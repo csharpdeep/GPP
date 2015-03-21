@@ -23,7 +23,7 @@ namespace SQLConfig
         {
             InitializeComponent();
             LayDanhSachMayChu();
-            readXML();
+            sdasdasda();
         }
 
         private void LayDanhSachMayChu()
@@ -96,7 +96,7 @@ namespace SQLConfig
                 MessageBox.Show("Lỗi trong quá trình lưu thông tin: " + ex.Message);
             }
         }
-        private bool readXML()
+        private bool sdasdasda()
         {
             try
             {
