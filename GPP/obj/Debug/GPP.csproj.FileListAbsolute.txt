@@ -1,9 +1,1 @@
-E:\GPP\GPP\obj\Debug\GPP.Properties.Resources.resources
-E:\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
-E:\GPP\GPP\obj\Debug\GPP.MainWindow.resources
 E:\GPP\GPP\bin\Debug\GPP.exe.config
-E:\GPP\GPP\bin\Debug\GPP.exe
-E:\GPP\GPP\bin\Debug\GPP.pdb
-E:\GPP\GPP\obj\Debug\GPP.exe
-E:\GPP\GPP\obj\Debug\GPP.pdb
-E:\GPP\GPP\obj\Debug\GPP.SettingSQL.resources
