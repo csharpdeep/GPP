@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<application>
+  <serverName>XUAN_DONG-PC</serverName>
+  <userNameDatabase>sa</userNameDatabase>
+  <passWordsDatabase>as</passWordsDatabase>
+  <databaseName>as</databaseName>
+</application>

@@ -1,6 +1,6 @@
-﻿namespace SQLConfig
+﻿namespace GPP
 {
-    partial class SqlManagementUC
+    partial class SettingSQL
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::GPP.Properties.Resources.Capture;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
@@ -131,9 +132,9 @@
             // 
             // _btnLuuCSDL
             // 
-            this._btnLuuCSDL.Location = new System.Drawing.Point(103, 349);
+            this._btnLuuCSDL.Location = new System.Drawing.Point(103, 315);
             this._btnLuuCSDL.Name = "_btnLuuCSDL";
-            this._btnLuuCSDL.Size = new System.Drawing.Size(173, 23);
+            this._btnLuuCSDL.Size = new System.Drawing.Size(173, 28);
             this._btnLuuCSDL.TabIndex = 10;
             this._btnLuuCSDL.Text = "Save";
             this._btnLuuCSDL.UseVisualStyleBackColor = true;
@@ -143,6 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(391, 350);
             this.Controls.Add(this._btnLuuCSDL);
             this.Controls.Add(this.label4);
             this.Controls.Add(this._cbTenCSDL);
@@ -157,7 +159,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SqlManagementUC";
-            this.Size = new System.Drawing.Size(407, 430);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
