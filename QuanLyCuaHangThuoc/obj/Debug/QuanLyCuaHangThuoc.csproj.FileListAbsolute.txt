@@ -1,0 +1,2 @@
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\QuanLyCuaHangThuoc\bin\Debug\QuanLyCuaHangThuoc.exe.config
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\QuanLyCuaHangThuoc\obj\Debug\QuanLyCuaHangThuoc.csprojResolveAssemblyReference.cache

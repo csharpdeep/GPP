@@ -1,0 +1,4 @@
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\bin\Release\Param.dll
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\bin\Release\Param.pdb
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\obj\Release\Param.dll
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\obj\Release\Param.pdb

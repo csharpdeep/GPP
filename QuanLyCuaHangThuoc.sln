@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Param", "Param\Param.csproj", "{854D4DFA-B32E-4FF9-8316-AE77B5D869A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{87EB14C6-3B02-4CB3-9CD2-200E17140EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLConfig", "SQLConfig\SQLConfig.csproj", "{95C1DC10-741D-4191-9EDE-716DE5134486}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{854D4DFA-B32E-4FF9-8316-AE77B5D869A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854D4DFA-B32E-4FF9-8316-AE77B5D869A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854D4DFA-B32E-4FF9-8316-AE77B5D869A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854D4DFA-B32E-4FF9-8316-AE77B5D869A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87EB14C6-3B02-4CB3-9CD2-200E17140EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EB14C6-3B02-4CB3-9CD2-200E17140EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EB14C6-3B02-4CB3-9CD2-200E17140EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EB14C6-3B02-4CB3-9CD2-200E17140EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C1DC10-741D-4191-9EDE-716DE5134486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C1DC10-741D-4191-9EDE-716DE5134486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C1DC10-741D-4191-9EDE-716DE5134486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C1DC10-741D-4191-9EDE-716DE5134486}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

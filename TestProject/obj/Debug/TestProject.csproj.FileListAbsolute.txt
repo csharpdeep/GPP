@@ -1,0 +1,12 @@
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\TestProject.exe.config
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\TestProject.exe
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\TestProject.pdb
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\Param.dll
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\Param.pdb
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\obj\Debug\TestProject.csprojResolveAssemblyReference.cache
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\obj\Debug\TestProject.exe
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\obj\Debug\TestProject.pdb
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\SQLConfig.dll
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\bin\Debug\SQLConfig.pdb
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\obj\Debug\TestProject.csproj.GenerateResource.Cache
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\TestProject\obj\Debug\TestProject.Form1.resources

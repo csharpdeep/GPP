@@ -1,0 +1,4 @@
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\bin\Debug\Param.dll
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\bin\Debug\Param.pdb
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\obj\Debug\Param.dll
+C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\Param\obj\Debug\Param.pdb
