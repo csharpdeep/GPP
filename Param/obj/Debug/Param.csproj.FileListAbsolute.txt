@@ -1,4 +1,0 @@
-F:\GPP\Param\bin\Debug\Param.dll
-F:\GPP\Param\bin\Debug\Param.pdb
-F:\GPP\Param\obj\Debug\Param.dll
-F:\GPP\Param\obj\Debug\Param.pdb
