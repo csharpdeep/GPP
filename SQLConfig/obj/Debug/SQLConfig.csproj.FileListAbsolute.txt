@@ -1,11 +1,3 @@
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\bin\Debug\SQLConfig.dll
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\bin\Debug\SQLConfig.pdb
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Debug\SQLConfig.Properties.Resources.resources
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Debug\SQLConfig.csproj.GenerateResource.Cache
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Debug\SQLConfig.dll
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Debug\SQLConfig.pdb
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Debug\SQLConfig.SqlManagementUC.resources
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Debug\SQLConfig.csprojResolveAssemblyReference.cache
 F:\GPP\SQLConfig\bin\Debug\SQLConfig.dll
 F:\GPP\SQLConfig\bin\Debug\SQLConfig.pdb
 F:\GPP\SQLConfig\obj\Debug\SQLConfig.csprojResolveAssemblyReference.cache

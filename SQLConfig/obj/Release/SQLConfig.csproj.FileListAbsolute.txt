@@ -1,7 +1,0 @@
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\bin\Release\SQLConfig.dll
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\bin\Release\SQLConfig.pdb
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Release\SQLConfig.Properties.Resources.resources
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Release\SQLConfig.SqlManagementUC.resources
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Release\SQLConfig.csproj.GenerateResource.Cache
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Release\SQLConfig.dll
-C:\Users\LEGENDARY\Desktop\Project\QuanLyCuaHangThuoc\SQLConfig\obj\Release\SQLConfig.pdb
