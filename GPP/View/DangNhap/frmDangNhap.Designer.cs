@@ -1,4 +1,4 @@
-﻿namespace GPP.View
+﻿namespace GPP
 {
     partial class frmDangNhap
     {

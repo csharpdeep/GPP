@@ -17,4 +17,4 @@ D:\Project\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
 D:\Project\GPP\GPP\obj\Debug\GPP.exe
 D:\Project\GPP\GPP\obj\Debug\GPP.pdb
 D:\Project\GPP\GPP\obj\Debug\GPP.View.FormLogin.resources
-E:\GPP\GPP\obj\Debug\GPP.View.frmDangNhap.resources
+E:\GPP\GPP\obj\Debug\GPP.frmDangNhap.resources

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace GPP.Common
+namespace GPP
 {
     class ConnectSQL
     {

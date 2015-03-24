@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GPP.Common;
 
-namespace GPP.View
+namespace GPP
 {
     public partial class frmDangNhap : Form
     {
