@@ -8,3 +8,13 @@ E:\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
 E:\GPP\GPP\obj\Debug\GPP.exe
 E:\GPP\GPP\obj\Debug\GPP.pdb
 E:\GPP\GPP\obj\Debug\GPP.csprojResolveAssemblyReference.cache
+D:\Project\GPP\GPP\bin\Debug\GPP.exe.config
+D:\Project\GPP\GPP\bin\Debug\GPP.exe
+D:\Project\GPP\GPP\bin\Debug\GPP.pdb
+D:\Project\GPP\GPP\obj\Debug\GPP.csprojResolveAssemblyReference.cache
+D:\Project\GPP\GPP\obj\Debug\GPP.Properties.Resources.resources
+D:\Project\GPP\GPP\obj\Debug\GPP.SettingSQL.resources
+D:\Project\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
+D:\Project\GPP\GPP\obj\Debug\GPP.exe
+D:\Project\GPP\GPP\obj\Debug\GPP.pdb
+D:\Project\GPP\GPP\obj\Debug\GPP.View.FormLogin.resources

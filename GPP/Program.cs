@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using GPP.View;
 
 namespace GPP
 {
@@ -14,7 +15,7 @@ namespace GPP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SettingSQL());
+            Application.Run(new FormLogin());
         }
     }
 }
