@@ -17,17 +17,18 @@ namespace GPP.Common
         private SqlDataAdapter da;
         private DataTable dt;
         private string SQLString;
-        private ConnectSQL()
+        public void InitInstance()
         {
-            if (System.IO.Directory.Exists(Application.StartupPath + "Data/config.xml")==false)
+            if ((System.IO.Directory.Exists(@"Data\Config.xml")))
             {
                 SettingSQL s = new SettingSQL();
-                s.ShowDialog();
+                s.Show();
             }
             ReadXML();
             connect = new SqlConnection(SQLString);
             connect.Open();
         }
+
         public void ReadXML()
         {
             try
@@ -45,13 +46,11 @@ namespace GPP.Common
                     XmlNode passWordsDatabase = userNameDatabase.NextSibling;
                     XmlNode databaseName = passWordsDatabase.NextSibling;
 
-
                     string _serverName = serverName.InnerText;
                     string _databaseName = databaseName.InnerText;
                     string _userNameDatabase = userNameDatabase.InnerText;
                     string _passWordsDatabase = passWordsDatabase.InnerText;
-                    SQLString="Data Source="+_serverName+","+"Initial Catalog="+_databaseName;
-
+                    SQLString = "Data Source=" + _serverName + ";" + "Initial Catalog=" + _databaseName + ";Integrated Security=True";
                 }
             }
             catch
@@ -73,7 +72,17 @@ namespace GPP.Common
             da.Fill(dt);
             return dt;
         }
-
+        public string ReturnString(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, connect);
+            string s="";
+            try
+            {
+                s = cmd.ExecuteScalar().ToString();
+            }
+            catch { s = ""; }
+            return s;
+        }
         public bool ThucThiSQL(string sql)
         {
             SqlCommand cmd = new SqlCommand(sql, connect);
