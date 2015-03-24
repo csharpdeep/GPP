@@ -16,5 +16,10 @@ namespace GPP
         {
             InitializeComponent();
         }
+
+        private void gppMenuItem1_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("mouse click");
+        }
     }
 }

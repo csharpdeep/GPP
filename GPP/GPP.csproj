@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ConnectSQL.cs" />
+    <Compile Include="Common\GPPMenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\GPPMenuItem.Designer.cs">
+      <DependentUpon>GPPMenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\GuiResInfoMng.cs" />
     <Compile Include="Common\IUserControlBase.cs" />
     <Compile Include="Common\ParamHelper.cs" />
@@ -99,6 +105,9 @@
     <Compile Include="View\MainWinDow\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Common\GPPMenuItem.resx">
+      <DependentUpon>GPPMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\DangNhap\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainWinDow\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -137,6 +149,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login_icon_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting_icon_mouse_move.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

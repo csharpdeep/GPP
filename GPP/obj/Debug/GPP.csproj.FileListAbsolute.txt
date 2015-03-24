@@ -18,3 +18,5 @@ D:\Project\GPP\GPP\obj\Debug\GPP.exe
 D:\Project\GPP\GPP\obj\Debug\GPP.pdb
 D:\Project\GPP\GPP\obj\Debug\GPP.View.FormLogin.resources
 E:\GPP\GPP\obj\Debug\GPP.frmDangNhap.resources
+E:\GPP\GPP\obj\Debug\GPP.MainWindow.resources
+E:\GPP\GPP\obj\Debug\GPP.GPPMenuItem.resources
