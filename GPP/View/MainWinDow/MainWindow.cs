@@ -177,5 +177,10 @@ namespace GPP
                 throw new ArgumentException();
             }
         }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

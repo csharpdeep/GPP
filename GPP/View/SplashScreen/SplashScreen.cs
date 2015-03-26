@@ -26,6 +26,7 @@ namespace GPP
         private void OnTimerTick(object sender, EventArgs e)
         {
             _progressBar.Value++;
+            this.Opacity = (float)_progressBar.Value / 100;
             if (_progressBar.Value == _progressBar.Maximum)
             {
                 _timer.Stop();
@@ -34,6 +35,17 @@ namespace GPP
                 this.ShowInTaskbar = false;
                 this.Hide();
                 frmMain.ShowDialog();
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // WS_EX_COMPOSITED
+                cp.ExStyle |= 0x00080000;  // WS_EX_LAYERED
+                return cp;
             }
         }
     }
