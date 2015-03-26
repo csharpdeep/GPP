@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DongTX.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -114,6 +117,12 @@
     <Compile Include="View\PhanQuyen\userControl_PhanQuyen.Designer.cs">
       <DependentUpon>userControl_PhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SplashScreen\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SplashScreen\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -139,6 +148,9 @@
     <EmbeddedResource Include="View\PhanQuyen\userControl_PhanQuyen.resx">
       <DependentUpon>userControl_PhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SplashScreen\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -152,12 +164,17 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_sql.PNG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login_icon_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
