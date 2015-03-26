@@ -107,7 +107,7 @@
             // 
             this._btnKiemTraKetNoi.Location = new System.Drawing.Point(103, 235);
             this._btnKiemTraKetNoi.Name = "_btnKiemTraKetNoi";
-            this._btnKiemTraKetNoi.Size = new System.Drawing.Size(173, 27);
+            this._btnKiemTraKetNoi.Size = new System.Drawing.Size(173, 32);
             this._btnKiemTraKetNoi.TabIndex = 7;
             this._btnKiemTraKetNoi.Text = "Kiểm tra kết nối CSDL";
             this._btnKiemTraKetNoi.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@
             this._btnLuuCSDL.TabIndex = 10;
             this._btnLuuCSDL.Text = "Save";
             this._btnLuuCSDL.UseVisualStyleBackColor = true;
-            this._btnLuuCSDL.Click += new System.EventHandler(this._btnLuuCSDL_Click);
+            this._btnLuuCSDL.Click += new System.EventHandler(this.OnBtnLuuCSDLClick);
             // 
-            // SqlManagementUC
+            // SettingSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "SqlManagementUC";
+            this.Name = "SettingSQL";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

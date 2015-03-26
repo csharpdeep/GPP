@@ -15,42 +15,21 @@ namespace GPP
 {
     public partial class SettingSQL: Form
     {
+        #region Field
         private Server srv;
         private ServerConnection conn;
+        #endregion
 
+        #region Contructor
         public SettingSQL()
         {
             InitializeComponent();
-            LayDanhSachMayChu();
+            GetAllServerName();
             ReadXML();
         }
+        #endregion
 
-        private void LayDanhSachMayChu()
-        {
-            try
-            {
-                RegistryKey rk = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server");
-                String[] instances = (String[])rk.GetValue("InstalledInstances");
-                if (instances.Length > 0)
-                {
-                    foreach (String element in instances)
-                    {
-                        if (element == "MSSQLSERVER")
-                        {
-                            _cbMayChu.Items.Add(System.Environment.MachineName);
-                        }
-                        else
-                        {
-                            _cbMayChu.Items.Add(System.Environment.MachineName + @"\" + element);
-                        }
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
+        #region Event
         private void OnBtnKiemTraKetNoiClick(object sender, EventArgs e)
         {
             try
@@ -78,18 +57,25 @@ namespace GPP
             }
         }
 
-        private void writeToXML()
+        private void OnBtnLuuCSDLClick(object sender, EventArgs e)
+        {
+            SaveToXML();
+        }
+        #endregion
+
+        #region Method
+        private void SaveToXML()
         {
             try
             {
-                XmlTextWriter xtw = new XmlTextWriter( @"Data/Config.xml", null);
+                XmlTextWriter xtw = new XmlTextWriter(@"Data/Config.xml", null);
                 xtw.Formatting = Formatting.Indented;
                 xtw.WriteStartDocument();
                 xtw.WriteStartElement("application");
-                xtw.WriteElementString("serverName",_cbMayChu.Text);
-                xtw.WriteElementString("userNameDatabase",_txtTenDangNhap.Text);
-                xtw.WriteElementString("passWordsDatabase",_txtMatKhau.Text);
-                xtw.WriteElementString("databaseName",_cbTenCSDL.Text);
+                xtw.WriteElementString("serverName", _cbMayChu.Text);
+                xtw.WriteElementString("userNameDatabase", _txtTenDangNhap.Text);
+                xtw.WriteElementString("passWordsDatabase", _txtMatKhau.Text);
+                xtw.WriteElementString("databaseName", _cbTenCSDL.Text);
                 xtw.WriteEndElement();
                 xtw.WriteEndDocument();
                 xtw.Flush();
@@ -101,6 +87,7 @@ namespace GPP
                 MessageBox.Show("Lỗi trong quá trình lưu thông tin: " + ex.Message);
             }
         }
+        
         private bool ReadXML()
         {
             try
@@ -140,9 +127,31 @@ namespace GPP
             return true;
         }
 
-        private void _btnLuuCSDL_Click(object sender, EventArgs e)
+        private void GetAllServerName()
         {
-            writeToXML();
+            try
+            {
+                RegistryKey rk = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server");
+                String[] instances = (String[])rk.GetValue("InstalledInstances");
+                if (instances.Length > 0)
+                {
+                    foreach (String element in instances)
+                    {
+                        if (element == "MSSQLSERVER")
+                        {
+                            _cbMayChu.Items.Add(System.Environment.MachineName);
+                        }
+                        else
+                        {
+                            _cbMayChu.Items.Add(System.Environment.MachineName + @"\" + element);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
+        #endregion
     }
 }
