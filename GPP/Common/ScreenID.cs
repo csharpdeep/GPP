@@ -17,5 +17,6 @@ namespace GPP
         public static uint BAN_THUOC = 6;
         public static uint PHAN_QUYEN = 7;
         public static uint NHAN_VIEN = 8;
+        public static uint NHAN_VIEN2 = 8;
     }
 }

@@ -19,4 +19,4 @@ D:\Project\GPP\GPP\obj\Debug\GPP.pdb
 D:\Project\GPP\GPP\obj\Debug\GPP.View.FormLogin.resources
 E:\GPP\GPP\obj\Debug\GPP.frmDangNhap.resources
 E:\GPP\GPP\obj\Debug\GPP.MainWindow.resources
-E:\GPP\GPP\obj\Debug\GPP.GPPMenuItem.resources
+E:\GPP\GPP\obj\Debug\GPP.View.PhanQuyen.userControl_PhanQuyen.resources
