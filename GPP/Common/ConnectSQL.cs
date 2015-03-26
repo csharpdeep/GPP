@@ -19,7 +19,7 @@ namespace GPP
         private string SQLString;
         public void InitInstance()
         {
-            if ((System.IO.Directory.Exists(@"Data\Config.xml")))
+            if (!(System.IO.Directory.Exists(@"Data\Config.xml")))
             {
                 SettingSQL s = new SettingSQL();
                 s.Show();

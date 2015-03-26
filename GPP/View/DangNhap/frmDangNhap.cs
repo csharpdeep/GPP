@@ -37,7 +37,7 @@ namespace GPP
                 _userName = _txtUser.Text;
                 _passWord = _txtPassWords.Text;
 
-                ConnectSQL.Istance.InitInstance();
+                
                 string strQuery = "select MatKhau from NhanVien where TaiKhoan='" + _userName + "'";
                 string strPassWords = ConnectSQL.Istance.ReturnString(strQuery);
 
@@ -65,6 +65,7 @@ namespace GPP
         private void OnFrmDangNhapLoad(object sender, EventArgs e)
         {
             label1.Focus();
+            ConnectSQL.Istance.InitInstance();
         }
 
         private void OnPictureBoxClosedClick(object sender, EventArgs e)

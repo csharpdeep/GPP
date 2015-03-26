@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GPP.View.PhanQuyen;
 
 namespace GPP
 {
@@ -17,9 +18,13 @@ namespace GPP
             InitializeComponent();
         }
 
-        private void gppMenuItem1_MouseClick(object sender, MouseEventArgs e)
+        private void MainWindow_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("mouse click");
+            userControl_PhanQuyen u = new userControl_PhanQuyen();
+            u.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(u);
+            
         }
     }
 }
