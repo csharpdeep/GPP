@@ -12,7 +12,6 @@ E:\GPP\GPP\obj\Debug\GPP.Properties.Resources.resources
 E:\GPP\GPP\obj\Debug\GPP.SettingSQL.resources
 E:\GPP\GPP\obj\Debug\GPP.frmDangNhap.resources
 E:\GPP\GPP\obj\Debug\GPP.MainWindow.resources
-E:\GPP\GPP\obj\Debug\GPP.View.PhanQuyen.userControl_PhanQuyen.resources
 E:\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
 E:\GPP\GPP\bin\Debug\GPP.exe.config
 E:\GPP\GPP\bin\Debug\GPP.exe
@@ -21,6 +20,9 @@ E:\GPP\GPP\bin\Debug\DongTX.Core.dll
 E:\GPP\GPP\bin\Debug\DongTX.Core.pdb
 E:\GPP\GPP\obj\Debug\GPP.exe
 E:\GPP\GPP\obj\Debug\GPP.pdb
-E:\GPP\GPP\obj\Debug\GPP.csprojResolveAssemblyReference.cache
 E:\GPP\GPP\obj\Debug\GPP.frmChucVuUC.resources
 E:\GPP\GPP\obj\Debug\GPP.SplashScreen.resources
+E:\GPP\GPP\obj\Debug\GPP.csprojResolveAssemblyReference.cache
+E:\GPP\GPP\obj\Debug\GPP.frmDangNhapUC.resources
+E:\GPP\GPP\obj\Debug\GPP.frmNhanVienUC.resources
+E:\GPP\GPP\obj\Debug\GPP.frmPhanQuyenUC.resources

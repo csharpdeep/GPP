@@ -125,7 +125,7 @@ namespace GPP
                 ConfigSqlString(filePath);
 
                 //add test form here
-                frmChucVuUC frm = new frmChucVuUC();
+                frmPhanQuyenUC frm = new frmPhanQuyenUC();
                 frm.Dock = DockStyle.Fill;
                 panel1.Controls.Add(frm);
             }

@@ -105,17 +105,29 @@
     <Compile Include="View\DangNhap\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DangNhap\frmDangNhapUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DangNhap\frmDangNhapUC.Designer.cs">
+      <DependentUpon>frmDangNhapUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWinDow\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MainWinDow\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PhanQuyen\userControl_PhanQuyen.cs">
+    <Compile Include="View\NhanVien\frmNhanVienUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\PhanQuyen\userControl_PhanQuyen.Designer.cs">
-      <DependentUpon>userControl_PhanQuyen.cs</DependentUpon>
+    <Compile Include="View\NhanVien\frmNhanVienUC.Designer.cs">
+      <DependentUpon>frmNhanVienUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanQuyen\frmPhanQuyenUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PhanQuyen\frmPhanQuyenUC.Designer.cs">
+      <DependentUpon>frmPhanQuyenUC.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SplashScreen\SplashScreen.cs">
       <SubType>Form</SubType>
@@ -142,11 +154,17 @@
     <EmbeddedResource Include="View\DangNhap\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\DangNhap\frmDangNhapUC.resx">
+      <DependentUpon>frmDangNhapUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainWinDow\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PhanQuyen\userControl_PhanQuyen.resx">
-      <DependentUpon>userControl_PhanQuyen.cs</DependentUpon>
+    <EmbeddedResource Include="View\NhanVien\frmNhanVienUC.resx">
+      <DependentUpon>frmNhanVienUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PhanQuyen\frmPhanQuyenUC.resx">
+      <DependentUpon>frmPhanQuyenUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SplashScreen\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -175,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\login_background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -28,16 +28,16 @@ namespace GPP
             string maChucVu = _datagridView[0, index].Value.ToString();
             string moTa = _datagridView[1, index].Value.ToString();
 
-            bool isUpdate = SqlHelper.Instance.CheckExistKey("ChucVu", "MaChucVu", maChucVu);
+            bool isUpdate = SqlHelper.Instance.CheckExistKey("CHUCVU", "MACHUCVU", maChucVu);
             if (isUpdate)
             {
-                int recordEffect = SqlHelper.Instance.Update("ChucVu", new SqlParameter[]
+                int recordEffect = SqlHelper.Instance.Update("CHUCVU", new SqlParameter[]
                 {
-                    new SqlParameter("MoTaCongViec", moTa)
+                    new SqlParameter("MOTA", moTa)
                 }, 
                 new SqlParameter[]
                 {
-                    new SqlParameter("MaChucVu", maChucVu)
+                    new SqlParameter("MACHUCVU", maChucVu)
                 });
 
                 if (recordEffect <= 0)
@@ -48,10 +48,10 @@ namespace GPP
             else
             {
                 //them moi du lieu
-                int recordEffect = (int)SqlHelper.Instance.Insert("ChucVu", new SqlParameter[]
+                int recordEffect = (int)SqlHelper.Instance.Insert("CHUCVU", new SqlParameter[]
                 {
-                    new SqlParameter("MaChucVu",maChucVu),
-                    new SqlParameter("MoTaCongViec",moTa),
+                    new SqlParameter("MACHUCVU",maChucVu),
+                    new SqlParameter("MOTA",moTa),
                 });
 
                 if (recordEffect <= 0)
@@ -65,7 +65,7 @@ namespace GPP
         {
             //khi user thêm 1 dòng mới thì ta sẽ lấy mã kế tiếp
             int rowIndex = e.Row.Index - 1;
-            _datagridView[0, rowIndex].Value = SqlHelper.Instance.GetNextPrimaryKey("ChucVu", "MaChucVu", "CV000000000000000001");
+            _datagridView[0, rowIndex].Value = SqlHelper.Instance.GetNextPrimaryKey("CHUCVU", "MACHUCVU", "CV001");
         }
 
         private void OnDatagridViewUserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -82,8 +82,10 @@ namespace GPP
                 MessageBoxDefaultButton.Button2);
             if (dlg == DialogResult.Yes)
             {
+                //trước khi xóa dữ liệu này, ta sẽ xóa dữ liệu trong bảng ChucNang 
+                //tương ứng với mã chức vụ chuẩn bị được xóa
                 //xoa du lieu trong database
-                int recordEffect = SqlHelper.Instance.Delete("ChucVu", new SqlParameter[]
+                int recordEffect = SqlHelper.Instance.Delete("CHUCVU", new SqlParameter[]
                 {
                     new SqlParameter("MaChucVu",maChucVu)
                 });

@@ -56,7 +56,7 @@
             // 
             // MaChucVu
             // 
-            this.MaChucVu.DataPropertyName = "MaChucVu";
+            this.MaChucVu.DataPropertyName = "MACHUCVU";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.MaChucVu.DefaultCellStyle = dataGridViewCellStyle1;
@@ -68,11 +68,11 @@
             // 
             // MoTaCongViec
             // 
-            this.MoTaCongViec.DataPropertyName = "MoTaCongViec";
+            this.MoTaCongViec.DataPropertyName = "MOTA";
             this.MoTaCongViec.HeaderText = "Mô tả";
             this.MoTaCongViec.Name = "MoTaCongViec";
             this.MoTaCongViec.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.MoTaCongViec.Width = 883;
+            this.MoTaCongViec.Width = 700;
             // 
             // frmChucVuUC
             // 
