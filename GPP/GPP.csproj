@@ -75,16 +75,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ConnectSQL.cs" />
     <Compile Include="Common\GuiResInfoMng.cs" />
     <Compile Include="Common\IUserControlBase.cs" />
     <Compile Include="Common\ParamHelper.cs" />
     <Compile Include="Common\ParamID.cs" />
     <Compile Include="Common\ScreenID.cs" />
-    <Compile Include="Controller\Control_NhaCC.cs" />
-    <Compile Include="Controller\Control_PhanQyen.cs" />
-    <Compile Include="Model\Model_NhaCC.cs" />
-    <Compile Include="Model\Model_PhanQuyen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SettingSQL.cs">
@@ -99,23 +94,17 @@
     <Compile Include="View\ChucVu\frmChucVuUC.Designer.cs">
       <DependentUpon>frmChucVuUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DangNhap\frmDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DangNhap\frmDangNhap.Designer.cs">
-      <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\DangNhap\frmDangNhapUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\DangNhap\frmDangNhapUC.Designer.cs">
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DonViTinh\frmDonViTInh.cs">
+    <Compile Include="View\DonViTinh\frmDonViTinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\DonViTinh\frmDonViTInh.Designer.cs">
-      <DependentUpon>frmDonViTInh.cs</DependentUpon>
+    <Compile Include="View\DonViTinh\frmDonViTinh.Designer.cs">
+      <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoaiThuoc\frmLoaiThuocUC.cs">
       <SubType>UserControl</SubType>
@@ -163,14 +152,11 @@
     <EmbeddedResource Include="View\ChucVu\frmChucVuUC.resx">
       <DependentUpon>frmChucVuUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DangNhap\frmDangNhap.resx">
-      <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\DangNhap\frmDangNhapUC.resx">
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DonViTinh\frmDonViTInh.resx">
-      <DependentUpon>frmDonViTInh.cs</DependentUpon>
+    <EmbeddedResource Include="View\DonViTinh\frmDonViTinh.resx">
+      <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoaiThuoc\frmLoaiThuocUC.resx">
       <DependentUpon>frmLoaiThuocUC.cs</DependentUpon>
@@ -213,7 +199,17 @@
     <Content Include="icon.ico" />
     <None Include="Resources\login_background.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\BaoCao\" />
+    <Folder Include="View\HeThong\GioiThieuPhanMem\" />
+    <Folder Include="View\HeThong\PhucHoiCSDL\" />
+    <Folder Include="View\HeThong\SaoLuuCSDL\" />
+    <Folder Include="View\HeThong\ThayDoiMatKhau\" />
+    <Folder Include="View\HeThong\ThayDoiTaiKhoan\" />
+    <Folder Include="View\HeThong\ThongTinNhaThuoc\" />
+    <Folder Include="View\HoaDon\" />
+    <Folder Include="View\NhapKho\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

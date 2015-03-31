@@ -54,6 +54,8 @@
             this.Column1.DataPropertyName = "MaLoaiThuoc";
             this.Column1.HeaderText = "Mã loại thuốc";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.Width = 150;
             // 
             // Column2

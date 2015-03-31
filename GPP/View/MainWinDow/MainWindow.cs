@@ -123,11 +123,6 @@ namespace GPP
             else
             {
                 ConfigSqlString(filePath);
-
-                //add test form here
-                frmLoaiThuocUC frm = new frmLoaiThuocUC();
-                frm.Dock = DockStyle.Fill;
-                panel1.Controls.Add(frm);
             }
         }
 
@@ -181,6 +176,33 @@ namespace GPP
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void loaiThuocToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeScreen(new frmLoaiThuocUC());
+        }
+
+        private void donViTinhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeScreen(new frmDonViTinh());
+        }
+
+        private void chucVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeScreen(new frmChucVuUC());
+        }
+
+        private void phanQuyenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeScreen(new frmPhanQuyenUC());
+        }
+
+        private void ChangeScreen(UserControl uc)
+        {
+            panel1.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            panel1.Controls.Add(uc);
         }
     }
 }

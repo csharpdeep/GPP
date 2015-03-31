@@ -28,16 +28,16 @@ namespace GPP
             string maLoaiThuoc = _dataGridView[0, index].Value.ToString();
             string moTa = _dataGridView[1, index].Value.ToString();
 
-            bool isUpdate = SqlHelper.Instance.CheckExistKey("LOAITHUOC", "MaLoaiThuoc", maLoaiThuoc);
+            bool isUpdate = SqlHelper.Instance.CheckExistKey("LOAITHUOC", "MALOAITHUOC", maLoaiThuoc);
             if (isUpdate)
             {
                 int recordEffect = SqlHelper.Instance.Update("LOAITHUOC", new SqlParameter[]
                 {
-                    new SqlParameter("MaLoaiThuoc", maLoaiThuoc)
+                    new SqlParameter("MALOAITHUOC", maLoaiThuoc)
                 },
                 new SqlParameter[]
                 {
-                    new SqlParameter("MoTa", moTa)
+                    new SqlParameter("MOTA", moTa)
                 });
 
                 if (recordEffect <= 0)
@@ -65,7 +65,7 @@ namespace GPP
         {
             //khi user thêm 1 dòng mới thì ta sẽ lấy mã kế tiếp
             int rowIndex = e.Row.Index - 1;
-            _dataGridView[0, rowIndex].Value = SqlHelper.Instance.GetNextPrimaryKey("LoaiTHuoc", "MaLoaiThuoc", "LT000000000000000001");
+            _dataGridView[0, rowIndex].Value = SqlHelper.Instance.GetNextPrimaryKey("LOAITHUOC", "MALOAITHUOC", "LT001");
         }
 
         private void OnUserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -85,7 +85,7 @@ namespace GPP
                 //xoa du lieu trong database
                 int recordEffect = SqlHelper.Instance.Delete("LoaiThuoc", new SqlParameter[]
                 {
-                    new SqlParameter("MaLoaiThuoc",maLoaiThuoc)
+                    new SqlParameter("MALOAITHUOC",maLoaiThuoc)
                 });
 
                 if (recordEffect <= 0)

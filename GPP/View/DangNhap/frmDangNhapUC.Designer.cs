@@ -30,7 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this._btnDangNhap = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -52,15 +52,16 @@
             this.textBox2.Size = new System.Drawing.Size(245, 19);
             this.textBox2.TabIndex = 1;
             // 
-            // button1
+            // _btnDangNhap
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(371, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Đăng nhập";
-            this.button1.UseVisualStyleBackColor = true;
+            this._btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnDangNhap.Location = new System.Drawing.Point(371, 257);
+            this._btnDangNhap.Name = "_btnDangNhap";
+            this._btnDangNhap.Size = new System.Drawing.Size(100, 29);
+            this._btnDangNhap.TabIndex = 2;
+            this._btnDangNhap.Text = "Đăng nhập";
+            this._btnDangNhap.UseVisualStyleBackColor = true;
+            this._btnDangNhap.Click += new System.EventHandler(this._btnDangNhap_Click);
             // 
             // checkBox1
             // 
@@ -81,7 +82,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(111)))), ((int)(((byte)(112)))));
             this.BackgroundImage = global::GPP.Properties.Resources.login_background;
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this._btnDangNhap);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
@@ -99,7 +100,7 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button _btnDangNhap;
         private System.Windows.Forms.CheckBox checkBox1;
 
     }

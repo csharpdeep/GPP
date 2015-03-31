@@ -44,5 +44,12 @@ namespace GPP
                 }
             }
         }
+
+        private void _btnDangNhap_Click(object sender, EventArgs e)
+        {
+            //Neu dang nhap thanh cong
+            string maNV = "NV001";
+            ParamHelper.Instance.SetParamStr(ParamID.IDS_TENDANGNHAP, maNV);
+        }
     }
 }

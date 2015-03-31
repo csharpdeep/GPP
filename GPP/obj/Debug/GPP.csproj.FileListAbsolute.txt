@@ -10,7 +10,6 @@ D:\Project\GPP\GPP\obj\Debug\GPP.pdb
 D:\Project\GPP\GPP\obj\Debug\GPP.View.FormLogin.resources
 E:\GPP\GPP\obj\Debug\GPP.Properties.Resources.resources
 E:\GPP\GPP\obj\Debug\GPP.SettingSQL.resources
-E:\GPP\GPP\obj\Debug\GPP.frmDangNhap.resources
 E:\GPP\GPP\obj\Debug\GPP.MainWindow.resources
 E:\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
 E:\GPP\GPP\bin\Debug\GPP.exe.config
@@ -44,3 +43,5 @@ E:\QLNhaThuoc\GPP\GPP\obj\Debug\GPP.SplashScreen.resources
 E:\QLNhaThuoc\GPP\GPP\obj\Debug\GPP.csproj.GenerateResource.Cache
 E:\QLNhaThuoc\GPP\GPP\obj\Debug\GPP.frmDonViTInh.resources
 E:\QLNhaThuoc\GPP\GPP\obj\Debug\GPP.frmLoaiThuocUC.resources
+E:\GPP\GPP\obj\Debug\GPP.frmDonViTInh.resources
+E:\GPP\GPP\obj\Debug\GPP.frmLoaiThuocUC.resources

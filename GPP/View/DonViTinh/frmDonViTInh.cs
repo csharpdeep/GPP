@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 
 namespace GPP
 {
-    public partial class frmDonViTInh : UserControl
+    public partial class frmDonViTinh : UserControl
     {
-        public frmDonViTInh()
+        public frmDonViTinh()
         {
             InitializeComponent();
             _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT * FROM DONVITINH");
@@ -28,16 +28,16 @@ namespace GPP
             string maDonVi = _dataGridView[0, index].Value.ToString();
             string moTa = _dataGridView[1, index].Value.ToString();
 
-            bool isUpdate = SqlHelper.Instance.CheckExistKey("DONVITINH", "MaDonVi", maDonVi);
+            bool isUpdate = SqlHelper.Instance.CheckExistKey("DONVITINH", "MADONVI", maDonVi);
             if (isUpdate)
             {
                 int recordEffect = SqlHelper.Instance.Update("DONVITINH", new SqlParameter[]
                 {
-                    new SqlParameter("MoTa", moTa)
+                    new SqlParameter("MOTA", moTa)
                 },
                 new SqlParameter[]
                 {
-                    new SqlParameter("MaDonVi", maDonVi)
+                    new SqlParameter("MADONVI", maDonVi)
                 });
 
                 if (recordEffect <= 0)
@@ -50,8 +50,8 @@ namespace GPP
                 //them moi du lieu
                 int recordEffect = (int)SqlHelper.Instance.Insert("DONVITINH", new SqlParameter[]
                 {
-                    new SqlParameter("MaDonVi",maDonVi),
-                    new SqlParameter("MoTa",moTa),
+                    new SqlParameter("MADONVI",maDonVi),
+                    new SqlParameter("MOTA",moTa),
                 });
 
                 if (recordEffect <= 0)
@@ -65,7 +65,7 @@ namespace GPP
         {
             //khi user thêm 1 dòng mới thì ta sẽ lấy mã kế tiếp
             int rowIndex = e.Row.Index - 1;
-            _dataGridView[0, rowIndex].Value = SqlHelper.Instance.GetNextPrimaryKey("DONVITINH", "MaDonVi", "DV00000000001");
+            _dataGridView[0, rowIndex].Value = SqlHelper.Instance.GetNextPrimaryKey("DONVITINH", "MADONVI", "DV001");
         }
 
         private void OnUserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
