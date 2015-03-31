@@ -111,6 +111,18 @@
     <Compile Include="View\DangNhap\frmDangNhapUC.Designer.cs">
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DonViTinh\frmDonViTInh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DonViTinh\frmDonViTInh.Designer.cs">
+      <DependentUpon>frmDonViTInh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoaiThuoc\frmLoaiThuocUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\LoaiThuoc\frmLoaiThuocUC.Designer.cs">
+      <DependentUpon>frmLoaiThuocUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWinDow\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +169,12 @@
     <EmbeddedResource Include="View\DangNhap\frmDangNhapUC.resx">
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\DonViTinh\frmDonViTInh.resx">
+      <DependentUpon>frmDonViTInh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoaiThuoc\frmLoaiThuocUC.resx">
+      <DependentUpon>frmLoaiThuocUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainWinDow\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +213,7 @@
     <Content Include="icon.ico" />
     <None Include="Resources\login_background.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

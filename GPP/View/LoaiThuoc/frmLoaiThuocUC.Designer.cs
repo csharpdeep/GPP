@@ -1,6 +1,6 @@
-﻿namespace GPP.View.DonViTinh
+﻿namespace GPP
 {
-    partial class frmDonViTinhUC
+    partial class frmLoaiThuocUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -43,16 +43,16 @@
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridView.Location = new System.Drawing.Point(0, 0);
             this._dataGridView.Name = "_dataGridView";
-            this._dataGridView.Size = new System.Drawing.Size(769, 471);
+            this._dataGridView.Size = new System.Drawing.Size(705, 423);
             this._dataGridView.TabIndex = 0;
-            this._dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridviewCellEndEdit);
+            this._dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridviewEndEdited);
             this._dataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserAddedRow);
             this._dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.OnUserDeletingRow);
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "MaDonVi";
-            this.Column1.HeaderText = "Mã đơn vị tính";
+            this.Column1.DataPropertyName = "MaLoaiThuoc";
+            this.Column1.HeaderText = "Mã loại thuốc";
             this.Column1.Name = "Column1";
             this.Column1.Width = 150;
             // 
@@ -60,16 +60,16 @@
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.DataPropertyName = "MoTa";
-            this.Column2.HeaderText = "Mô tả đơn vị tính";
+            this.Column2.HeaderText = "Mô tả";
             this.Column2.Name = "Column2";
             // 
-            // frmDonViTinhUC
+            // frmLoaiThuocUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._dataGridView);
-            this.Name = "frmDonViTinhUC";
-            this.Size = new System.Drawing.Size(769, 471);
+            this.Name = "frmLoaiThuocUC";
+            this.Size = new System.Drawing.Size(705, 423);
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             this.ResumeLayout(false);
 

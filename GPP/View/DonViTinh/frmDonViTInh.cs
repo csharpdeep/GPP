@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using DongTX.Core;
+using System.Data.SqlClient;
 
-namespace GPP.View.DonViTinh
+namespace GPP
 {
-    public partial class frmDonViTinhUC : UserControl
+    public partial class frmDonViTInh : UserControl
     {
-        public frmDonViTinhUC()
+        public frmDonViTInh()
         {
             InitializeComponent();
             _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT * FROM DONVITINH");
         }
 
-        private void OnDataGridviewCellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void OnDataGridviewCellEndEdited(object sender, DataGridViewCellEventArgs e)
         {
             //khi 1 row nào đó sửa dữ liệu xong thì row đó
             // có thể là row mới hoặc row cũ cần update

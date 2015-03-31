@@ -7,31 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DongTX.Core;
 using System.Data.SqlClient;
+using DongTX.Core;
 
 namespace GPP
 {
-    public partial class frmLoaiThuoc : UserControl
+    public partial class frmLoaiThuocUC : UserControl
     {
-        public frmLoaiThuoc()
+        public frmLoaiThuocUC()
         {
             InitializeComponent();
             _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT * FROM LOAITHUOC");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void OnDataGridviewEndClick(object sender, DataGridViewCellEventArgs e)
+        private void OnDataGridviewEndEdited(object sender, DataGridViewCellEventArgs e)
         {
             //khi 1 row nào đó sửa dữ liệu xong thì row đó
             // có thể là row mới hoặc row cũ cần update
             int index = e.RowIndex;
             string maLoaiThuoc = _dataGridView[0, index].Value.ToString();
-            string tenLoaiThuoc = _dataGridView[1, index].Value.ToString();
+            string moTa = _dataGridView[1, index].Value.ToString();
 
             bool isUpdate = SqlHelper.Instance.CheckExistKey("LOAITHUOC", "MaLoaiThuoc", maLoaiThuoc);
             if (isUpdate)
@@ -42,7 +37,7 @@ namespace GPP
                 },
                 new SqlParameter[]
                 {
-                    new SqlParameter("TenLoaiThuoc", tenLoaiThuoc)
+                    new SqlParameter("MoTa", moTa)
                 });
 
                 if (recordEffect <= 0)
@@ -56,7 +51,7 @@ namespace GPP
                 int recordEffect = (int)SqlHelper.Instance.Insert("LOAITHUOC", new SqlParameter[]
                 {
                     new SqlParameter("MaLoaiThuoc",maLoaiThuoc),
-                    new SqlParameter("TenLoaiTHuoc",tenLoaiThuoc),
+                    new SqlParameter("MoTa",moTa),
                 });
 
                 if (recordEffect <= 0)
@@ -66,7 +61,7 @@ namespace GPP
             }
         }
 
-        private void OnDataGridviewAddRow(object sender, DataGridViewRowEventArgs e)
+        private void OnUserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
             //khi user thêm 1 dòng mới thì ta sẽ lấy mã kế tiếp
             int rowIndex = e.Row.Index - 1;
@@ -103,5 +98,6 @@ namespace GPP
                 e.Cancel = true;
             }
         }
+
     }
 }

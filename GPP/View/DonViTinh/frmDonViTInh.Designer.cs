@@ -1,6 +1,6 @@
 ﻿namespace GPP
 {
-    partial class frmLoaiThuoc
+    partial class frmDonViTInh
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,49 +29,48 @@
         private void InitializeComponent()
         {
             this._dataGridView = new System.Windows.Forms.DataGridView();
-            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // _dataGridView
             // 
+            this._dataGridView.AllowUserToDeleteRows = false;
             this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLoaiThuoc,
-            this.TenLoaiThuoc});
+            this.Column1,
+            this.Column2});
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridView.Location = new System.Drawing.Point(0, 0);
             this._dataGridView.Name = "_dataGridView";
-            this._dataGridView.Size = new System.Drawing.Size(922, 524);
+            this._dataGridView.Size = new System.Drawing.Size(789, 498);
             this._dataGridView.TabIndex = 0;
-            this._dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridviewEndClick);
-            this._dataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnDataGridviewAddRow);
+            this._dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridviewCellEndEdited);
+            this._dataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserAddedRow);
             this._dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.OnUserDeletingRow);
             // 
-            // MaLoaiThuoc
+            // Column1
             // 
-            this.MaLoaiThuoc.DataPropertyName = "MaLoaiThuoc";
-            this.MaLoaiThuoc.Frozen = true;
-            this.MaLoaiThuoc.HeaderText = "Ma Loai Thuoc";
-            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
-            this.MaLoaiThuoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaLoaiThuoc.Width = 150;
+            this.Column1.DataPropertyName = "MaDonVi";
+            this.Column1.HeaderText = "Mã đơn vị tính";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
             // 
-            // TenLoaiThuoc
+            // Column2
             // 
-            this.TenLoaiThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenLoaiThuoc.DataPropertyName = "TenLoaiThuoc";
-            this.TenLoaiThuoc.HeaderText = "Ten Loai Thuoc";
-            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "MoTa";
+            this.Column2.HeaderText = "Mô tả";
+            this.Column2.Name = "Column2";
             // 
-            // frmLoaiThuoc
+            // frmDonViTInh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._dataGridView);
-            this.Name = "frmLoaiThuoc";
-            this.Size = new System.Drawing.Size(922, 524);
+            this.Name = "frmDonViTInh";
+            this.Size = new System.Drawing.Size(789, 498);
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -80,7 +79,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView _dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
