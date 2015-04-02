@@ -17,7 +17,7 @@ namespace GPP
         }
 
         //Khai báo từ điển để lưu trữ param và giá trị tương ứng
-        private Dictionary<uint, Object> _dictionnary;
+        private Dictionary<GuiResId.ParamId, Object> _dictionnary;
 
         //Khai báo lỗi khi ta không tìm thấy key trong từ điển
         public const string _NOT_FOUND_KEY_EXEPTION = "Không tìm thấy ParamID";
@@ -25,7 +25,7 @@ namespace GPP
         public ParamHelper()
         {
             //Cấp phát bộ nhớ cho biến _dictionnary
-            _dictionnary = new Dictionary<uint, object>();
+            _dictionnary = new Dictionary<GuiResId.ParamId, object>();
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace GPP
         /// </summary>
         /// <param name="paramID"></param>
         /// <returns></returns>
-        public string GetParamStr(uint paramID)
+        public string GetParamStr(GuiResId.ParamId paramID)
         {
             //Nếu ta không tìm thấy paramID thì thông báo lỗi
             if (_dictionnary.ContainsKey(paramID) == false)
@@ -51,7 +51,7 @@ namespace GPP
         /// </summary>
         /// <param name="paramID"></param>
         /// <returns></returns>
-        public int GetParamInt(uint paramID)
+        public int GetParamInt(GuiResId.ParamId paramID)
         {
             //Nếu ta không tìm thấy paramID thì thông báo lỗi
             if (_dictionnary.ContainsKey(paramID) == false)
@@ -69,7 +69,7 @@ namespace GPP
         /// </summary>
         /// <param name="paramID"></param>
         /// <param name="value"></param>
-        public void SetParamStr(uint paramID, string value)
+        public void SetParamStr(GuiResId.ParamId paramID, string value)
         {
             //kiểm tra xem đã có param đó chưa
             //nếu chưa có thì thêm vào
@@ -89,7 +89,7 @@ namespace GPP
         /// </summary>
         /// <param name="paramID"></param>
         /// <param name="value"></param>
-        public void SetParamInt(uint paramID, int value)
+        public void SetParamInt(GuiResId.ParamId paramID, int value)
         {
             //kiểm tra xem đã có param đó chưa
             //nếu chưa có thì thêm vào

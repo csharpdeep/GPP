@@ -12,9 +12,9 @@ using DongTX.Core;
 
 namespace GPP
 {
-    public partial class frmLoaiThuocUC : UserControl
+    public partial class frmLoaiThuoc : Form, IUserControlBase
     {
-        public frmLoaiThuocUC()
+        public frmLoaiThuoc()
         {
             InitializeComponent();
             _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT * FROM LOAITHUOC");
@@ -99,5 +99,15 @@ namespace GPP
             }
         }
 
+
+        public void Search(string keyWords)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcessKeyUp(ref Message msg, Keys keyData)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

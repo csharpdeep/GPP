@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace GPP
 {
-    public partial class frmNhanVienUC : UserControl
+    public partial class frmNhanVienUC : UserControl,IUserControlBase
     {
         private int vt;
         private string maNV;
@@ -123,6 +123,16 @@ namespace GPP
             sql+=  "WHERE CHUCVU.MACHUCVU = NHANVIEN.MACHUCVU";
 
             _dataNhanVien.DataSource = SqlHelper.Instance.ExecuteDataTable(sql);
+        }
+
+        public void Search(string keyWords)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcessKeyUp(ref Message msg, Keys keyData)
+        {
+            throw new NotImplementedException();
         }
     }
 }

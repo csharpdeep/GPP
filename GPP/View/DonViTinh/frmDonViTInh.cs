@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace GPP
 {
-    public partial class frmDonViTinh : UserControl
+    public partial class frmDonViTinh : Form , IUserControlBase
     {
         public frmDonViTinh()
         {
@@ -99,6 +99,16 @@ namespace GPP
             {
                 e.Cancel = true;
             }
+        }
+
+        public void Search(string keyWords)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcessKeyUp(ref Message msg, Keys keyData)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -77,11 +77,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\GuiResId.cs" />
     <Compile Include="Common\GuiResInfoMng.cs" />
+    <Compile Include="Common\IGuiMng.cs" />
     <Compile Include="Common\IUserControlBase.cs" />
     <Compile Include="Common\ParamHelper.cs" />
-    <Compile Include="Common\ParamID.cs" />
-    <Compile Include="Common\ScreenID.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SettingSQL.cs">
@@ -90,11 +90,11 @@
     <Compile Include="Common\SettingSQL.Designer.cs">
       <DependentUpon>SettingSQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChucVu\frmChucVuUC.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\ChucVu\frmChucVu.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ChucVu\frmChucVuUC.Designer.cs">
-      <DependentUpon>frmChucVuUC.cs</DependentUpon>
+      <DependentUpon>frmChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChucVu\frm_ThemChucVu.cs">
       <SubType>Form</SubType>
@@ -109,17 +109,18 @@
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DonViTinh\frmDonViTinh.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\DonViTinh\frmDonViTinh.Designer.cs">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\LoaiThuoc\frmLoaiThuocUC.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\LoaiThuoc\frmLoaiThuoc.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\LoaiThuoc\frmLoaiThuocUC.Designer.cs">
-      <DependentUpon>frmLoaiThuocUC.cs</DependentUpon>
+    <Compile Include="View\LoaiThuoc\frmLoaiThuoc.Designer.cs">
+      <DependentUpon>frmLoaiThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\GuiResInfoBaseMng.cs" />
     <Compile Include="View\MainWinDow\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,8 +142,8 @@
     <Compile Include="View\PhanQuyen\frmPhanQuyenUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\PhanQuyen\frmPhanQuyenUC.Designer.cs">
-      <DependentUpon>frmPhanQuyenUC.cs</DependentUpon>
+    <Compile Include="View\PhanQuyen\frmPhanQuyen.Designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SplashScreen\SplashScreen.cs">
       <SubType>Form</SubType>
@@ -164,7 +165,7 @@
       <DependentUpon>SettingSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChucVu\frmChucVuUC.resx">
-      <DependentUpon>frmChucVuUC.cs</DependentUpon>
+      <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChucVu\frm_ThemChucVu.resx">
       <DependentUpon>frm_ThemChucVu.cs</DependentUpon>
@@ -175,8 +176,8 @@
     <EmbeddedResource Include="View\DonViTinh\frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\LoaiThuoc\frmLoaiThuocUC.resx">
-      <DependentUpon>frmLoaiThuocUC.cs</DependentUpon>
+    <EmbeddedResource Include="View\LoaiThuoc\frmLoaiThuoc.resx">
+      <DependentUpon>frmLoaiThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainWinDow\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

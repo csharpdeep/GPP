@@ -12,12 +12,12 @@ using DongTX.Core;
 
 namespace GPP
 {
-    public partial class frmPhanQuyenUC : UserControl
+    public partial class frmPhanQuyen : Form,IUserControlBase
     {
         private readonly Color _colorChecked = Color.Yellow;
         private readonly Color _colorUnChecked = Color.Gray;
 
-        public frmPhanQuyenUC()
+        public frmPhanQuyen()
         {
             InitializeComponent();
             CheckAndInsertTo_PhanQuyen();
@@ -176,6 +176,16 @@ namespace GPP
         {
             string maChucVu = _dataGridViewChucVu[0, e.RowIndex].Value.ToString();
             LoadDataPhanQuyen(maChucVu);
+        }
+
+        public void Search(string keyWords)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcessKeyUp(ref Message msg, Keys keyData)
+        {
+            throw new NotImplementedException();
         }
     }
 }

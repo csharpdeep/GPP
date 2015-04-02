@@ -5,126 +5,89 @@ using System.Windows.Forms;
 
 namespace GPP
 {
-    /// <summary>
-    /// Class quản lý toàn bộ hoạt động của hệ thống
-    /// </summary>
-    class GuiResInfoMng
+    class GuiResInfoMng : GuiResInfoBaseMng
     {
-        #region Delegate
-        /// <summary>
-        /// Delegate truyền thông điệp đến các form
-        /// </summary>
-        /// <param name="e">Event ID</param>
-        /// <param name="data">Dữ liệu bất kỳ</param>
-        internal delegate void DelegateGuiEvent(GuiEventID e, object data);
-
-        /// <summary>
-        /// Event quản lý việc truyền dữ liệu
-        /// </summary>
-        public static event DelegateGuiEvent GuiEventHandle;
-        #endregion Delegate
-
-        #region Inner Class
-        /// <summary>
-        /// Class định nghĩa event ID
-        /// </summary>
-        internal class GuiEventID
+        private  static GuiResInfoMng _instance = new GuiResInfoMng();
+        public static GuiResInfoMng Instance
         {
-            /// <summary>
-            /// Định nghĩa các event ID
-            /// </summary>
-            internal enum EventID
+            get
             {
-                /// <summary>
-                /// None
-                /// </summary>
-                None,
-
-                /// <summary>
-                /// Event thay đổi màn hình
-                /// </summary>
-                ChangeScreen,
-
-                /// <summary>
-                /// Event thay đổi người sử dụng
-                /// </summary>
-                ChangeUser,
-
-                /// <summary>
-                /// Event thông báo LogInScreen
-                /// </summary>
-                Login,
-
-                /// <summary>
-                /// Event thông báo Logout
-                /// </summary>
-                LogOut,
-
-                /// <summary>
-                /// Cho phép button click
-                /// </summary>
-                EnableButton,
-
-                /// <summary>
-                /// Không cho phép button click
-                /// </summary>
-                DisableButton,
+                return _instance;
             }
-
-            /// <summary>
-            /// ID của event
-            /// </summary>
-            public EventID ID = EventID.None; 
         }
-        #endregion Inner Class
+
+        public event EventHandler OnGuiEvent;
 
         #region Field
-        private List<ScreenInfo> _listScreenInfo;
         private const string _SCREEN_ID_NOT_FOUND = @"Not found screen";
         #endregion Field
 
-        #region Contructor
-        public GuiResInfoMng()
-        {
-            _listScreenInfo = new List<ScreenInfo>
-            {
-                new ScreenInfo()
-                { 
-                    ID = ScreenID.BAN_THUOC, 
-                    Name = "Quản lý bán thuốc", 
-                    Instance = null
-                },
-            };
-        }
-        #endregion
-
         #region Method
-        /// <summary>
-        /// Hàm thay đổi màn hình
-        /// </summary>
-        /// <param name="screenID">ID của màn hình</param>
-        public void ChangeScreen(ScreenID screenID)
+        public override void ChangeScreen(GuiResId.ScreenID screenID)
         {
-
-        }
-
-        /// <summary>
-        /// Hàm gửi event đến toàn bộ các form
-        /// </summary>
-        /// <param name="e">EventID muốn thông báo</param>
-        /// <param name="data">Nội dung muốn thông báo</param>
-        public void SendInternalEvent(GuiEventID e, object data)
-        {
-            if (GuiEventHandle != null)
+            GuiResId.ScreenMode mode = GetScreenMode(screenID);
+            object instance = GetIntanceScreen(screenID);
+            IGuiMng iGuiMng = GetMainWindow() as IGuiMng;
+            if (iGuiMng != null)
             {
-                GuiEventHandle(e, data);
+                iGuiMng.ChangeScreen(instance, mode);
             }
         }
-        
-        /// <summary>
-        /// Hàm lấy ra form main
-        /// </summary>
-        /// <returns></returns>
+
+        private object GetIntanceScreen(GuiResId.ScreenID screenID)
+        {
+            object instance = null;
+            switch (screenID)
+            {
+                case GuiResId.ScreenID.ChucVu:
+                    instance = new frmChucVu();
+                    break;
+                case GuiResId.ScreenID.DonViTinh:
+                    instance = new frmDonViTinh();
+                    break;
+                case GuiResId.ScreenID.LoaiThuoc:
+                    instance = new frmLoaiThuoc();
+                    break;
+                case GuiResId.ScreenID.NhanVien:
+                    instance = new frmNhanVienUC();
+                    break;
+                case GuiResId.ScreenID.PhanQuyen:
+                    instance = new frmPhanQuyen();
+                    break;
+                case GuiResId.ScreenID.DangNhap:
+                    instance = new frmDangNhapUC();
+                    break;
+            };
+            return instance;
+        }
+
+        private GuiResId.ScreenMode GetScreenMode(GuiResId.ScreenID screenID)
+        {
+            GuiResId.ScreenMode mode  = GuiResId.ScreenMode.None;
+            switch (screenID)
+            {
+                case GuiResId.ScreenID.ChucVu:
+                case GuiResId.ScreenID.DonViTinh:
+                case GuiResId.ScreenID.LoaiThuoc:
+                case GuiResId.ScreenID.PhanQuyen:
+                    mode = GuiResId.ScreenMode.Dialog;
+                    break;
+                case GuiResId.ScreenID.NhanVien:
+                case GuiResId.ScreenID.DangNhap:
+                    mode = GuiResId.ScreenMode.UserControl;
+                    break;
+            };
+            return mode;
+        }
+
+        public void SendInternalEvent(object sender, EventArgs e)
+        {
+            if (OnGuiEvent != null)
+            {
+                OnGuiEvent(sender,e);
+            }
+        }
+
         public MainWindow GetMainWindow()
         {
             foreach (Form frm in Application.OpenForms)
@@ -137,46 +100,21 @@ namespace GPP
             return null;
         }
 
-        /// <summary>
-        /// Hàm lấy screenID hiện tại
-        /// </summary>
-        /// <returns>ScreenID</returns>
-        public uint GetCurrentScreen()
-        {
-            return 0;
-        }
-
-        /// <summary>
-        /// Hàm kiểm tra xem màn hình hiện tại có được phép thêm mới dữ liệu hay ko
-        /// </summary>
-        /// <returns>True nếu đươc phép, false nếu ko đươc phép</returns>
         public bool CanInsert()
         {
             return false;
         }
 
-        /// <summary>
-        /// Hàm kiểm tra xem màn hình hiện tại có được phép sửa dữ liệu hay ko
-        /// </summary>
-        /// <returns>True nếu đươc phép, false nếu ko đươc phép</returns>
         public bool CanUpdate()
         {
             return false;
         }
 
-        /// <summary>
-        /// Hàm kiểm tra xem màn hình hiện tại có được phép xóa dữ liệu hay ko
-        /// </summary>
-        /// <returns>True nếu đươc phép, false nếu ko đươc phép</returns>
         public bool CanDelete()
         {
             return false;
         }
 
-        /// <summary>
-        /// Hàm kiểm tra xem màn hình hiện tại có được xem dữ liệu hay ko
-        /// </summary>
-        /// <returns>True nếu đươc phép, false nếu ko đươc phép</returns>
         public bool CanView()
         {
             return false;
@@ -184,21 +122,14 @@ namespace GPP
         #endregion Method
     }
 
-    class ScreenInfo
+    class EventID : EventArgs
     {
-        /// <summary>
-        /// ID của màn hình
-        /// </summary>
-        public uint ID;
-
-        /// <summary>
-        /// Tên, diễn giải chức năng của màn hình
-        /// </summary>
-        public string Name;
-
-        /// <summary>
-        /// Thực thể của màn  hình
-        /// </summary>
-        public object Instance;
+        public enum ID
+        {
+            None,
+            ChangeScreen,
+            Login,
+            Logout
+        }
     }
 }

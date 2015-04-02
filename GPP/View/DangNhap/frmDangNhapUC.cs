@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GPP
 {
-    public partial class frmDangNhapUC : UserControl
+    public partial class frmDangNhapUC : UserControl,IUserControlBase
     {
         public frmDangNhapUC()
         {
@@ -49,7 +49,16 @@ namespace GPP
         {
             //Neu dang nhap thanh cong
             string maNV = "NV001";
-            ParamHelper.Instance.SetParamStr(ParamID.IDS_TENDANGNHAP, maNV);
+        }
+
+        public void Search(string keyWords)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcessKeyUp(ref Message msg, Keys keyData)
+        {
+            throw new NotImplementedException();
         }
     }
 }

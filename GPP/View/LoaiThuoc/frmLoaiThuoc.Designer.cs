@@ -1,6 +1,6 @@
 ﻿namespace GPP
 {
-    partial class frmLoaiThuocUC
+    partial class frmLoaiThuoc
     {
         /// <summary> 
         /// Required designer variable.
@@ -43,7 +43,7 @@
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridView.Location = new System.Drawing.Point(0, 0);
             this._dataGridView.Name = "_dataGridView";
-            this._dataGridView.Size = new System.Drawing.Size(705, 423);
+            this._dataGridView.Size = new System.Drawing.Size(835, 453);
             this._dataGridView.TabIndex = 0;
             this._dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridviewEndEdited);
             this._dataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserAddedRow);
@@ -65,13 +65,15 @@
             this.Column2.HeaderText = "Mô tả";
             this.Column2.Name = "Column2";
             // 
-            // frmLoaiThuocUC
+            // frmLoaiThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(835, 453);
             this.Controls.Add(this._dataGridView);
-            this.Name = "frmLoaiThuocUC";
-            this.Size = new System.Drawing.Size(705, 423);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "frmLoaiThuoc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             this.ResumeLayout(false);
 

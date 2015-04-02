@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GPP
 {
-    class ParamID
+    abstract class  GuiResInfoBaseMng
     {
-        public const uint IDS_TENDANGNHAP = 1;
+        public abstract void ChangeScreen(GuiResId.ScreenID screenID);
     }
 }

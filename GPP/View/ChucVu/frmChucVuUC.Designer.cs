@@ -1,6 +1,6 @@
 ﻿namespace GPP
 {
-    partial class frmChucVuUC
+    partial class frmChucVu
     {
         /// <summary> 
         /// Required designer variable.
@@ -48,7 +48,7 @@
             this._datagridView.Margin = new System.Windows.Forms.Padding(4);
             this._datagridView.MultiSelect = false;
             this._datagridView.Name = "_datagridView";
-            this._datagridView.Size = new System.Drawing.Size(1071, 639);
+            this._datagridView.Size = new System.Drawing.Size(835, 453);
             this._datagridView.TabIndex = 15;
             this._datagridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridViewCellEndEdit);
             this._datagridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnDatagridViewUserAddedRow);
@@ -64,25 +64,28 @@
             this.MaChucVu.Name = "MaChucVu";
             this.MaChucVu.ReadOnly = true;
             this.MaChucVu.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.MaChucVu.Width = 300;
             // 
             // MoTaCongViec
             // 
+            this.MoTaCongViec.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MoTaCongViec.DataPropertyName = "MOTA";
             this.MoTaCongViec.HeaderText = "Mô tả";
             this.MoTaCongViec.Name = "MoTaCongViec";
             this.MoTaCongViec.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.MoTaCongViec.Width = 700;
             // 
-            // frmChucVuUC
+            // frmChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(835, 453);
             this.Controls.Add(this._datagridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmChucVuUC";
-            this.Size = new System.Drawing.Size(1071, 639);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmChucVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this._datagridView)).EndInit();
             this.ResumeLayout(false);
 
