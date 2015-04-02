@@ -145,13 +145,5 @@ namespace GPP
         {
             GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.ChucVu);
         }
-
-        private void nhanVienToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            frmNhanVienUC uc_nv = new frmNhanVienUC();
-            uc_nv.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc_nv);
-        }
     }
 }

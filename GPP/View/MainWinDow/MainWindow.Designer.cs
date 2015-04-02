@@ -41,11 +41,6 @@
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loaiThuocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.donViTinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chucVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phanQuyenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -161,46 +156,6 @@
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(214, 6);
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loaiThuocToolStripMenuItem,
-            this.donViTinhToolStripMenuItem,
-            this.chucVuToolStripMenuItem,
-            this.phanQuyenToolStripMenuItem,
-            this.nhanVienToolStripMenuItem});
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.testToolStripMenuItem.Text = "Test";
-            // 
-            // loaiThuocToolStripMenuItem
-            // 
-            this.loaiThuocToolStripMenuItem.Name = "loaiThuocToolStripMenuItem";
-            this.loaiThuocToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.loaiThuocToolStripMenuItem.Text = "LoaiThuoc";
-            this.loaiThuocToolStripMenuItem.Click += new System.EventHandler(this.loaiThuocToolStripMenuItem_Click);
-            // 
-            // donViTinhToolStripMenuItem
-            // 
-            this.donViTinhToolStripMenuItem.Name = "donViTinhToolStripMenuItem";
-            this.donViTinhToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.donViTinhToolStripMenuItem.Text = "DonViTinh";
-            this.donViTinhToolStripMenuItem.Click += new System.EventHandler(this.donViTinhToolStripMenuItem_Click);
-            // 
-            // chucVuToolStripMenuItem
-            // 
-            this.chucVuToolStripMenuItem.Name = "chucVuToolStripMenuItem";
-            this.chucVuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.chucVuToolStripMenuItem.Text = "ChucVu";
-            this.chucVuToolStripMenuItem.Click += new System.EventHandler(this.chucVuToolStripMenuItem_Click);
-            // 
-            // phanQuyenToolStripMenuItem
-            // 
-            this.phanQuyenToolStripMenuItem.Name = "phanQuyenToolStripMenuItem";
-            this.phanQuyenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.phanQuyenToolStripMenuItem.Text = "PhanQuyen";
-            this.phanQuyenToolStripMenuItem.Click += new System.EventHandler(this.phanQuyenToolStripMenuItem_Click);
             // 
             // toolStrip
             // 

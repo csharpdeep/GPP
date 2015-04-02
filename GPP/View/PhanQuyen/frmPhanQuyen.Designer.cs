@@ -61,7 +61,7 @@
             this._dataGridViewChucVu.ShowCellErrors = false;
             this._dataGridViewChucVu.ShowCellToolTips = false;
             this._dataGridViewChucVu.ShowEditingIcon = false;
-            this._dataGridViewChucVu.Size = new System.Drawing.Size(275, 453);
+            this._dataGridViewChucVu.Size = new System.Drawing.Size(401, 456);
             this._dataGridViewChucVu.TabIndex = 0;
             this._dataGridViewChucVu.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this._dataGridViewChucVu_RowEnter);
             // 
@@ -95,11 +95,11 @@
             this.Sua,
             this.Xoa});
             this._dataGridViewPhanQuyen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._dataGridViewPhanQuyen.Location = new System.Drawing.Point(275, 0);
+            this._dataGridViewPhanQuyen.Location = new System.Drawing.Point(401, 0);
             this._dataGridViewPhanQuyen.Margin = new System.Windows.Forms.Padding(4);
             this._dataGridViewPhanQuyen.MultiSelect = false;
             this._dataGridViewPhanQuyen.Name = "_dataGridViewPhanQuyen";
-            this._dataGridViewPhanQuyen.Size = new System.Drawing.Size(560, 453);
+            this._dataGridViewPhanQuyen.Size = new System.Drawing.Size(722, 456);
             this._dataGridViewPhanQuyen.TabIndex = 1;
             this._dataGridViewPhanQuyen.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this._dataGridViewChucNang_CellEndEdit);
             this._dataGridViewPhanQuyen.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this._dataGridViewChucNang_DataBindingComplete);
@@ -111,6 +111,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "MaPhanQuyen";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 127;
             // 
             // MaChucNang
             // 
@@ -164,20 +165,16 @@
             this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Xoa.Width = 50;
             // 
-            // frmPhanQuyen
+            // frmPhanQuyenUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 453);
             this.Controls.Add(this._dataGridViewPhanQuyen);
             this.Controls.Add(this._dataGridViewChucVu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmPhanQuyen";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "frmPhanQuyenUC";
+            this.Size = new System.Drawing.Size(1123, 456);
             ((System.ComponentModel.ISupportInitialize)(this._dataGridViewChucVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridViewPhanQuyen)).EndInit();
             this.ResumeLayout(false);

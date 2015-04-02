@@ -96,12 +96,6 @@
     <Compile Include="View\ChucVu\frmChucVuUC.Designer.cs">
       <DependentUpon>frmChucVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChucVu\frm_ThemChucVu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChucVu\frm_ThemChucVu.Designer.cs">
-      <DependentUpon>frm_ThemChucVu.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\DangNhap\frmDangNhapUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,12 +133,10 @@
     <Compile Include="View\NhanVien\Popup_NhanVien.designer.cs">
       <DependentUpon>Popup_NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PhanQuyen\frmPhanQuyenUC.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\PhanQuyen\frmPhanQuyen.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PhanQuyen\frmPhanQuyen.Designer.cs">
-      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
-    </Compile>
+    <Compile Include="View\PhanQuyen\frmPhanQuyen.Designer.cs" />
     <Compile Include="View\SplashScreen\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,9 +159,6 @@
     <EmbeddedResource Include="View\ChucVu\frmChucVuUC.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChucVu\frm_ThemChucVu.resx">
-      <DependentUpon>frm_ThemChucVu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\DangNhap\frmDangNhapUC.resx">
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,9 +177,7 @@
     <EmbeddedResource Include="View\NhanVien\Popup_NhanVien.resx">
       <DependentUpon>Popup_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PhanQuyen\frmPhanQuyenUC.resx">
-      <DependentUpon>frmPhanQuyenUC.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="View\PhanQuyen\frmPhanQuyen.resx" />
     <EmbeddedResource Include="View\SplashScreen\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
