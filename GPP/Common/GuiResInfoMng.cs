@@ -57,6 +57,11 @@ namespace GPP
                 case GuiResId.ScreenID.DangNhap:
                     instance = new frmDangNhapUC();
                     break;
+                case GuiResId.ScreenID.HoaDon:
+                    break;
+                case GuiResId.ScreenID.Thuoc:
+                    instance = new frmThuocUC();
+                    break;
             };
             return instance;
         }
@@ -70,10 +75,12 @@ namespace GPP
                 case GuiResId.ScreenID.DonViTinh:
                 case GuiResId.ScreenID.LoaiThuoc:
                 case GuiResId.ScreenID.PhanQuyen:
+                case GuiResId.ScreenID.Thuoc:
                     mode = GuiResId.ScreenMode.Dialog;
                     break;
                 case GuiResId.ScreenID.NhanVien:
                 case GuiResId.ScreenID.DangNhap:
+                case GuiResId.ScreenID.HoaDon:
                     mode = GuiResId.ScreenMode.UserControl;
                     break;
             };

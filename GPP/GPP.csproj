@@ -38,11 +38,9 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="DongTX.Core">
       <HintPath>..\Document\DongTX.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Excel">
-      <HintPath>C:\Users\NguyenDuong\Documents\Visual Studio 2012\Projects\HeChuyenGia_BigData\HeChuyenGia_BigData\Excel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -143,6 +141,24 @@
     <Compile Include="View\SplashScreen\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Thuoc\frmImportThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Thuoc\frmImportThuoc.Designer.cs">
+      <DependentUpon>frmImportThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Thuoc\frmThuocUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Thuoc\frmThuocUC.Designer.cs">
+      <DependentUpon>frmThuocUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Thuoc\popupThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Thuoc\popupThuoc.Designer.cs">
+      <DependentUpon>popupThuoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,6 +197,15 @@
     <EmbeddedResource Include="View\SplashScreen\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Thuoc\frmImportThuoc.resx">
+      <DependentUpon>frmImportThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Thuoc\frmThuocUC.resx">
+      <DependentUpon>frmThuocUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Thuoc\popupThuoc.resx">
+      <DependentUpon>popupThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -205,6 +230,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Profile.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Pie Chart.png" />
+    <None Include="Resources\Picture.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\Modify.png" />
+    <None Include="Resources\Loading.png" />
+    <None Include="Resources\Load.png" />
+    <None Include="Resources\Line Chart.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Email.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Comment.png" />
+    <None Include="Resources\Bar Chart.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\Add.png" />
     <None Include="Resources\login_background.jpg" />
   </ItemGroup>
   <ItemGroup>

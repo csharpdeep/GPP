@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,21 +11,39 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml;
 using DongTX.Core;
+using DevComponents.DotNetBar;
 
 namespace GPP
 {
-    public partial class MainWindow : Form, IGuiMng
+    public partial class MainWindow : DevComponents.DotNetBar.OfficeForm, IGuiMng
     {
-        private int childFormNumber = 0;
-
         public MainWindow()
         {
             InitializeComponent();
+            CheckAndInitSQL();
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
+        public void ChangeScreen(object obj, GuiResId.ScreenMode screenMode)
         {
-            CheckAndInitSQL();
+            if (screenMode == GuiResId.ScreenMode.Dialog)
+            {
+                Form frm = obj as Form;
+                if (frm != null)
+                {
+                    frm.ShowInTaskbar = false;
+                    frm.ShowDialog(this);
+                }
+            }
+            else if (screenMode == GuiResId.ScreenMode.UserControl)
+            {
+                UserControl uc = obj as UserControl;
+                if (uc != null)
+                {
+                    _panelMain.Controls.Clear();
+                    uc.Dock = DockStyle.Fill;
+                    _panelMain.Controls.Add(uc);
+                }
+            }
         }
 
         private void CheckAndInitSQL()
@@ -64,8 +83,8 @@ namespace GPP
                     string _userNameDatabase = userNameDatabase.InnerText;
                     string _passWordsDatabase = passWordsDatabase.InnerText;
 
-                    if (_serverName == "" 
-                        || _databaseName == "" 
+                    if (_serverName == ""
+                        || _databaseName == ""
                         || _userNameDatabase == ""
                         || _passWordsDatabase == "")
                     {
@@ -88,62 +107,14 @@ namespace GPP
             }
         }
 
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        private void button1_Click(object sender, System.EventArgs e)
         {
-            Application.Exit();
-        }
-
-        public void ChangeScreen(object obj, GuiResId.ScreenMode screenMode)
-        {
-            if (screenMode == GuiResId.ScreenMode.Dialog)
-            {
-                Form frm = obj as Form;
-                if (frm != null)
-                {
-                    frm.ShowInTaskbar = false;
-                    frm.ShowDialog(this);
-                }
-            }
-            else if (screenMode == GuiResId.ScreenMode.UserControl)
-            {
-                UserControl uc = obj as UserControl;
-                if (uc != null)
-                {
-                    _panelMain.Controls.Clear();
-                    uc.Dock = DockStyle.Fill;
-                    _panelMain.Controls.Add(uc);
-                }
-            }
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.DangNhap);
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.PhanQuyen);
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.NhanVien);
-        }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.LoaiThuoc);
-        }
-
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.DonViTinh);
-        }
-
-        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GuiResInfoMng.Instance.ChangeScreen(GuiResId.ScreenID.ChucVu);
+            frmThuocUC frm = new frmThuocUC();
+            frm.TopLevel = false;
+            _panelMain.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            _panelMain.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

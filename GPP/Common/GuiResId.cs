@@ -12,7 +12,7 @@ namespace GPP
         {
             None,
             Dialog,
-            UserControl
+            UserControl,
         }
 
         public enum ScreenID
@@ -23,7 +23,9 @@ namespace GPP
             PhanQuyen,
             ChucVu,
             DonViTinh,
-            DangNhap
+            DangNhap,
+            HoaDon,
+            Thuoc
         }
 
         public enum ParamId
