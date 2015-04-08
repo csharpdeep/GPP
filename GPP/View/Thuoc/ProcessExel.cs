@@ -1,12 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
-namespace GPP
+
+namespace GPP.View.Thuoc
 {
-    public class MoFileExcel
+    class ProcessExel
     {
         private string _cn;
         private OleDbConnection _con;
-        public MoFileExcel(string pathFile)
+        public ProcessExel(string pathFile)
         {
             if (pathFile.Contains("xlsx")) _cn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + pathFile + ";" + "Extended Properties=Excel 12.0;";
             else

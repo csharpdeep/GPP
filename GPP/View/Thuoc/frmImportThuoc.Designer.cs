@@ -32,7 +32,7 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.richTextBoxEx1 = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.inforError = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
             this.checkUpscae = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -50,7 +50,7 @@
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.buttonX3);
             this.groupPanel1.Controls.Add(this.labelX3);
-            this.groupPanel1.Controls.Add(this.richTextBoxEx1);
+            this.groupPanel1.Controls.Add(this.inforError);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.progressBarX1);
             this.groupPanel1.Controls.Add(this.checkUpscae);
@@ -118,18 +118,18 @@
             this.labelX3.TabIndex = 12;
             this.labelX3.Text = "Thông báo lỗi khi import";
             // 
-            // richTextBoxEx1
+            // inforError
             // 
             // 
             // 
             // 
-            this.richTextBoxEx1.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.richTextBoxEx1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.richTextBoxEx1.Location = new System.Drawing.Point(3, 162);
-            this.richTextBoxEx1.Name = "richTextBoxEx1";
-            this.richTextBoxEx1.ReadOnly = true;
-            this.richTextBoxEx1.Size = new System.Drawing.Size(587, 140);
-            this.richTextBoxEx1.TabIndex = 11;
+            this.inforError.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.inforError.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.inforError.Location = new System.Drawing.Point(3, 162);
+            this.inforError.Name = "inforError";
+            this.inforError.ReadOnly = true;
+            this.inforError.Size = new System.Drawing.Size(587, 140);
+            this.inforError.TabIndex = 11;
             // 
             // labelX2
             // 
@@ -257,7 +257,7 @@
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.RichTextBoxEx richTextBoxEx1;
+        private DevComponents.DotNetBar.Controls.RichTextBoxEx inforError;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.ProgressBarX progressBarX1;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkUpscae;

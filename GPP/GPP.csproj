@@ -141,7 +141,6 @@
     <Compile Include="View\SplashScreen\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Thuoc\Excel.cs" />
     <Compile Include="View\Thuoc\frmImportThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +159,7 @@
     <Compile Include="View\Thuoc\popupThuoc.Designer.cs">
       <DependentUpon>popupThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Thuoc\ProcessExel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
