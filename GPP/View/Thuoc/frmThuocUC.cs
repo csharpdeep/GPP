@@ -19,35 +19,15 @@ namespace GPP
 
             _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT *FROM THUOC");
         }
-        private string fileName;
         private int vt;
-        private void bntSelectFile_Click(object sender, EventArgs e)
+        void loadData(bool change)
         {
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Chọn file để import dữ liệu vào";
-            if (op.ShowDialog() == DialogResult.OK)
+            if (change == true)
             {
-            //    fileName = op.FileName;
-            //    txtFileName.Text = fileName;
+                _dataGridView.Rows.Clear();
+                _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT *FROM THUOC");
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            String maThuoc = SqlHelper.Instance.GetNextPrimaryKey("LOAITHUOC", "MALOAITHUOC", "T00001");
-            popupThuoc pt = new popupThuoc(false,maThuoc);
-            pt.ShowDialog();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //if (vt >= 0 && vt < _dataGridView.Rows.Count)_dataGridView.Rows[vt].Cells[0].Value.ToString()
-            {
-                popupThuoc pt = new popupThuoc(true,"Nhan vien 1");
-                pt.ShowDialog();
-            }
-        }
-
         private void _dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             vt = e.RowIndex;
@@ -56,6 +36,24 @@ namespace GPP
         private void _btnNhapTuFile_Click(object sender, EventArgs e)
         {
             new frmImportThuoc().ShowDialog();
+        }
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            String maThuoc = SqlHelper.Instance.GetNextPrimaryKey("LOAITHUOC", "MALOAITHUOC", "T00001");
+            popupThuoc pt = new popupThuoc(false, maThuoc);
+            pt._send = new popupThuoc.send(loadData);
+            pt.ShowDialog();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (vt >= 0 && vt < _dataGridView.Rows.Count);
+            {
+                popupThuoc pt = new popupThuoc(true, _dataGridView.Rows[vt].Cells[0].Value.ToString());
+                pt._send = new popupThuoc.send(loadData);
+                pt.ShowDialog();
+            }
         }
     }
 }

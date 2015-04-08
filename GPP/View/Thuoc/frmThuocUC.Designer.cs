@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._panelBottom = new DevComponents.DotNetBar.PanelEx();
             this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
             this._btnNhapTuFile = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnThem = new DevComponents.DotNetBar.ButtonX();
+            this.btnSua = new DevComponents.DotNetBar.ButtonX();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this._panelContent = new DevComponents.DotNetBar.PanelEx();
             this._dataGridView = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this._panelBottom.SuspendLayout();
@@ -52,9 +52,9 @@
             this._panelBottom.Controls.Add(this.textBoxX1);
             this._panelBottom.Controls.Add(this.buttonX5);
             this._panelBottom.Controls.Add(this._btnNhapTuFile);
-            this._panelBottom.Controls.Add(this.buttonX3);
-            this._panelBottom.Controls.Add(this.buttonX2);
-            this._panelBottom.Controls.Add(this.buttonX1);
+            this._panelBottom.Controls.Add(this.btnThem);
+            this._panelBottom.Controls.Add(this.btnSua);
+            this._panelBottom.Controls.Add(this.btnXoa);
             this._panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._panelBottom.Location = new System.Drawing.Point(0, 451);
             this._panelBottom.Name = "_panelBottom";
@@ -124,47 +124,49 @@
             this._btnNhapTuFile.Text = "Nhập từ file";
             this._btnNhapTuFile.Click += new System.EventHandler(this._btnNhapTuFile_Click);
             // 
-            // buttonX3
+            // btnThem
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Image = global::GPP.Properties.Resources.Add;
-            this.buttonX3.ImageTextSpacing = 5;
-            this.buttonX3.Location = new System.Drawing.Point(688, 8);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(106, 34);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 2;
-            this.buttonX3.Text = "Thêm";
+            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThem.Image = global::GPP.Properties.Resources.Add;
+            this.btnThem.ImageTextSpacing = 5;
+            this.btnThem.Location = new System.Drawing.Point(688, 8);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(106, 34);
+            this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.buttonX3_Click);
             // 
-            // buttonX2
+            // btnSua
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Image = global::GPP.Properties.Resources.Modify;
-            this.buttonX2.ImageTextSpacing = 5;
-            this.buttonX2.Location = new System.Drawing.Point(800, 8);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(106, 34);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 1;
-            this.buttonX2.Text = "Sửa";
+            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSua.Image = global::GPP.Properties.Resources.Modify;
+            this.btnSua.ImageTextSpacing = 5;
+            this.btnSua.Location = new System.Drawing.Point(800, 8);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(106, 34);
+            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // buttonX1
+            // btnXoa
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Image = global::GPP.Properties.Resources.Delete;
-            this.buttonX1.ImageTextSpacing = 5;
-            this.buttonX1.Location = new System.Drawing.Point(912, 8);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(106, 34);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 0;
-            this.buttonX1.Text = "Xóa";
+            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXoa.Image = global::GPP.Properties.Resources.Delete;
+            this.btnXoa.ImageTextSpacing = 5;
+            this.btnXoa.Location = new System.Drawing.Point(912, 8);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(106, 34);
+            this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnXoa.TabIndex = 0;
+            this.btnXoa.Text = "Xóa";
             // 
             // _panelContent
             // 
@@ -187,16 +189,16 @@
             // _dataGridView
             // 
             this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this._dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this._dataGridView.Location = new System.Drawing.Point(0, 0);
             this._dataGridView.Name = "_dataGridView";
             this._dataGridView.Size = new System.Drawing.Size(1030, 451);
@@ -209,6 +211,7 @@
             this.ClientSize = new System.Drawing.Size(1030, 501);
             this.Controls.Add(this._panelContent);
             this.Controls.Add(this._panelBottom);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThuocUC";
@@ -224,9 +227,9 @@
         private DevComponents.DotNetBar.PanelEx _panelBottom;
         private DevComponents.DotNetBar.ButtonX buttonX5;
         private DevComponents.DotNetBar.ButtonX _btnNhapTuFile;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btnThem;
+        private DevComponents.DotNetBar.ButtonX btnSua;
+        private DevComponents.DotNetBar.ButtonX btnXoa;
         private DevComponents.DotNetBar.PanelEx _panelContent;
         private DevComponents.DotNetBar.Controls.DataGridViewX _dataGridView;
         private DevComponents.DotNetBar.ButtonX buttonX6;
