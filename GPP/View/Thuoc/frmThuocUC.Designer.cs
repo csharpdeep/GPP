@@ -49,7 +49,7 @@
             this.DONVIQUYDOICAP_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TILEQUYDOICAP_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVIQUYDOICAP_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENNHACUNGCAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOACTCHATCHINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONGDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CACHSUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XUATXU = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -222,7 +222,7 @@
             this.DONVIQUYDOICAP_1,
             this.TILEQUYDOICAP_2,
             this.DONVIQUYDOICAP_2,
-            this.TENNHACUNGCAP,
+            this.HOACTCHATCHINH,
             this.CONGDUNG,
             this.CACHSUDUNG,
             this.XUATXU,
@@ -326,12 +326,12 @@
             this.DONVIQUYDOICAP_2.ReadOnly = true;
             this.DONVIQUYDOICAP_2.Width = 117;
             // 
-            // TENNHACUNGCAP
+            // HOACTCHATCHINH
             // 
-            this.TENNHACUNGCAP.DataPropertyName = "TENNHACUNGCAP";
-            this.TENNHACUNGCAP.HeaderText = "Nhà cung cấp";
-            this.TENNHACUNGCAP.Name = "TENNHACUNGCAP";
-            this.TENNHACUNGCAP.ReadOnly = true;
+            this.HOACTCHATCHINH.DataPropertyName = "HOATCHATCHINH";
+            this.HOACTCHATCHINH.HeaderText = "Hoạt chất chính";
+            this.HOACTCHATCHINH.Name = "HOACTCHATCHINH";
+            this.HOACTCHATCHINH.ReadOnly = true;
             // 
             // CONGDUNG
             // 
@@ -375,6 +375,7 @@
             this.ClientSize = new System.Drawing.Size(1030, 501);
             this.Controls.Add(this._panelContent);
             this.Controls.Add(this._panelBottom);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 10.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThuocUC";
@@ -405,7 +406,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVIQUYDOICAP_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TILEQUYDOICAP_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVIQUYDOICAP_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENNHACUNGCAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOACTCHATCHINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONGDUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn CACHSUDUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn XUATXU;

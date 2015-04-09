@@ -22,6 +22,7 @@ namespace GPP
         public delegate void send(bool change = false);
         public send _send;
         private string _fileName;
+        private int _error = 0;
         //private Exel e=new Exel();
         private bool _isSelectFile = false;
         private void buttonX1_Click(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace GPP
                     
                     string _maThuoc = SqlHelper.Instance.GetNextPrimaryKey("THUOC", "MATHUOC", "T000001"),
                             _tenThuoc = dataThuoc.Rows[i][2].ToString(),
-                            //_loaiTHuoc=dataThuoc.Rows[i][2].ToString(),
+                            _loaiTHuoc="LT00000",
                             _hoatChatChinh = dataThuoc.Rows[i][3].ToString(),
                             _donViTinh = dataThuoc.Rows[i][4].ToString(),
                             _DVQD1 = dataThuoc.Rows[i][5].ToString(),
@@ -80,6 +81,7 @@ namespace GPP
                     {
                         _maThuoc.ToUpper();
                         _tenThuoc.ToUpper();
+                        _loaiTHuoc.ToUpper();
                         _hoatChatChinh.ToUpper();
                         _donViTinh.ToUpper();
                         _DVQD1.ToUpper();
@@ -98,7 +100,7 @@ namespace GPP
                             {
                                 new SqlParameter("MATHUOC",_maThuoc),
                                 new SqlParameter("TENTHUOC",_tenThuoc),
-                                new SqlParameter("MALOAITHUOC",""),
+                                new SqlParameter("MALOAITHUOC",_loaiTHuoc),
                                 new SqlParameter("DONVITINH",_donViTinh),
                                 new SqlParameter("DONVIQUYDOICAP_1",_DVQD1),
                                 new SqlParameter("TYLEQUYDOICAP_1",_TLQD1),
@@ -122,13 +124,15 @@ namespace GPP
                     }
                     else
                     {
-                        inforError.Text+="Lỗi dòng "+i+"\n";
+                        inforError.Text+="Lỗi dòng "+i+" : Không có thông tin về đơn vị tính.\n";
+                        _error++;
+                        _lbError.Text = _error.ToString();
                     }
                 }
-                MessageBox.Show("Import dữ liệu thành công!");
                 this._send(true);
                 btnImport.Enabled = true;
                 btnBrowser.Enabled = true;
+                MessageBox.Show("Import dữ liệu thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);     
             }
         }
     }

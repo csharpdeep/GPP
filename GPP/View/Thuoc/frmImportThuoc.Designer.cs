@@ -42,6 +42,8 @@
             this.txtPatch = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnBrowser = new DevComponents.DotNetBar.ButtonX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this._lbError = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +51,8 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this._lbError);
+            this.groupPanel1.Controls.Add(this.labelX4);
             this.groupPanel1.Controls.Add(this.lbPecen);
             this.groupPanel1.Controls.Add(this.btnImport);
             this.groupPanel1.Controls.Add(this.labelX3);
@@ -102,7 +106,7 @@
             // 
             // 
             this.lbPecen.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbPecen.Location = new System.Drawing.Point(501, 314);
+            this.lbPecen.Location = new System.Drawing.Point(82, 314);
             this.lbPecen.Name = "lbPecen";
             this.lbPecen.Size = new System.Drawing.Size(75, 23);
             this.lbPecen.TabIndex = 14;
@@ -167,7 +171,7 @@
             this.progressBarX1.Location = new System.Drawing.Point(3, 343);
             this.progressBarX1.Name = "progressBarX1";
             this.progressBarX1.Size = new System.Drawing.Size(587, 33);
-            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.progressBarX1.TabIndex = 9;
             this.progressBarX1.Text = "progressBarX1";
             // 
@@ -249,11 +253,38 @@
             this.btnBrowser.Text = "Duyệt";
             this.btnBrowser.Click += new System.EventHandler(this.buttonX1_Click);
             // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(503, 308);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(37, 29);
+            this.labelX4.TabIndex = 15;
+            this.labelX4.Text = "Số lỗi";
+            // 
+            // _lbError
+            // 
+            this._lbError.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this._lbError.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._lbError.ForeColor = System.Drawing.Color.Red;
+            this._lbError.Location = new System.Drawing.Point(546, 311);
+            this._lbError.Name = "_lbError";
+            this._lbError.Size = new System.Drawing.Size(44, 23);
+            this._lbError.TabIndex = 16;
+            // 
             // frmImportThuoc
             // 
             this.ClientSize = new System.Drawing.Size(605, 466);
             this.ControlBox = false;
             this.Controls.Add(this.groupPanel1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -281,5 +312,7 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX btnBrowser;
         private DevComponents.DotNetBar.LabelX lbPecen;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private DevComponents.DotNetBar.LabelX _lbError;
     }
 }
