@@ -42,6 +42,9 @@
     <Reference Include="DongTX.Core">
       <HintPath>..\Document\DongTX.Core.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelConnection">
+      <HintPath>C:\Users\Administrator\Desktop\ExcelConnection.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\05. My document\04. San pham lam ra\iSmart-QLNS\iSmart-QLNS\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
@@ -159,7 +162,6 @@
     <Compile Include="View\Thuoc\popupThuoc.Designer.cs">
       <DependentUpon>popupThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Thuoc\ProcessExel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

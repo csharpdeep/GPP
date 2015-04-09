@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevComponents.DotNetBar;
+
 using DongTX.Core;
 
 namespace GPP
@@ -60,13 +62,18 @@ namespace GPP
         }
         private void LoadData()
         {
-            string sql = "SELECT THUOC.MATHUOC, THUOC.TENTHUOC, LOAITHUOC.MOTA, THUOC.DONVITINH, THUOC.DONVIQUYDOICAP_1, THUOC.TYLEQUYDOICAP_1, ";
+            string sql = "SELECT THUOC.MATHUOC, THUOC.TENTHUOC, LOAITHUOC.MOTA, DONVITINH.MOTA AS DVT, THUOC.DONVIQUYDOICAP_1, THUOC.TYLEQUYDOICAP_1, ";
                    sql+="THUOC.DONVIQUYDOI_CAP2, THUOC.TYLEQUYDOICAP_2, THUOC.HOATCHATCHINH, THUOC.CONGDUNG, THUOC.CACHSUDUNG, ";
                    sql+= "THUOC.XUATXU, THUOC.NHIETDOBAOQUAN, THUOC.DOAMBAOQUAN ";
-                   sql+= "FROM THUOC, LOAITHUOC ";
-                   sql+= "WHERE THUOC.MALOAITHUOC=LOAITHUOC.MALOAITHUOC ";
+                   sql+= "FROM THUOC, LOAITHUOC,DONVITINH ";
+                   sql+= "WHERE THUOC.MALOAITHUOC=LOAITHUOC.MALOAITHUOC AND THUOC.DONVITINH=DONVITINH.MADONVI ";
 
             _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable(sql);
+        }
+
+        private void buttonX5_Click(object sender, EventArgs e)
+        {
+            ToastNotification.Show(this, "Hello");
         }
     }
 }

@@ -126,5 +126,10 @@ namespace GPP
             _panelMain.Controls.Add(frm);
             frm.Show();
         }
+
+        private void quảnLýBánThuốcToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

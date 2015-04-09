@@ -48,8 +48,8 @@ namespace GPP
                 DataTable Thuoc = SqlHelper.Instance.ExecuteDataTable("SELECT * FROM THUOC WHERE MATHUOC='"+maThuoc+"'");
                 txtMaThuoc.Text = maThuoc;
                 txtTenThuoc.Text=Thuoc.Rows[0][1].ToString();
-                //cbLoaiThuoc.ValueMember = Thuoc.Rows[0][2].ToString();
-                //cbDonViTinh.ValueMember = Thuoc.Rows[0][3].ToString();
+                cbLoaiThuoc.SelectedValue = Thuoc.Rows[0][2].ToString();
+                cbDonViTinh.SelectedValue = Thuoc.Rows[0][3].ToString();
                 //cbDVQD1.ValueMember = Thuoc.Rows[0][4].ToString();
                 txtTLQD1.Text = Thuoc.Rows[0][5].ToString();
                // cbDVQD2.ValueMember = Thuoc.Rows[0][6].ToString();
@@ -223,6 +223,16 @@ namespace GPP
         }
 
         private void popupThuoc_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
 
         }

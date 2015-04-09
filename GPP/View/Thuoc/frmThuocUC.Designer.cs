@@ -45,10 +45,10 @@
             this.TENTHUOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TILLEQUYDOICAP_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVIQUYDOICAP_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TILEQUYDOICAP_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TILLEQUYDOICAP_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVIQUYDOICAP_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TILEQUYDOICAP_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HOACTCHATCHINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CONGDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CACHSUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,6 +124,7 @@
             this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX5.TabIndex = 4;
             this.buttonX5.Text = "Xuất ra Excel";
+            this.buttonX5.Click += new System.EventHandler(this.buttonX5_Click);
             // 
             // _btnNhapTuFile
             // 
@@ -218,10 +219,10 @@
             this.TENTHUOC,
             this.MOTA,
             this.DONVITINH,
-            this.TILLEQUYDOICAP_1,
             this.DONVIQUYDOICAP_1,
-            this.TILEQUYDOICAP_2,
+            this.TILLEQUYDOICAP_1,
             this.DONVIQUYDOICAP_2,
+            this.TILEQUYDOICAP_2,
             this.HOACTCHATCHINH,
             this.CONGDUNG,
             this.CACHSUDUNG,
@@ -233,7 +234,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this._dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -284,20 +285,11 @@
             // DONVITINH
             // 
             this.DONVITINH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DONVITINH.DataPropertyName = "DONVITINH";
+            this.DONVITINH.DataPropertyName = "DVT";
             this.DONVITINH.HeaderText = "Đơn vị tính";
             this.DONVITINH.Name = "DONVITINH";
             this.DONVITINH.ReadOnly = true;
             this.DONVITINH.Width = 102;
-            // 
-            // TILLEQUYDOICAP_1
-            // 
-            this.TILLEQUYDOICAP_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.TILLEQUYDOICAP_1.DataPropertyName = "TYLEQUYDOICAP_1";
-            this.TILLEQUYDOICAP_1.HeaderText = "Tỉ lệ quy đổi cấp 1";
-            this.TILLEQUYDOICAP_1.Name = "TILLEQUYDOICAP_1";
-            this.TILLEQUYDOICAP_1.ReadOnly = true;
-            this.TILLEQUYDOICAP_1.Width = 105;
             // 
             // DONVIQUYDOICAP_1
             // 
@@ -308,14 +300,14 @@
             this.DONVIQUYDOICAP_1.ReadOnly = true;
             this.DONVIQUYDOICAP_1.Width = 117;
             // 
-            // TILEQUYDOICAP_2
+            // TILLEQUYDOICAP_1
             // 
-            this.TILEQUYDOICAP_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.TILEQUYDOICAP_2.DataPropertyName = "TYLEQUYDOICAP_2";
-            this.TILEQUYDOICAP_2.HeaderText = "Tỉ lệ quy đổi cấp 2";
-            this.TILEQUYDOICAP_2.Name = "TILEQUYDOICAP_2";
-            this.TILEQUYDOICAP_2.ReadOnly = true;
-            this.TILEQUYDOICAP_2.Width = 105;
+            this.TILLEQUYDOICAP_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TILLEQUYDOICAP_1.DataPropertyName = "TYLEQUYDOICAP_1";
+            this.TILLEQUYDOICAP_1.HeaderText = "Tỉ lệ quy đổi cấp 1";
+            this.TILLEQUYDOICAP_1.Name = "TILLEQUYDOICAP_1";
+            this.TILLEQUYDOICAP_1.ReadOnly = true;
+            this.TILLEQUYDOICAP_1.Width = 105;
             // 
             // DONVIQUYDOICAP_2
             // 
@@ -325,6 +317,15 @@
             this.DONVIQUYDOICAP_2.Name = "DONVIQUYDOICAP_2";
             this.DONVIQUYDOICAP_2.ReadOnly = true;
             this.DONVIQUYDOICAP_2.Width = 117;
+            // 
+            // TILEQUYDOICAP_2
+            // 
+            this.TILEQUYDOICAP_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TILEQUYDOICAP_2.DataPropertyName = "TYLEQUYDOICAP_2";
+            this.TILEQUYDOICAP_2.HeaderText = "Tỉ lệ quy đổi cấp 2";
+            this.TILEQUYDOICAP_2.Name = "TILEQUYDOICAP_2";
+            this.TILEQUYDOICAP_2.ReadOnly = true;
+            this.TILEQUYDOICAP_2.Width = 105;
             // 
             // HOACTCHATCHINH
             // 
@@ -402,10 +403,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTHUOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVITINH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TILLEQUYDOICAP_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVIQUYDOICAP_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TILEQUYDOICAP_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TILLEQUYDOICAP_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVIQUYDOICAP_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TILEQUYDOICAP_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOACTCHATCHINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONGDUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn CACHSUDUNG;

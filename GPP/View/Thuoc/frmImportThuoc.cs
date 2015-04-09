@@ -5,94 +5,105 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 using DevComponents.DotNetBar;
 using DongTX.Core;
-using GPP.View.Thuoc;
 using System.Data.SqlClient;
+using ExcelConnection;
 
 namespace GPP
 {
     public partial class frmImportThuoc : DevComponents.DotNetBar.OfficeForm
     {
 
-        public frmImportThuoc()
-        {
-            InitializeComponent();
-        }
         public delegate void send(bool change = false);
         public send _send;
         private string _fileName;
         private int _error = 0;
-        //private Exel e=new Exel();
-        private bool _isSelectFile = false;
-        private void buttonX1_Click(object sender, EventArgs e)
+
+        public frmImportThuoc()
         {
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Mở file Exel để import dữ liệu";
-            if (op.ShowDialog() == DialogResult.OK)
+            InitializeComponent();
+        }
+
+        private void OnBtnDuyetTimClick(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDlg = new OpenFileDialog();
+            openFileDlg.Filter = "Excel 2007 (*.xls)|*.xls|Laster version (*.xlsx*)|*.xlsx*";
+            openFileDlg.Title = "Mở file Exel để import dữ liệu";
+            if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
-                _fileName = op.FileName;
-                txtPatch.Text = _fileName;
-                _isSelectFile = true;
+                _fileName = openFileDlg.FileName;
+                _txtDuongDan.Text = _fileName;
             }
         }
 
-        private void buttonX2_Click(object sender, EventArgs e)
+        private void OnBtnDongClick(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonX3_Click(object sender, EventArgs e)
+        private void OnBtnImportClick(object sender, EventArgs e)
         {
-            btnBrowser.Enabled = false;
-            btnImport.Enabled = false;
-            if (_isSelectFile == false)
+            //Kiem tra du lieu truoc khi import
+            if (CheckBeforeImportData() == false)
             {
-                MessageBox.Show("Bạn cần phải chọn file để import dữ liệu!");
+                return;
             }
-            else
+
+            //Tien hanh import du lieu vao bang thuoc
+
+            _btnDuyet.Enabled = false;
+            _btnImport.Enabled = false;
+
+            if (_checkBoxXoaTruocKhiImport.Checked == true)
             {
-                if (checkDeleteAllThuoc.Checked == true)
+                SqlHelper.Instance.Execute("DELETE FROM THUOC");
+                this._send(true);
+            }
+
+            //chen du lieu vao
+            DataTable dataThuoc = ExcelUtility.Instance.GetDataTable(_txtDuongDan.Text,"SELECT * FROM  [Sheet1$]");
+
+            //Khoi tao gia tri cho ProgressBar
+            _progressBar.Maximum = dataThuoc.Rows.Count;
+            _progressBar.Value = 0;
+
+            int _soLuong = dataThuoc.Rows.Count;
+            for (int i = 0; i < _soLuong; i++)
+            {
+                string _maThuoc = SqlHelper.Instance.GetNextPrimaryKey("THUOC", "MATHUOC", "T000001");
+                string _tenThuoc = dataThuoc.Rows[i][2].ToString();
+                string _loaiTHuoc = "LT00000";
+                string _hoatChatChinh = dataThuoc.Rows[i][3].ToString();
+                string _donViTinh = dataThuoc.Rows[i][4].ToString();
+                string _DVQD1 = dataThuoc.Rows[i][5].ToString();
+                string _TLQD1 = dataThuoc.Rows[i][6].ToString();
+                string _xuatXu = dataThuoc.Rows[i][15].ToString();
+                string _doAm = "";
+                string _nhietDo = "";
+                string _congDung = "";
+                string _cachDung = "";
+
+                if (_checkBoxTuDongVietHoa.Checked == true)
                 {
-                    SqlHelper.Instance.Execute("DELETE FROM THUOC");
-                    this._send(true);
+                    _maThuoc.ToUpper();
+                    _tenThuoc.ToUpper();
+                    _loaiTHuoc.ToUpper();
+                    _hoatChatChinh.ToUpper();
+                    _donViTinh.ToUpper();
+                    _DVQD1.ToUpper();
+                    _TLQD1.ToUpper();
+                    _xuatXu.ToUpper();
+                    _doAm.ToUpper();
+                    _congDung.ToUpper();
+                    _cachDung.ToUpper();
+                    _nhietDo.ToUpper();
                 }
 
-                //chen du lieu vao
-                ProcessExel exel = new ProcessExel(_fileName);
-                DataTable dataThuoc = exel.getDataFromExel();
-                int _soLuong = dataThuoc.Rows.Count;
-                for (int i = 0; i < _soLuong; i++)
+                if (SqlHelper.Instance.CheckExistKey("DONVITINH", "MOTA", _donViTinh.ToString()) == true)
                 {
-                    
-                    string _maThuoc = SqlHelper.Instance.GetNextPrimaryKey("THUOC", "MATHUOC", "T000001"),
-                            _tenThuoc = dataThuoc.Rows[i][2].ToString(),
-                            _loaiTHuoc="LT00000",
-                            _hoatChatChinh = dataThuoc.Rows[i][3].ToString(),
-                            _donViTinh = dataThuoc.Rows[i][4].ToString(),
-                            _DVQD1 = dataThuoc.Rows[i][5].ToString(),
-                            _TLQD1 = dataThuoc.Rows[i][6].ToString(),
-                            _xuatXu = dataThuoc.Rows[i][15].ToString(),
-                            _doAm = "",
-                            _nhietDo = "",
-                            _congDung = "",
-                            _cachDung = "";
-                    if (checkUpscae.Checked == true)
-                    {
-                        _maThuoc.ToUpper();
-                        _tenThuoc.ToUpper();
-                        _loaiTHuoc.ToUpper();
-                        _hoatChatChinh.ToUpper();
-                        _donViTinh.ToUpper();
-                        _DVQD1.ToUpper();
-                        _TLQD1.ToUpper();
-                        _xuatXu.ToUpper();
-                        _doAm.ToUpper();
-                        _congDung.ToUpper();
-                        _cachDung.ToUpper();
-                        _nhietDo.ToUpper();
-                    }
-                    if (SqlHelper.Instance.CheckExistKey("DONVITINH", "MOTA", _donViTinh.ToString())==true)
+                    if (SqlHelper.Instance.CheckExistKey("THUOC", "TENTHUOC", _tenThuoc) == false)
                     {
                         DataTable DVT = SqlHelper.Instance.ExecuteDataTable("Select MADONVI from DONVITINH Where MOTA='" + _donViTinh + "'");
                         _donViTinh = DVT.Rows[0][0].ToString();
@@ -113,27 +124,59 @@ namespace GPP
                                 new SqlParameter("NHIETDOBAOQUAN",_nhietDo),
                                 new SqlParameter("DOAMBAOQUAN",_doAm) 
                             });
-                        if (recordEffect <= 0)
-                        {
-                            //bao loi
-                        }
-                        int value = (i * 100 / _soLuong);
-                        progressBarX1.Value = value;
-                        lbPecen.Text = i.ToString() + "/" + _soLuong.ToString();
-                        SendKeys.Flush();
                     }
                     else
                     {
-                        inforError.Text+="Lỗi dòng "+i+" : Không có thông tin về đơn vị tính.\n";
+                        _richTexBoxEdit.Text += "Lỗi dòng " + i + " : THuốc đã tồn tại trong CSDL.\n";
                         _error++;
                         _lbError.Text = _error.ToString();
+                        SendKeys.Flush();
                     }
                 }
-                this._send(true);
-                btnImport.Enabled = true;
-                btnBrowser.Enabled = true;
-                MessageBox.Show("Import dữ liệu thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);     
+                else
+                {
+                    _richTexBoxEdit.Text += "Lỗi dòng " + i + " : Không có thông tin về đơn vị tính.\n";
+                    _error++;
+                    _lbError.Text = _error.ToString();
+                    SendKeys.Flush();
+                }
+                _progressBar.Value++;
+                _lbPecen.Text = i.ToString() + "/" + _soLuong.ToString();
+                SendKeys.Flush();
             }
+
+            this._send(true);
+
+            _btnImport.Enabled = true;
+            _btnDuyet.Enabled = true;
+
+            MessageBox.Show("Import dữ liệu thành công!", 
+                "Thông báo",
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Hàm kiểm tra các điều kiện cơ bản trước khi import dữ liệu
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckBeforeImportData()
+        {
+            //Kiem tra xem nguoi dung da chon file hay chua?
+            if (string.IsNullOrEmpty(_txtDuongDan.Text))
+            {
+                ToastNotification.Show(this, "Chưa chọn file import");
+                return false;
+            }
+
+            //Neu da co file roi thi file do co ton tai hay khong
+            if (File.Exists(_txtDuongDan.Text) == false)
+            {
+                ToastNotification.Show(this, "File không tồn tại");
+                return false;
+            }
+
+            return true;
         }
     }
 }
