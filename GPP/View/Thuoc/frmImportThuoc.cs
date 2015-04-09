@@ -19,6 +19,8 @@ namespace GPP
         {
             InitializeComponent();
         }
+        public delegate void send(bool change = false);
+        public send _send;
         private string _fileName;
         //private Exel e=new Exel();
         private bool _isSelectFile = false;
@@ -41,6 +43,8 @@ namespace GPP
 
         private void buttonX3_Click(object sender, EventArgs e)
         {
+            btnBrowser.Enabled = false;
+            btnImport.Enabled = false;
             if (_isSelectFile == false)
             {
                 MessageBox.Show("Bạn cần phải chọn file để import dữ liệu!");
@@ -50,15 +54,17 @@ namespace GPP
                 if (checkDeleteAllThuoc.Checked == true)
                 {
                     SqlHelper.Instance.Execute("DELETE FROM THUOC");
+                    this._send(true);
                 }
-
 
                 //chen du lieu vao
                 ProcessExel exel = new ProcessExel(_fileName);
                 DataTable dataThuoc = exel.getDataFromExel();
-                for (int i = 0; i < dataThuoc.Rows.Count; i++)
+                int _soLuong = dataThuoc.Rows.Count;
+                for (int i = 0; i < _soLuong; i++)
                 {
-                    string _maThuoc = SqlHelper.Instance.GetNextPrimaryKey("LOAITHUOC", "MALOAITHUOC", "T000001"),
+                    
+                    string _maThuoc = SqlHelper.Instance.GetNextPrimaryKey("THUOC", "MATHUOC", "T000001"),
                             _tenThuoc = dataThuoc.Rows[i][2].ToString(),
                             //_loaiTHuoc=dataThuoc.Rows[i][2].ToString(),
                             _hoatChatChinh = dataThuoc.Rows[i][3].ToString(),
@@ -70,7 +76,21 @@ namespace GPP
                             _nhietDo = "",
                             _congDung = "",
                             _cachDung = "";
-                    if (SqlHelper.Instance.CheckExistKey("DONVITINH", "MOTA", _donViTinh.ToString()))
+                    if (checkUpscae.Checked == true)
+                    {
+                        _maThuoc.ToUpper();
+                        _tenThuoc.ToUpper();
+                        _hoatChatChinh.ToUpper();
+                        _donViTinh.ToUpper();
+                        _DVQD1.ToUpper();
+                        _TLQD1.ToUpper();
+                        _xuatXu.ToUpper();
+                        _doAm.ToUpper();
+                        _congDung.ToUpper();
+                        _cachDung.ToUpper();
+                        _nhietDo.ToUpper();
+                    }
+                    if (SqlHelper.Instance.CheckExistKey("DONVITINH", "MOTA", _donViTinh.ToString())==true)
                     {
                         DataTable DVT = SqlHelper.Instance.ExecuteDataTable("Select MADONVI from DONVITINH Where MOTA='" + _donViTinh + "'");
                         _donViTinh = DVT.Rows[0][0].ToString();
@@ -95,12 +115,20 @@ namespace GPP
                         {
                             //bao loi
                         }
+                        int value = (i * 100 / _soLuong);
+                        progressBarX1.Value = value;
+                        lbPecen.Text = i.ToString() + "/" + _soLuong.ToString();
+                        SendKeys.Flush();
                     }
                     else
                     {
-                        inforError.Text="Lỗi dòng "+i+"\n";
+                        inforError.Text+="Lỗi dòng "+i+"\n";
                     }
                 }
+                MessageBox.Show("Import dữ liệu thành công!");
+                this._send(true);
+                btnImport.Enabled = true;
+                btnBrowser.Enabled = true;
             }
         }
     }

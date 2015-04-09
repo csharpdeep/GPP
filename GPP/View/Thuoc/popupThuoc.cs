@@ -55,11 +55,11 @@ namespace GPP
                // cbDVQD2.ValueMember = Thuoc.Rows[0][6].ToString();
                 txtTLQD2.Text = Thuoc.Rows[0][7].ToString();
                 txtHoatTinh.Text = Thuoc.Rows[0][8].ToString();
-                txtCongDung.Text = Thuoc.Rows[0][8].ToString();
-                txtCachSuDung.Text = Thuoc.Rows[0][9].ToString();
-                txtXuatXu.Text = Thuoc.Rows[0][10].ToString();
-                txtNhietDo.Text = Thuoc.Rows[0][11].ToString();
-                txtDoAm.Text = Thuoc.Rows[0][12].ToString();
+                txtCongDung.Text = Thuoc.Rows[0][9].ToString();
+                txtCachSuDung.Text = Thuoc.Rows[0][10].ToString();
+                txtXuatXu.Text = Thuoc.Rows[0][11].ToString();
+                txtNhietDo.Text = Thuoc.Rows[0][12].ToString();
+                txtDoAm.Text = Thuoc.Rows[0][13].ToString();
                
             }
             else

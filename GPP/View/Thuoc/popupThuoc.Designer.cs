@@ -246,7 +246,7 @@
             this.txtTenThuoc.Location = new System.Drawing.Point(215, 74);
             this.txtTenThuoc.Name = "txtTenThuoc";
             this.txtTenThuoc.Size = new System.Drawing.Size(267, 23);
-            this.txtTenThuoc.TabIndex = 47;
+            this.txtTenThuoc.TabIndex = 1;
             // 
             // cbLoaiThuoc
             // 
@@ -259,7 +259,7 @@
             this.cbLoaiThuoc.Name = "cbLoaiThuoc";
             this.cbLoaiThuoc.Size = new System.Drawing.Size(267, 23);
             this.cbLoaiThuoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbLoaiThuoc.TabIndex = 48;
+            this.cbLoaiThuoc.TabIndex = 2;
             // 
             // cbDonViTinh
             // 
@@ -272,7 +272,7 @@
             this.cbDonViTinh.Name = "cbDonViTinh";
             this.cbDonViTinh.Size = new System.Drawing.Size(267, 23);
             this.cbDonViTinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbDonViTinh.TabIndex = 49;
+            this.cbDonViTinh.TabIndex = 3;
             // 
             // txtTLQD1
             // 
@@ -284,7 +284,7 @@
             this.txtTLQD1.Location = new System.Drawing.Point(215, 264);
             this.txtTLQD1.Name = "txtTLQD1";
             this.txtTLQD1.Size = new System.Drawing.Size(267, 23);
-            this.txtTLQD1.TabIndex = 50;
+            this.txtTLQD1.TabIndex = 5;
             this.txtTLQD1.TextChanged += new System.EventHandler(this.txtTLQD1_TextChanged);
             // 
             // cbDVQD1
@@ -298,7 +298,7 @@
             this.cbDVQD1.Name = "cbDVQD1";
             this.cbDVQD1.Size = new System.Drawing.Size(267, 23);
             this.cbDVQD1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbDVQD1.TabIndex = 51;
+            this.cbDVQD1.TabIndex = 4;
             // 
             // cbDVQD2
             // 
@@ -311,7 +311,7 @@
             this.cbDVQD2.Name = "cbDVQD2";
             this.cbDVQD2.Size = new System.Drawing.Size(267, 23);
             this.cbDVQD2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbDVQD2.TabIndex = 52;
+            this.cbDVQD2.TabIndex = 6;
             // 
             // txtTLQD2
             // 
@@ -323,7 +323,7 @@
             this.txtTLQD2.Location = new System.Drawing.Point(215, 363);
             this.txtTLQD2.Name = "txtTLQD2";
             this.txtTLQD2.Size = new System.Drawing.Size(267, 23);
-            this.txtTLQD2.TabIndex = 53;
+            this.txtTLQD2.TabIndex = 7;
             this.txtTLQD2.TextChanged += new System.EventHandler(this.txtTLQD2_TextChanged);
             // 
             // txtHoatTinh
@@ -336,7 +336,7 @@
             this.txtHoatTinh.Location = new System.Drawing.Point(703, 26);
             this.txtHoatTinh.Name = "txtHoatTinh";
             this.txtHoatTinh.Size = new System.Drawing.Size(267, 23);
-            this.txtHoatTinh.TabIndex = 54;
+            this.txtHoatTinh.TabIndex = 8;
             // 
             // labelX14
             // 
@@ -360,7 +360,7 @@
             this.txtCachSuDung.Location = new System.Drawing.Point(703, 119);
             this.txtCachSuDung.Name = "txtCachSuDung";
             this.txtCachSuDung.Size = new System.Drawing.Size(267, 23);
-            this.txtCachSuDung.TabIndex = 56;
+            this.txtCachSuDung.TabIndex = 10;
             // 
             // txtNhietDo
             // 
@@ -372,7 +372,7 @@
             this.txtNhietDo.Location = new System.Drawing.Point(703, 218);
             this.txtNhietDo.Name = "txtNhietDo";
             this.txtNhietDo.Size = new System.Drawing.Size(267, 23);
-            this.txtNhietDo.TabIndex = 58;
+            this.txtNhietDo.TabIndex = 12;
             this.txtNhietDo.TextChanged += new System.EventHandler(this.txtNhietDo_TextChanged);
             // 
             // txtDoAm
@@ -385,7 +385,7 @@
             this.txtDoAm.Location = new System.Drawing.Point(703, 271);
             this.txtDoAm.Name = "txtDoAm";
             this.txtDoAm.Size = new System.Drawing.Size(267, 23);
-            this.txtDoAm.TabIndex = 59;
+            this.txtDoAm.TabIndex = 13;
             // 
             // btnSave
             // 
@@ -475,7 +475,7 @@
             this.txtCongDung.Location = new System.Drawing.Point(703, 72);
             this.txtCongDung.Name = "txtCongDung";
             this.txtCongDung.Size = new System.Drawing.Size(267, 23);
-            this.txtCongDung.TabIndex = 66;
+            this.txtCongDung.TabIndex = 9;
             // 
             // lbErrorTLQD1
             // 
@@ -523,7 +523,7 @@
             this.txtXuatXu.Location = new System.Drawing.Point(703, 164);
             this.txtXuatXu.Name = "txtXuatXu";
             this.txtXuatXu.Size = new System.Drawing.Size(267, 23);
-            this.txtXuatXu.TabIndex = 70;
+            this.txtXuatXu.TabIndex = 11;
             // 
             // popupThuoc
             // 

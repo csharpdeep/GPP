@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportThuoc));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.btnImport = new DevComponents.DotNetBar.ButtonX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.inforError = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -40,7 +40,8 @@
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.txtPatch = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnBrowser = new DevComponents.DotNetBar.ButtonX();
+            this.lbPecen = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.buttonX3);
+            this.groupPanel1.Controls.Add(this.lbPecen);
+            this.groupPanel1.Controls.Add(this.btnImport);
             this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.inforError);
             this.groupPanel1.Controls.Add(this.labelX2);
@@ -58,7 +60,7 @@
             this.groupPanel1.Controls.Add(this.buttonX2);
             this.groupPanel1.Controls.Add(this.txtPatch);
             this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Controls.Add(this.buttonX1);
+            this.groupPanel1.Controls.Add(this.btnBrowser);
             this.groupPanel1.Location = new System.Drawing.Point(0, 12);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(604, 451);
@@ -93,17 +95,17 @@
             this.groupPanel1.TabIndex = 4;
             this.groupPanel1.Text = "Nhập thuốc từ file excel";
             // 
-            // buttonX3
+            // btnImport
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(385, 390);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(99, 31);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 13;
-            this.buttonX3.Text = "Import";
-            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
+            this.btnImport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnImport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnImport.Location = new System.Drawing.Point(385, 390);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(99, 31);
+            this.btnImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnImport.TabIndex = 13;
+            this.btnImport.Text = "Import";
+            this.btnImport.Click += new System.EventHandler(this.buttonX3_Click);
             // 
             // labelX3
             // 
@@ -153,6 +155,7 @@
             this.progressBarX1.Location = new System.Drawing.Point(3, 343);
             this.progressBarX1.Name = "progressBarX1";
             this.progressBarX1.Size = new System.Drawing.Size(587, 33);
+            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.progressBarX1.TabIndex = 9;
             this.progressBarX1.Text = "progressBarX1";
             // 
@@ -222,17 +225,28 @@
             this.labelX1.TabIndex = 4;
             this.labelX1.Text = "Chọn đường dẫn đến file excel";
             // 
-            // buttonX1
+            // btnBrowser
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(471, 33);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(105, 28);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 3;
-            this.buttonX1.Text = "Duyệt";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            this.btnBrowser.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBrowser.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBrowser.Location = new System.Drawing.Point(471, 33);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Size = new System.Drawing.Size(105, 28);
+            this.btnBrowser.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBrowser.TabIndex = 3;
+            this.btnBrowser.Text = "Duyệt";
+            this.btnBrowser.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // lbPecen
+            // 
+            // 
+            // 
+            // 
+            this.lbPecen.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbPecen.Location = new System.Drawing.Point(501, 314);
+            this.lbPecen.Name = "lbPecen";
+            this.lbPecen.Size = new System.Drawing.Size(75, 23);
+            this.lbPecen.TabIndex = 14;
             // 
             // frmImportThuoc
             // 
@@ -255,7 +269,7 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX btnImport;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.RichTextBoxEx inforError;
         private DevComponents.DotNetBar.LabelX labelX2;
@@ -265,6 +279,7 @@
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private System.Windows.Forms.TextBox txtPatch;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btnBrowser;
+        private DevComponents.DotNetBar.LabelX lbPecen;
     }
 }
