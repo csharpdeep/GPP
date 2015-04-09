@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DongTX.Core;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace GPP
 {
-    public partial class Popup_NhanVien : Form
+    public partial class Popup_NhanVien : DevComponents.DotNetBar.OfficeForm
     {
         private bool _isUpdate;
 
@@ -52,9 +53,7 @@ namespace GPP
                 txt_TaiKhoan.Text = dtnv.Rows[0][15].ToString();
                 txt_MatKhau.Text = dtnv.Rows[0][16].ToString();
             }
-            
         }
-       
         private void CleanAllTextOnScreen()
         {
             foreach (Control item in _groupBox.Controls)
@@ -65,36 +64,54 @@ namespace GPP
                 }
             }    
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Popup_NhanVien_Load(object sender, EventArgs e)
         {
-
+           
         }
-
-        private void btn_Save_Click(object sender, EventArgs e)
+        //bat loi nhap so
+        private static bool IsNumber(string val)
         {
-            if (CheckData())
+            if (val != "")
+                return Regex.IsMatch(val, @"^[0-9]\d*\.?[0]*$");
+            else return true;
+        }
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+            if (IsNumber(txt_SDT.Text) != true)
             {
-                if (_isUpdate)
-                {
-                    UpdateData();
-                }
-                else
-                {
-                    InsertData();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Xem lai du lieu nhap vao, cac muc dau * la yeu cau bat buoc");
+                MessageBox.Show("Dữ liệu nhập không hợp lệ, không được nhập ký tự đặc biệt và số!", "Thông báo");
+                txt_SDT.Text = "";
             }
         }
-
+        private void txt_MucLuong_TextChanged(object sender, EventArgs e)
+        {
+            if (IsNumber(txt_MucLuong.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu nhập không hợp lệ, không được nhập ký tự đặc biệt và số!", "Thông báo");
+                txt_MucLuong.Text = "";
+            }
+        }
+        private void txt_CMTND_TextChanged(object sender, EventArgs e)
+        {
+            if (IsNumber(txt_CMTND.Text) != true)
+            {
+                MessageBox.Show("Dữ liệu nhập không hợp lệ, không được nhập ký tự đặc biệt và số!", "Thông báo");
+                txt_CMTND.Text = "";
+            }
+        }
+        //ham kiem tra email
+        public static bool isValidEmail(string inputEmail)
+        {
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
+        //bat loi ki tu trong
         private bool CheckData()
         {
             if (string.IsNullOrEmpty(txt_TaiKhoan.Text))
@@ -103,7 +120,30 @@ namespace GPP
                 txt_TaiKhoan.Focus();
                 return false;
             }
-            //kiem tra mot so thu khac tuong tu
+            else  if (string.IsNullOrEmpty(txt_Hoten.Text))
+            {
+                _labelCheckHoTen.Visible = true;
+                txt_Hoten.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_SDT.Text))
+            {
+                _labelCheckSDT.Visible = true;
+                txt_SDT.Focus();
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_MucLuong.Text))
+            {
+                _labelCheckMucLuong.Visible = true;
+                txt_MucLuong.Focus();
+                return false;
+            }
+            
+            else if (string.IsNullOrEmpty(date_ngayBatDauLam.Text))
+            {
+                date_ngayBatDauLam.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -120,6 +160,7 @@ namespace GPP
                     new SqlParameter("DANTOC", txt_DanToc.Text),
                     new SqlParameter("TONGIAO", txt_TonGiao.Text),
                     new SqlParameter("CMTND", txt_CMTND.Text),
+                    new SqlParameter("NOICAP", txt_NoiCap.Text),
                     new SqlParameter("NGAYCAP", date_NgayCap.Text),
                     new SqlParameter("NGAYBATDAUVAOLAM", date_ngayBatDauLam.Text),
                     new SqlParameter("MUCLUONG", txt_MucLuong.Text),
@@ -177,10 +218,39 @@ namespace GPP
                     MessageBoxIcon.Information);
             }
         }
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                if (_isUpdate)
+                {
+                    UpdateData();
+                    MessageBox.Show("Sửa thành công!");
+                }
+                else
+                {
+                    InsertData();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng xem lại dữ liệu nhập vào, các mục dấu * là yêu cầu bắt buộc","Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (CheckData() == true)
+            {
+                this.Close();
+            }
+        }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            CleanAllTextOnScreen();
+            this.Close();
+        }
+
+        private void btn_ThemChucVu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

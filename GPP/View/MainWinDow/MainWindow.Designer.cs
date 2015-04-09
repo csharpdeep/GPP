@@ -1,4 +1,4 @@
-namespace GPP
+﻿namespace GPP
 {
     partial class MainWindow
     {
@@ -33,6 +33,8 @@ namespace GPP
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this._btnNhanVien = new DevComponents.DotNetBar.ButtonItem();
+            this._btnThuoc = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.applicationButton1 = new DevComponents.DotNetBar.ApplicationButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
@@ -53,14 +55,13 @@ namespace GPP
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.TEST = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this._panelStatus = new DevComponents.DotNetBar.PanelEx();
             this._panelMain = new DevComponents.DotNetBar.PanelEx();
-            this.button1 = new System.Windows.Forms.Button();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +80,7 @@ namespace GPP
             this.ribbonControl1.ForeColor = System.Drawing.Color.Black;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.applicationButton1,
-            this.ribbonTabItem1,
+            this.TEST,
             this.ribbonTabItem2});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -107,12 +108,11 @@ namespace GPP
             this.ribbonControl1.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
-            this.ribbonControl1.Text = "ribbonControl1";
+            this.ribbonControl1.Text = "QUẢN LÝ CỬA HÀNG THUỐC ĐỨC KHÁNH";
             // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.button1);
             this.ribbonPanel1.Controls.Add(this.ribbonBar1);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ribbonPanel1.Location = new System.Drawing.Point(0, 53);
@@ -146,12 +146,15 @@ namespace GPP
             this.ribbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonBar1.ContainerControlProcessDialogKey = true;
             this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this._btnNhanVien,
+            this._btnThuoc});
             this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar1.Name = "ribbonBar1";
             this.ribbonBar1.Size = new System.Drawing.Size(712, 95);
             this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar1.TabIndex = 0;
-            this.ribbonBar1.Text = "ribbonBar1";
+            this.ribbonBar1.Text = "menu";
             // 
             // 
             // 
@@ -160,6 +163,19 @@ namespace GPP
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // _btnNhanVien
+            // 
+            this._btnNhanVien.Name = "_btnNhanVien";
+            this._btnNhanVien.SubItemsExpandWidth = 14;
+            this._btnNhanVien.Text = "Nhân viên";
+            this._btnNhanVien.Click += new System.EventHandler(this._btnNhanVien_Click);
+            // 
+            // _btnThuoc
+            // 
+            this._btnThuoc.Name = "_btnThuoc";
+            this._btnThuoc.SubItemsExpandWidth = 14;
+            this._btnThuoc.Text = "Thuốc";
             // 
             // ribbonPanel2
             // 
@@ -396,12 +412,12 @@ namespace GPP
             this.buttonItem13.SubItemsExpandWidth = 24;
             this.buttonItem13.Text = "E&xit";
             // 
-            // ribbonTabItem1
+            // TEST
             // 
-            this.ribbonTabItem1.Checked = true;
-            this.ribbonTabItem1.Name = "ribbonTabItem1";
-            this.ribbonTabItem1.Panel = this.ribbonPanel1;
-            this.ribbonTabItem1.Text = "ribbonTabItem1";
+            this.TEST.Checked = true;
+            this.TEST.Name = "TEST";
+            this.TEST.Panel = this.ribbonPanel1;
+            this.TEST.Text = "TEST";
             // 
             // ribbonTabItem2
             // 
@@ -457,16 +473,6 @@ namespace GPP
             this._panelMain.Style.GradientAngle = 90;
             this._panelMain.TabIndex = 3;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(762, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(1199, 615);
@@ -474,10 +480,13 @@ namespace GPP
             this.Controls.Add(this._panelStatus);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconTooltip = "GPP";
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
@@ -510,13 +519,14 @@ namespace GPP
         private DevComponents.DotNetBar.ItemContainer itemContainer4;
         private DevComponents.DotNetBar.ButtonItem buttonItem12;
         private DevComponents.DotNetBar.ButtonItem buttonItem13;
-        private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem1;
+        private DevComponents.DotNetBar.RibbonTabItem TEST;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private DevComponents.DotNetBar.PanelEx _panelStatus;
         private DevComponents.DotNetBar.PanelEx _panelMain;
-        private System.Windows.Forms.Button button1;
+        private DevComponents.DotNetBar.ButtonItem _btnNhanVien;
+        private DevComponents.DotNetBar.ButtonItem _btnThuoc;
     }
 }

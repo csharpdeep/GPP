@@ -17,7 +17,7 @@ namespace GPP
         {
             InitializeComponent();
 
-            _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT *FROM THUOC");
+            LoadData();
         }
         private int vt;
         void loadData(bool change)
@@ -25,7 +25,7 @@ namespace GPP
             if (change == true)
             {
                 _dataGridView.DataSource = null;
-                _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable("SELECT *FROM THUOC");
+                LoadData();
             }
         }
         private void _btnNhapTuFile_Click(object sender, EventArgs e)
@@ -57,6 +57,16 @@ namespace GPP
         private void _dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             vt = e.RowIndex;
+        }
+        private void LoadData()
+        {
+            string sql = "SELECT THUOC.MATHUOC, THUOC.TENTHUOC, LOAITHUOC.MOTA, THUOC.DONVITINH, THUOC.DONVIQUYDOICAP_1, THUOC.TYLEQUYDOICAP_1,";
+                   sql+="THUOC.DONVIQUYDOI_CAP2, THUOC.TYLEQUYDOICAP_2, NHACUNGCAP.TENNHACUNGCAP, THUOC.CONGDUNG, THUOC.CACHSUDUNG,";
+                   sql+= "THUOC.XUATXU, THUOC.NHIETDOBAOQUAN, THUOC.DOAMBAOQUAN ";
+                   sql+= "FROM THUOC, LOAITHUOC, NHACUNGCAP ";
+                   sql+= "WHERE THUOC.MANHACUNGCAP=NHACUNGCAP.MANHACUNGCAP AND THUOC.MALOAITHUOC=LOAITHUOC.MALOAITHUOC ";
+
+            _dataGridView.DataSource = SqlHelper.Instance.ExecuteDataTable(sql);
         }
     }
 }

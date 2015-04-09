@@ -107,7 +107,17 @@ namespace GPP
             }
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+       
+
+        private void _btnNhanVien_Click(object sender, System.EventArgs e)
+        {
+            frmNhanVienUC frm = new frmNhanVienUC();
+            _panelMain.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            _panelMain.Controls.Add(frm);
+            frm.Show();
+        }
+        private void MainWindow_Load(object sender, System.EventArgs e)
         {
             frmThuocUC frm = new frmThuocUC();
             frm.TopLevel = false;

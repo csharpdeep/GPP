@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportThuoc));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.lbPecen = new DevComponents.DotNetBar.LabelX();
             this.btnImport = new DevComponents.DotNetBar.ButtonX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.inforError = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
@@ -41,7 +42,6 @@
             this.txtPatch = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnBrowser = new DevComponents.DotNetBar.ButtonX();
-            this.lbPecen = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,18 @@
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 4;
             this.groupPanel1.Text = "Nhập thuốc từ file excel";
+            // 
+            // lbPecen
+            // 
+            this.lbPecen.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbPecen.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbPecen.Location = new System.Drawing.Point(501, 314);
+            this.lbPecen.Name = "lbPecen";
+            this.lbPecen.Size = new System.Drawing.Size(75, 23);
+            this.lbPecen.TabIndex = 14;
             // 
             // btnImport
             // 
@@ -237,24 +249,12 @@
             this.btnBrowser.Text = "Duyệt";
             this.btnBrowser.Click += new System.EventHandler(this.buttonX1_Click);
             // 
-            // lbPecen
-            // 
-            // 
-            // 
-            // 
-            this.lbPecen.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbPecen.Location = new System.Drawing.Point(501, 314);
-            this.lbPecen.Name = "lbPecen";
-            this.lbPecen.Size = new System.Drawing.Size(75, 23);
-            this.lbPecen.TabIndex = 14;
-            // 
             // frmImportThuoc
             // 
             this.ClientSize = new System.Drawing.Size(605, 466);
             this.ControlBox = false;
             this.Controls.Add(this.groupPanel1);
-            this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.Font = new System.Drawing.Font("Arial", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmImportThuoc";
