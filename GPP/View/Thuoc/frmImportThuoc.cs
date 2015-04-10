@@ -100,7 +100,7 @@ namespace GPP
                     _cachDung.ToUpper();
                     _nhietDo.ToUpper();
                 }
-
+                _tenThuoc=LoaiBoKyTuDacBiet(_tenThuoc);
                 if (SqlHelper.Instance.CheckExistKey("DONVITINH", "MOTA", _donViTinh.ToString()) == true)
                 {
                     if (SqlHelper.Instance.CheckExistKey("THUOC", "TENTHUOC", _tenThuoc) == false)
@@ -177,6 +177,21 @@ namespace GPP
             }
 
             return true;
+        }
+        private string LoaiBoKyTuDacBiet(string s)
+        {
+            for (int i = 0; i < s.Length; )
+            {
+                if ((int)s[i] == 34 || (int)s[i] == 39 || (int)s[i] == 46)
+                {
+                    s = s.Remove(i, 1);
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return s;
         }
     }
 }

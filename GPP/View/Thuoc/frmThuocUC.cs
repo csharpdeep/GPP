@@ -26,7 +26,6 @@ namespace GPP
         {
             if (change == true)
             {
-                _dataGridView.DataSource = null;
                 LoadData();
             }
         }

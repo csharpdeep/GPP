@@ -22,6 +22,7 @@ namespace GPP
         {
             InitializeComponent();
             _isUpdate = isUpdate;
+            btnSaveAndContinue.Enabled = false;
             
             DataTable LoaiThuoc = SqlHelper.Instance.ExecuteDataTable("SELECT * FROM LOAITHUOC");
             cbLoaiThuoc.DataSource = LoaiThuoc;
@@ -97,11 +98,12 @@ namespace GPP
             }
             else
             {
+                this._send(true);
                 MessageBox.Show("Thêm mới thuốc thành công!",
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                this._send(true);
+
             }
         }
         private void UpdateData()
@@ -114,7 +116,7 @@ namespace GPP
                     new SqlParameter("DONVITINH",cbDonViTinh.ValueMember.ToString()),
                     new SqlParameter("DONVIQUYDOICAP_1",cbDVQD1 .ValueMember.ToString()),
                     new SqlParameter("TYLEQUYDOICAP_1",txtTLQD1.Text),
-                    new SqlParameter ("DONVIQUYDOI_CAP2",cbDVQD2.ValueMember.ToString()),
+                    new SqlParameter("DONVIQUYDOI_CAP2",cbDVQD2.ValueMember.ToString()),
                     new SqlParameter("TYLEQUYDOICAP_2",txtTLQD2.Text),
                     new SqlParameter("HOATCHATCHINH",txtHoatTinh.Text),
                     new SqlParameter("CONGDUNG",txtCongDung.Text),
@@ -123,20 +125,33 @@ namespace GPP
                     new SqlParameter("NHIETDOBAOQUAN",txtNhietDo.Text),
                     new SqlParameter("DOAMBAOQUAN",txtDoAm.Text) 
                 },
-            new SqlParameter[]{new SqlParameter("MATHUOC", txtMaThuoc.Text),});
+                new SqlParameter[]{
+                    new SqlParameter("MATHUOC", txtMaThuoc.Text),
+                });
             if (recordEffect <= 0)
             {
-                MessageBox.Show("Không thể sửa dữ liệu này",
+                MessageBox.Show("Không thể sửa dữ liệu",
                     "Lỗi",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+            }
+            else
+            {
                 this._send(true);
+                MessageBox.Show("Sửa dữ liệu thành công!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
             }
         }
-
-        private void buttonX1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-          
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
             if (_isUpdate == false)
             {
                 //them moi thuoc
@@ -147,94 +162,32 @@ namespace GPP
                 //chinh sua thuoc
                 UpdateData();
             }
-            
         }
 
-        private void buttonX3_Click(object sender, EventArgs e)
+        private void btnSaveAndContinue_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void txtTLQD1_TextChanged(object sender, EventArgs e)
-        {
-            if (txtTLQD1.Text != "")
+           if (_isUpdate == false)
             {
-                try
-                {
-                    double.Parse(txtTLQD1.Text);
-                    lbErrorTLQD1.Text = "";
-                }
-                catch
-                {
-                    lbErrorTLQD1.Text = "Tỷ lệ quy đổi phải là số!";
-                }
+                //them moi thuoc
+                InsertData();
+                ResetForm();
+                txtMaThuoc.Text = SqlHelper.Instance.GetNextPrimaryKey("THUOC", "MATHUOC", "T000001");
             }
             else
             {
-
-                lbErrorTLQD1.Text = "";
+                //chinh sua thuoc
+                UpdateData();
             }
         }
-
-        private void txtTLQD2_TextChanged(object sender, EventArgs e)
+        private void ResetForm()
         {
-            if (txtTLQD2.Text != "")
+            foreach (Control c in _groupPanel.Controls)
             {
-                try
+                if (c is TextBox && c.Enabled == true)
                 {
-                    double.Parse(txtTLQD2.Text);
-                    lbErrorTLQD2.Text = "";
-                }
-                catch
-                {
-                    lbErrorTLQD2.Text = "Tỷ lệ quy đổi phải là số!";
+                    c.Text = "";
                 }
             }
-            else
-            {
-                lbErrorTLQD2.Text = "";
-            }
-        }
-
-        private void txtNhietDo_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNhietDo.Text != "")
-            {
-                try
-                {
-                    double.Parse(txtNhietDo.Text);
-                    lbErrorNhietDo.Text = "";
-                }
-                catch
-                {
-                    lbErrorNhietDo.Text = "Nhiệt độ phải là số!";
-                }
-            }
-            else
-            {
-                lbErrorNhietDo.Text = "";
-            }
-
-        }
-
-        private void buttonX2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void popupThuoc_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
