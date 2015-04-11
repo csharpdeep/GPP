@@ -51,9 +51,9 @@ namespace GPP
                 txtTenThuoc.Text=Thuoc.Rows[0][1].ToString();
                 cbLoaiThuoc.SelectedValue = Thuoc.Rows[0][2].ToString();
                 cbDonViTinh.SelectedValue = Thuoc.Rows[0][3].ToString();
-                //cbDVQD1.ValueMember = Thuoc.Rows[0][4].ToString();
+                cbDVQD1.SelectedValue = Thuoc.Rows[0][4].ToString().Trim();
                 txtTLQD1.Text = Thuoc.Rows[0][5].ToString();
-               // cbDVQD2.ValueMember = Thuoc.Rows[0][6].ToString();
+                cbDVQD2.SelectedValue = Thuoc.Rows[0][6].ToString();
                 txtTLQD2.Text = Thuoc.Rows[0][7].ToString();
                 txtHoatTinh.Text = Thuoc.Rows[0][8].ToString();
                 txtCongDung.Text = Thuoc.Rows[0][9].ToString();
