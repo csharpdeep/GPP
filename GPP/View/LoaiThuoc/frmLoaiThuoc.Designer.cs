@@ -28,48 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._dataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOAITHUOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._dataGridView = new DevComponents.DotNetBar.Controls.DataGridViewX();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // MOTA
+            // 
+            this.MOTA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MOTA.DataPropertyName = "MOTA";
+            this.MOTA.HeaderText = "Mô tả";
+            this.MOTA.Name = "MOTA";
+            // 
+            // MALOAITHUOC
+            // 
+            this.MALOAITHUOC.DataPropertyName = "MALOAITHUOC";
+            this.MALOAITHUOC.HeaderText = "Mã loại thuốc";
+            this.MALOAITHUOC.Name = "MALOAITHUOC";
+            this.MALOAITHUOC.ReadOnly = true;
+            this.MALOAITHUOC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // _dataGridView
             // 
             this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.MALOAITHUOC,
+            this.MOTA});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this._dataGridView.Location = new System.Drawing.Point(0, 0);
             this._dataGridView.Name = "_dataGridView";
-            this._dataGridView.Size = new System.Drawing.Size(835, 453);
+            this._dataGridView.Size = new System.Drawing.Size(835, 487);
             this._dataGridView.TabIndex = 0;
-            this._dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnDataGridviewEndEdited);
-            this._dataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.OnUserAddedRow);
-            this._dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.OnUserDeletingRow);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaLoaiThuoc";
-            this.Column1.HeaderText = "Mã loại thuốc";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "MoTa";
-            this.Column2.HeaderText = "Mô tả";
-            this.Column2.Name = "Column2";
             // 
             // frmLoaiThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 453);
+            this.ClientSize = new System.Drawing.Size(835, 487);
             this.Controls.Add(this._dataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmLoaiThuoc";
@@ -81,8 +87,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView _dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALOAITHUOC;
+        private DevComponents.DotNetBar.Controls.DataGridViewX _dataGridView;
+
     }
 }

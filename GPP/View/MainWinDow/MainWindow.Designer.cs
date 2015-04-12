@@ -42,11 +42,6 @@
             this.khôiPhụcCSDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.đóngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bar1 = new DevComponents.DotNetBar.Bar();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this._metroStatusBar = new DevComponents.DotNetBar.Metro.MetroStatusBar();
-            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
-            this._panelMain = new DevComponents.DotNetBar.PanelEx();
             this.thayĐổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thayĐổiTênĐăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
@@ -69,6 +64,7 @@
             this.nhàCungCấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
             this.phânQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khoThuốcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +74,12 @@
             this.thôngTinPhầnMềmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripSeparator();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bar1 = new DevComponents.DotNetBar.Bar();
+            this._metroStatusBar = new DevComponents.DotNetBar.Metro.MetroStatusBar();
+            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
+            this._panelMain = new DevComponents.DotNetBar.PanelEx();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
+            this.chứcVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.SuspendLayout();
@@ -149,6 +151,7 @@
             this.saoLưuCSDLToolStripMenuItem.Name = "saoLưuCSDLToolStripMenuItem";
             this.saoLưuCSDLToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.saoLưuCSDLToolStripMenuItem.Text = "Sao lưu CSDL";
+            this.saoLưuCSDLToolStripMenuItem.Click += new System.EventHandler(this.saoLưuCSDLToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -160,6 +163,7 @@
             this.khôiPhụcCSDLToolStripMenuItem.Name = "khôiPhụcCSDLToolStripMenuItem";
             this.khôiPhụcCSDLToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.khôiPhụcCSDLToolStripMenuItem.Text = "Khôi phục CSDL";
+            this.khôiPhụcCSDLToolStripMenuItem.Click += new System.EventHandler(this.khôiPhụcCSDLToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -174,69 +178,6 @@
             this.đóngToolStripMenuItem.Name = "đóngToolStripMenuItem";
             this.đóngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.đóngToolStripMenuItem.Text = "Tài khoản";
-            // 
-            // bar1
-            // 
-            this.bar1.AntiAlias = true;
-            this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bar1.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem2});
-            this.bar1.Location = new System.Drawing.Point(0, 25);
-            this.bar1.Name = "bar1";
-            this.bar1.Size = new System.Drawing.Size(1199, 33);
-            this.bar1.Stretch = true;
-            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bar1.TabIndex = 5;
-            this.bar1.TabStop = false;
-            this.bar1.Text = "bar1";
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.Image = global::GPP.Properties.Resources.Back;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.Text = "buttonItem2";
-            // 
-            // _metroStatusBar
-            // 
-            // 
-            // 
-            // 
-            this._metroStatusBar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._metroStatusBar.ContainerControlProcessDialogKey = true;
-            this._metroStatusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._metroStatusBar.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._metroStatusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.labelItem1});
-            this._metroStatusBar.Location = new System.Drawing.Point(0, 593);
-            this._metroStatusBar.Name = "_metroStatusBar";
-            this._metroStatusBar.Size = new System.Drawing.Size(1199, 22);
-            this._metroStatusBar.TabIndex = 6;
-            this._metroStatusBar.Text = "metroStatusBar1";
-            // 
-            // labelItem1
-            // 
-            this.labelItem1.ForeColor = System.Drawing.Color.White;
-            this.labelItem1.Name = "labelItem1";
-            this.labelItem1.SingleLineColor = System.Drawing.Color.White;
-            this.labelItem1.Text = "Tài khoản: Admin";
-            // 
-            // _panelMain
-            // 
-            this._panelMain.CanvasColor = System.Drawing.SystemColors.Control;
-            this._panelMain.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this._panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._panelMain.Location = new System.Drawing.Point(0, 58);
-            this._panelMain.Name = "_panelMain";
-            this._panelMain.Size = new System.Drawing.Size(1199, 535);
-            this._panelMain.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this._panelMain.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this._panelMain.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this._panelMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this._panelMain.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this._panelMain.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this._panelMain.Style.GradientAngle = 90;
-            this._panelMain.TabIndex = 8;
             // 
             // thayĐổiMậtKhẩuToolStripMenuItem
             // 
@@ -289,7 +230,9 @@
             this.toolStripMenuItem12,
             this.nhàCungCấpToolStripMenuItem,
             this.toolStripMenuItem13,
-            this.phânQuyềnToolStripMenuItem});
+            this.phânQuyềnToolStripMenuItem,
+            this.nhânViênToolStripMenuItem,
+            this.chứcVụToolStripMenuItem});
             this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
             this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
             this.danhMụcToolStripMenuItem.Text = "Danh mục";
@@ -310,6 +253,7 @@
             this.thuốcToolStripMenuItem.Name = "thuốcToolStripMenuItem";
             this.thuốcToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.thuốcToolStripMenuItem.Text = "Thuốc";
+            this.thuốcToolStripMenuItem.Click += new System.EventHandler(this.thuốcToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -344,6 +288,7 @@
             this.đơnVịTínhToolStripMenuItem.Name = "đơnVịTínhToolStripMenuItem";
             this.đơnVịTínhToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.đơnVịTínhToolStripMenuItem.Text = "Đơn vị tính";
+            this.đơnVịTínhToolStripMenuItem.Click += new System.EventHandler(this.đơnVịTínhToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 
@@ -355,6 +300,7 @@
             this.loạiThuốcToolStripMenuItem.Name = "loạiThuốcToolStripMenuItem";
             this.loạiThuốcToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.loạiThuốcToolStripMenuItem.Text = "Loại thuốc";
+            this.loạiThuốcToolStripMenuItem.Click += new System.EventHandler(this.loạiThuốcToolStripMenuItem_Click);
             // 
             // toolStripMenuItem12
             // 
@@ -377,6 +323,13 @@
             this.phânQuyềnToolStripMenuItem.Name = "phânQuyềnToolStripMenuItem";
             this.phânQuyềnToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.phânQuyềnToolStripMenuItem.Text = "Phân quyền";
+            // 
+            // nhânViênToolStripMenuItem
+            // 
+            this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.nhânViênToolStripMenuItem.Text = "Nhân viên";
+            this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // báoCáoToolStripMenuItem
             // 
@@ -439,6 +392,76 @@
             this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             // 
+            // bar1
+            // 
+            this.bar1.AntiAlias = true;
+            this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bar1.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem2});
+            this.bar1.Location = new System.Drawing.Point(0, 25);
+            this.bar1.Name = "bar1";
+            this.bar1.Size = new System.Drawing.Size(1199, 33);
+            this.bar1.Stretch = true;
+            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bar1.TabIndex = 5;
+            this.bar1.TabStop = false;
+            this.bar1.Text = "bar1";
+            // 
+            // _metroStatusBar
+            // 
+            // 
+            // 
+            // 
+            this._metroStatusBar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._metroStatusBar.ContainerControlProcessDialogKey = true;
+            this._metroStatusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._metroStatusBar.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._metroStatusBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.labelItem1});
+            this._metroStatusBar.Location = new System.Drawing.Point(0, 593);
+            this._metroStatusBar.Name = "_metroStatusBar";
+            this._metroStatusBar.Size = new System.Drawing.Size(1199, 22);
+            this._metroStatusBar.TabIndex = 6;
+            this._metroStatusBar.Text = "metroStatusBar1";
+            // 
+            // labelItem1
+            // 
+            this.labelItem1.ForeColor = System.Drawing.Color.White;
+            this.labelItem1.Name = "labelItem1";
+            this.labelItem1.SingleLineColor = System.Drawing.Color.White;
+            this.labelItem1.Text = "Tài khoản: Admin";
+            // 
+            // _panelMain
+            // 
+            this._panelMain.CanvasColor = System.Drawing.SystemColors.Control;
+            this._panelMain.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this._panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._panelMain.Location = new System.Drawing.Point(0, 58);
+            this._panelMain.Name = "_panelMain";
+            this._panelMain.Size = new System.Drawing.Size(1199, 535);
+            this._panelMain.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this._panelMain.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this._panelMain.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this._panelMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this._panelMain.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this._panelMain.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this._panelMain.Style.GradientAngle = 90;
+            this._panelMain.TabIndex = 8;
+            // 
+            // buttonItem2
+            // 
+            this.buttonItem2.Image = global::GPP.Properties.Resources.Back;
+            this.buttonItem2.Name = "buttonItem2";
+            this.buttonItem2.Text = "buttonItem2";
+            // 
+            // chứcVụToolStripMenuItem
+            // 
+            this.chứcVụToolStripMenuItem.Name = "chứcVụToolStripMenuItem";
+            this.chứcVụToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.chứcVụToolStripMenuItem.Text = "Chức vụ";
+            this.chứcVụToolStripMenuItem.Click += new System.EventHandler(this.chứcVụToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(1199, 615);
@@ -446,6 +469,7 @@
             this.Controls.Add(this._metroStatusBar);
             this.Controls.Add(this.bar1);
             this.Controls.Add(this._menuStrip);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IconTooltip = "GPP";
@@ -513,5 +537,7 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem15;
         private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chứcVụToolStripMenuItem;
     }
 }

@@ -48,7 +48,7 @@ namespace GPP
         private void _btnDangNhap_Click(object sender, EventArgs e)
         {
             //Neu dang nhap thanh cong
-            string maNV = "NV001";
+           // string maNV = "NV001";
         }
 
         public void Search(string keyWords)

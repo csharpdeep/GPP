@@ -12,7 +12,7 @@ using System.IO;
 using System.Xml;
 using DongTX.Core;
 using DevComponents.DotNetBar;
-
+using GPP.View.HeThong.PhucHoiCSDL;
 namespace GPP
 {
     public partial class MainWindow : DevComponents.DotNetBar.OfficeForm, IGuiMng
@@ -106,17 +106,6 @@ namespace GPP
                 throw new ArgumentException();
             }
         }
-
-       
-
-        private void _btnNhanVien_Click(object sender, System.EventArgs e)
-        {
-            frmNhanVienUC frm = new frmNhanVienUC();
-            _panelMain.Controls.Clear();
-            frm.Dock = DockStyle.Fill;
-            _panelMain.Controls.Add(frm);
-            frm.Show();
-        }
         private void MainWindow_Load(object sender, System.EventArgs e)
         {
             frmThuocUC frm = new frmThuocUC();
@@ -130,6 +119,61 @@ namespace GPP
         private void quảnLýBánThuốcToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
 
+        }
+
+        private void saoLưuCSDLToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            SaoLuuPhucHoiDuLieu frm = new SaoLuuPhucHoiDuLieu();
+            frm.Show();
+        }
+
+        private void khôiPhụcCSDLToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+           
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            frmNhanVienUC frm = new frmNhanVienUC();
+            _panelMain.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            _panelMain.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void thuốcToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            frmThuocUC frm = new frmThuocUC();
+            frm.TopLevel = false;
+            _panelMain.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            _panelMain.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void đơnVịTínhToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            frmDonViTinh frm = new frmDonViTinh();
+            frm.TopLevel = false;
+            _panelMain.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            _panelMain.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void loạiThuốcToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            frmLoaiThuoc frm = new frmLoaiThuoc();
+            frm.TopLevel = false;
+            _panelMain.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            _panelMain.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void chứcVụToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            
         }
     }
 }

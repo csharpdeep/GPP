@@ -26,24 +26,30 @@ namespace GPP
             InitializeComponent();
         }
 
-        private void OnBtnDuyetTimClick(object sender, EventArgs e)
+        /// <summary>
+        /// Hàm kiểm tra các điều kiện cơ bản trước khi import dữ liệu
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckBeforeImportData()
         {
-            OpenFileDialog openFileDlg = new OpenFileDialog();
-            openFileDlg.Filter = "Excel 2007 (*.xls)|*.xls|Laster version (*.xlsx*)|*.xlsx*";
-            openFileDlg.Title = "Mở file Exel để import dữ liệu";
-            if (openFileDlg.ShowDialog() == DialogResult.OK)
+            //Kiem tra xem nguoi dung da chon file hay chua?
+            if (string.IsNullOrEmpty(_txtDuongDan.Text))
             {
-                _fileName = openFileDlg.FileName;
-                _txtDuongDan.Text = _fileName;
+                ToastNotification.Show(this, "Chưa chọn file import");
+                return false;
             }
+
+            //Neu da co file roi thi file do co ton tai hay khong
+            if (File.Exists(_txtDuongDan.Text) == false)
+            {
+                ToastNotification.Show(this, "File không tồn tại");
+                return false;
+            }
+
+            return true;
         }
 
-        private void OnBtnDongClick(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void OnBtnImportClick(object sender, EventArgs e)
+        private void _btnImport_Click(object sender, EventArgs e)
         {
             //Kiem tra du lieu truoc khi import
             if (CheckBeforeImportData() == false)
@@ -145,33 +151,30 @@ namespace GPP
                 _btnImport.Enabled = true;
                 _btnDuyet.Enabled = true;
 
-                MessageBox.Show("Import dữ liệu thành công!",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            _btnImport.Enabled = true;
+            _btnDuyet.Enabled = true;
+
+            MessageBox.Show("Import dữ liệu thành công!",
+                "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// Hàm kiểm tra các điều kiện cơ bản trước khi import dữ liệu
-        /// </summary>
-        /// <returns></returns>
-        private bool CheckBeforeImportData()
+        private void _btnDong_Click(object sender, EventArgs e)
         {
-            //Kiem tra xem nguoi dung da chon file hay chua?
-            if (string.IsNullOrEmpty(_txtDuongDan.Text))
-            {
-                ToastNotification.Show(this, "Chưa chọn file import");
-                return false;
-            }
+            this.Close();
+        }
 
-            //Neu da co file roi thi file do co ton tai hay khong
-            if (File.Exists(_txtDuongDan.Text) == false)
+        private void _btnDuyet_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDlg = new OpenFileDialog();
+            openFileDlg.Filter = "Excel 2007 (*.xls)|*.xls|Laster version (*.xlsx*)|*.xlsx*";
+            openFileDlg.Title = "Mở file Exel để import dữ liệu";
+            if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
-                ToastNotification.Show(this, "File không tồn tại");
-                return false;
+                _fileName = openFileDlg.FileName;
+                _txtDuongDan.Text = _fileName;
             }
-
-            return true;
         }
         private string LoaiBoKyTuDacBiet(string s)
         {

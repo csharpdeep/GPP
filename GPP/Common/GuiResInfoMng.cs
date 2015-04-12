@@ -39,9 +39,7 @@ namespace GPP
             object instance = null;
             switch (screenID)
             {
-                case GuiResId.ScreenID.ChucVu:
-                    instance = new frmChucVu();
-                    break;
+               
                 case GuiResId.ScreenID.DonViTinh:
                     instance = new frmDonViTinh();
                     break;

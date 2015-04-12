@@ -43,7 +43,7 @@
       <HintPath>..\Document\DongTX.Core.dll</HintPath>
     </Reference>
     <Reference Include="ExcelConnection">
-      <HintPath>C:\Users\Administrator\Desktop\ExcelConnection.dll</HintPath>
+      <HintPath>..\Document\ExcelConnection.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -91,12 +91,6 @@
     <Compile Include="Common\SettingSQL.Designer.cs">
       <DependentUpon>SettingSQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChucVu\frmChucVu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChucVu\frmChucVuUC.Designer.cs">
-      <DependentUpon>frmChucVu.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\DangNhap\frmDangNhapUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +102,18 @@
     </Compile>
     <Compile Include="View\DonViTinh\frmDonViTinh.Designer.cs">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HeThong\PhucHoiCSDL\SaoLuuPhucHoiDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\HeThong\PhucHoiCSDL\SaoLuuPhucHoiDuLieu.Designer.cs">
+      <DependentUpon>SaoLuuPhucHoiDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HoaDon\UC_PhieuXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\HoaDon\UC_PhieuXuat.Designer.cs">
+      <DependentUpon>UC_PhieuXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoaiThuoc\frmLoaiThuoc.cs">
       <SubType>Form</SubType>
@@ -133,6 +139,12 @@
     </Compile>
     <Compile Include="View\NhanVien\Popup_NhanVien.designer.cs">
       <DependentUpon>Popup_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhapKho\Frm_HoaDonNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhapKho\Frm_HoaDonNhapHang.Designer.cs">
+      <DependentUpon>Frm_HoaDonNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PhanQuyen\frmPhanQuyen.cs">
       <SubType>Form</SubType>
@@ -175,14 +187,17 @@
     <EmbeddedResource Include="Common\SettingSQL.resx">
       <DependentUpon>SettingSQL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChucVu\frmChucVuUC.resx">
-      <DependentUpon>frmChucVu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\DangNhap\frmDangNhapUC.resx">
       <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DonViTinh\frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HeThong\PhucHoiCSDL\SaoLuuPhucHoiDuLieu.resx">
+      <DependentUpon>SaoLuuPhucHoiDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HoaDon\UC_PhieuXuat.resx">
+      <DependentUpon>UC_PhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoaiThuoc\frmLoaiThuoc.resx">
       <DependentUpon>frmLoaiThuoc.cs</DependentUpon>
@@ -195,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhanVien\Popup_NhanVien.resx">
       <DependentUpon>Popup_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhapKho\Frm_HoaDonNhapHang.resx">
+      <DependentUpon>Frm_HoaDonNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PhanQuyen\frmPhanQuyen.resx" />
     <EmbeddedResource Include="View\SplashScreen\SplashScreen.resx">
@@ -233,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Document-Download.png" />
     <None Include="Resources\Warning.png" />
     <None Include="Resources\Search.png" />
     <None Include="Resources\Save.png" />
@@ -257,14 +276,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\BaoCao\" />
+    <Folder Include="View\ChucVu\" />
     <Folder Include="View\HeThong\GioiThieuPhanMem\" />
-    <Folder Include="View\HeThong\PhucHoiCSDL\" />
     <Folder Include="View\HeThong\SaoLuuCSDL\" />
     <Folder Include="View\HeThong\ThayDoiMatKhau\" />
     <Folder Include="View\HeThong\ThayDoiTaiKhoan\" />
     <Folder Include="View\HeThong\ThongTinNhaThuoc\" />
-    <Folder Include="View\HoaDon\" />
-    <Folder Include="View\NhapKho\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
