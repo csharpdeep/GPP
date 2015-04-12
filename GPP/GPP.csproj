@@ -251,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Open.png" />
     <None Include="Resources\Document-Download.png" />
     <None Include="Resources\Warning.png" />
     <None Include="Resources\Search.png" />
