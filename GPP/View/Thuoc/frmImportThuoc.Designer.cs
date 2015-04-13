@@ -29,193 +29,155 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportThuoc));
-            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this._lbError = new DevComponents.DotNetBar.LabelX();
-            this._lbSoLoi = new DevComponents.DotNetBar.LabelX();
-            this._lbPecen = new DevComponents.DotNetBar.LabelX();
-            this._btnImport = new DevComponents.DotNetBar.ButtonX();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this._lbErrorCount = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this._richTexBoxEdit = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this._progressBar = new DevComponents.DotNetBar.Controls.ProgressBarX();
-            this._checkBoxTuDongVietHoa = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this._txtTenSheet = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._progressBar = new System.Windows.Forms.ProgressBar();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this._btnImport = new DevComponents.DotNetBar.ButtonX();
             this._checkBoxXoaTruocKhiImport = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this._btnDong = new DevComponents.DotNetBar.ButtonX();
             this._txtDuongDan = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this._btnDuyet = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelEx1.SuspendLayout();
-            this.panelEx2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelEx1
+            // richTextBox1
             // 
-            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this._lbError);
-            this.panelEx1.Controls.Add(this._lbSoLoi);
-            this.panelEx1.Controls.Add(this._lbPecen);
-            this.panelEx1.Controls.Add(this._btnImport);
-            this.panelEx1.Controls.Add(this.labelX3);
-            this.panelEx1.Controls.Add(this._richTexBoxEdit);
-            this.panelEx1.Controls.Add(this.labelX2);
-            this.panelEx1.Controls.Add(this._progressBar);
-            this.panelEx1.Controls.Add(this._checkBoxTuDongVietHoa);
-            this.panelEx1.Controls.Add(this._checkBoxXoaTruocKhiImport);
-            this.panelEx1.Controls.Add(this._btnDong);
-            this.panelEx1.Controls.Add(this._txtDuongDan);
-            this.panelEx1.Controls.Add(this.labelX1);
-            this.panelEx1.Controls.Add(this._btnDuyet);
-            this.panelEx1.Location = new System.Drawing.Point(153, 0);
-            this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(579, 494);
-            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 0;
+            this.richTextBox1.Location = new System.Drawing.Point(6, 22);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(489, 131);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
-            // panelEx2
+            // _lbErrorCount
             // 
-            this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2000;
-            this.panelEx2.Controls.Add(this.pictureBox1);
-            this.panelEx2.Location = new System.Drawing.Point(4, 0);
-            this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(148, 494);
-            this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx2.Style.GradientAngle = 90;
-            this.panelEx2.TabIndex = 1;
-            // 
-            // _lbError
-            // 
-            this._lbError.BackColor = System.Drawing.Color.Transparent;
+            this._lbErrorCount.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this._lbError.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._lbError.ForeColor = System.Drawing.Color.Red;
-            this._lbError.Location = new System.Drawing.Point(593, 324);
-            this._lbError.Name = "_lbError";
-            this._lbError.Size = new System.Drawing.Size(44, 23);
-            this._lbError.TabIndex = 30;
+            this._lbErrorCount.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._lbErrorCount.Location = new System.Drawing.Point(263, 175);
+            this._lbErrorCount.Name = "_lbErrorCount";
+            this._lbErrorCount.Size = new System.Drawing.Size(73, 18);
+            this._lbErrorCount.TabIndex = 58;
+            this._lbErrorCount.Text = "0";
             // 
-            // _lbSoLoi
+            // labelX7
             // 
-            this._lbSoLoi.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this._lbSoLoi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._lbSoLoi.Location = new System.Drawing.Point(442, 318);
-            this._lbSoLoi.Name = "_lbSoLoi";
-            this._lbSoLoi.Size = new System.Drawing.Size(37, 29);
-            this._lbSoLoi.TabIndex = 29;
-            this._lbSoLoi.Text = "Số lỗi";
-            // 
-            // _lbPecen
-            // 
-            this._lbPecen.BackColor = System.Drawing.Color.Transparent;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this._lbPecen.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._lbPecen.Location = new System.Drawing.Point(129, 324);
-            this._lbPecen.Name = "_lbPecen";
-            this._lbPecen.Size = new System.Drawing.Size(75, 23);
-            this._lbPecen.TabIndex = 28;
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Location = new System.Drawing.Point(184, 175);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(73, 18);
+            this.labelX7.TabIndex = 57;
+            this.labelX7.Text = "Số lỗi";
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Location = new System.Drawing.Point(185, 146);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(73, 18);
+            this.labelX6.TabIndex = 56;
+            this.labelX6.Text = "Tiến trình";
+            // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.ForeColor = System.Drawing.Color.Red;
+            this.labelX5.Location = new System.Drawing.Point(381, 83);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(17, 23);
+            this.labelX5.TabIndex = 55;
+            this.labelX5.Text = "(*)";
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.ForeColor = System.Drawing.Color.Red;
+            this.labelX3.Location = new System.Drawing.Point(553, 32);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(17, 23);
+            this.labelX3.TabIndex = 54;
+            this.labelX3.Text = "(*)";
+            // 
+            // _txtTenSheet
+            // 
+            // 
+            // 
+            // 
+            this._txtTenSheet.Border.Class = "TextBoxBorder";
+            this._txtTenSheet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._txtTenSheet.Location = new System.Drawing.Point(185, 83);
+            this._txtTenSheet.Name = "_txtTenSheet";
+            this._txtTenSheet.Size = new System.Drawing.Size(193, 23);
+            this._txtTenSheet.TabIndex = 53;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.ForeColor = System.Drawing.Color.Red;
+            this.groupBox1.Location = new System.Drawing.Point(185, 198);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(503, 159);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ghi chú";
+            // 
+            // _progressBar
+            // 
+            this._progressBar.Location = new System.Drawing.Point(263, 141);
+            this._progressBar.Name = "_progressBar";
+            this._progressBar.Size = new System.Drawing.Size(425, 23);
+            this._progressBar.TabIndex = 51;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(185, 61);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(73, 18);
+            this.labelX4.TabIndex = 50;
+            this.labelX4.Text = "Tên Sheet";
             // 
             // _btnImport
             // 
             this._btnImport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this._btnImport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this._btnImport.Location = new System.Drawing.Point(357, 453);
+            this._btnImport.Location = new System.Drawing.Point(484, 361);
             this._btnImport.Name = "_btnImport";
             this._btnImport.Size = new System.Drawing.Size(99, 31);
             this._btnImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this._btnImport.TabIndex = 27;
+            this._btnImport.TabIndex = 48;
             this._btnImport.Text = "Import";
-            this._btnImport.Click += new System.EventHandler(this._btnImport_Click);
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(23, 140);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(163, 29);
-            this.labelX3.TabIndex = 26;
-            this.labelX3.Text = "Thông báo lỗi khi import";
-            // 
-            // _richTexBoxEdit
-            // 
-            // 
-            // 
-            // 
-            this._richTexBoxEdit.BackgroundStyle.Class = "RichTextBoxBorder";
-            this._richTexBoxEdit.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._richTexBoxEdit.Location = new System.Drawing.Point(23, 175);
-            this._richTexBoxEdit.Name = "_richTexBoxEdit";
-            this._richTexBoxEdit.ReadOnly = true;
-            this._richTexBoxEdit.Size = new System.Drawing.Size(540, 140);
-            this._richTexBoxEdit.TabIndex = 25;
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(23, 321);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(73, 29);
-            this.labelX2.TabIndex = 24;
-            this.labelX2.Text = "Tiến trình";
-            // 
-            // _progressBar
-            // 
-            // 
-            // 
-            // 
-            this._progressBar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._progressBar.Location = new System.Drawing.Point(21, 356);
-            this._progressBar.Name = "_progressBar";
-            this._progressBar.Size = new System.Drawing.Size(545, 33);
-            this._progressBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this._progressBar.TabIndex = 23;
-            this._progressBar.Text = "progressBarX1";
-            // 
-            // _checkBoxTuDongVietHoa
-            // 
-            this._checkBoxTuDongVietHoa.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this._checkBoxTuDongVietHoa.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._checkBoxTuDongVietHoa.Checked = true;
-            this._checkBoxTuDongVietHoa.CheckState = System.Windows.Forms.CheckState.Checked;
-            this._checkBoxTuDongVietHoa.CheckValue = "Y";
-            this._checkBoxTuDongVietHoa.Location = new System.Drawing.Point(21, 111);
-            this._checkBoxTuDongVietHoa.Name = "_checkBoxTuDongVietHoa";
-            this._checkBoxTuDongVietHoa.Size = new System.Drawing.Size(295, 23);
-            this._checkBoxTuDongVietHoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this._checkBoxTuDongVietHoa.TabIndex = 22;
-            this._checkBoxTuDongVietHoa.Text = "Tự động viết hoa khi import vào";
+            this._btnImport.Click += new System.EventHandler(this.OnBtnImportClick);
             // 
             // _checkBoxXoaTruocKhiImport
             // 
@@ -227,32 +189,32 @@
             this._checkBoxXoaTruocKhiImport.Checked = true;
             this._checkBoxXoaTruocKhiImport.CheckState = System.Windows.Forms.CheckState.Checked;
             this._checkBoxXoaTruocKhiImport.CheckValue = "Y";
-            this._checkBoxXoaTruocKhiImport.Location = new System.Drawing.Point(21, 80);
+            this._checkBoxXoaTruocKhiImport.Location = new System.Drawing.Point(184, 112);
             this._checkBoxXoaTruocKhiImport.Name = "_checkBoxXoaTruocKhiImport";
             this._checkBoxXoaTruocKhiImport.Size = new System.Drawing.Size(276, 23);
             this._checkBoxXoaTruocKhiImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this._checkBoxXoaTruocKhiImport.TabIndex = 21;
+            this._checkBoxXoaTruocKhiImport.TabIndex = 47;
             this._checkBoxXoaTruocKhiImport.Text = "Xóa dữ liệu bảng thuốc trước khi import";
             // 
             // _btnDong
             // 
             this._btnDong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this._btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this._btnDong.Location = new System.Drawing.Point(462, 453);
+            this._btnDong.Location = new System.Drawing.Point(589, 361);
             this._btnDong.Name = "_btnDong";
             this._btnDong.Size = new System.Drawing.Size(99, 31);
             this._btnDong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this._btnDong.TabIndex = 20;
+            this._btnDong.TabIndex = 46;
             this._btnDong.Text = "Đóng";
-            this._btnDong.Click += new System.EventHandler(this._btnDong_Click);
+            this._btnDong.Click += new System.EventHandler(this.OnBtnDongClick);
             // 
             // _txtDuongDan
             // 
-            this._txtDuongDan.Location = new System.Drawing.Point(23, 51);
+            this._txtDuongDan.Location = new System.Drawing.Point(185, 32);
             this._txtDuongDan.Name = "_txtDuongDan";
             this._txtDuongDan.ReadOnly = true;
-            this._txtDuongDan.Size = new System.Drawing.Size(433, 23);
-            this._txtDuongDan.TabIndex = 19;
+            this._txtDuongDan.Size = new System.Drawing.Size(365, 23);
+            this._txtDuongDan.TabIndex = 45;
             // 
             // labelX1
             // 
@@ -261,74 +223,90 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(25, 12);
+            this.labelX1.Location = new System.Drawing.Point(184, 6);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(189, 29);
-            this.labelX1.TabIndex = 18;
-            this.labelX1.Text = "Chọn đường dẫn đến file excel";
+            this.labelX1.Size = new System.Drawing.Size(73, 29);
+            this.labelX1.TabIndex = 44;
+            this.labelX1.Text = "Tên file";
             // 
             // _btnDuyet
             // 
             this._btnDuyet.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this._btnDuyet.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this._btnDuyet.Location = new System.Drawing.Point(462, 46);
+            this._btnDuyet.Location = new System.Drawing.Point(575, 31);
             this._btnDuyet.Name = "_btnDuyet";
-            this._btnDuyet.Size = new System.Drawing.Size(90, 28);
+            this._btnDuyet.Size = new System.Drawing.Size(105, 25);
             this._btnDuyet.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this._btnDuyet.TabIndex = 17;
+            this._btnDuyet.TabIndex = 43;
             this._btnDuyet.Text = "Duyệt";
-            this._btnDuyet.Click += new System.EventHandler(this._btnDuyet_Click);
+            this._btnDuyet.Click += new System.EventHandler(this.OnBtnDuyetTimClick);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GPP.Properties.Resources.Document_Download;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 297);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::GPP.Properties.Resources.import_thuoc_wizard;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 151);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(154, 399);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
             // 
             // frmImportThuoc
             // 
-            this.ClientSize = new System.Drawing.Size(735, 500);
+            this.ClientSize = new System.Drawing.Size(697, 399);
             this.ControlBox = false;
-            this.Controls.Add(this.panelEx2);
-            this.Controls.Add(this.panelEx1);
+            this.Controls.Add(this._lbErrorCount);
+            this.Controls.Add(this.labelX7);
+            this.Controls.Add(this.labelX6);
+            this.Controls.Add(this.labelX5);
+            this.Controls.Add(this.labelX3);
+            this.Controls.Add(this._txtTenSheet);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this._progressBar);
+            this.Controls.Add(this.labelX4);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this._btnImport);
+            this.Controls.Add(this._checkBoxXoaTruocKhiImport);
+            this.Controls.Add(this._btnDong);
+            this.Controls.Add(this._txtDuongDan);
+            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this._btnDuyet);
+            this.DoubleBuffered = true;
             this.EnableGlass = false;
             this.Font = new System.Drawing.Font("Arial", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmImportThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HỆ THỐNG QUẢN LÝ THUỐC GPP";
-            this.panelEx1.ResumeLayout(false);
-            this.panelEx1.PerformLayout();
-            this.panelEx2.ResumeLayout(false);
+            this.Text = "Import danh sách thuốc từ excel";
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.LabelX _lbError;
-        private DevComponents.DotNetBar.LabelX _lbSoLoi;
-        private DevComponents.DotNetBar.LabelX _lbPecen;
-        private DevComponents.DotNetBar.ButtonX _btnImport;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private DevComponents.DotNetBar.LabelX _lbErrorCount;
+        private DevComponents.DotNetBar.LabelX labelX7;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.RichTextBoxEx _richTexBoxEdit;
-        private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.Controls.ProgressBarX _progressBar;
-        private DevComponents.DotNetBar.Controls.CheckBoxX _checkBoxTuDongVietHoa;
+        private DevComponents.DotNetBar.Controls.TextBoxX _txtTenSheet;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ProgressBar _progressBar;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevComponents.DotNetBar.ButtonX _btnImport;
         private DevComponents.DotNetBar.Controls.CheckBoxX _checkBoxXoaTruocKhiImport;
         private DevComponents.DotNetBar.ButtonX _btnDong;
         private System.Windows.Forms.TextBox _txtDuongDan;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX _btnDuyet;
-        private DevComponents.DotNetBar.PanelEx panelEx2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+
 
 
     }

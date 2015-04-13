@@ -15,17 +15,242 @@ namespace GPP
 {
     public partial class frmImportThuoc : DevComponents.DotNetBar.OfficeForm
     {
+        #region Field
+        /// <summary>
+        /// Danh sách các lỗi khi import thuốc
+        /// </summary>
+        private List<string> _errorMsg;
 
-        public delegate void send(bool change = false);
-        public send _send;
-        private string _fileName;
-        private int _errorCount = 0;
+        /// <summary>
+        /// Class quản lý việc import thuốc
+        /// </summary>
+        private ThuocController _thuocController;
 
+        /// <summary>
+        /// Đối tượng lưu trữ dữ liệu từ excel
+        /// </summary>
+        private DataTable _dataTable;
+
+        /// <summary>
+        /// Đối tượng chạy ngầm bên dưới khi import dữ liệu
+        /// </summary>
+        private BackgroundWorker _backgroundWorker;
+
+        /// <summary>
+        /// Số dòng của file excel
+        /// </summary>
+        private int MAX_ROWS = 0;
+        #endregion
+
+        #region Contructor
         public frmImportThuoc()
         {
             InitializeComponent();
+
+            HandleCreated += OnHandleCreated;
+            HandleDestroyed += OnHandleDestroyed;
+        }
+        #endregion
+
+        #region Event
+        private void OnHandleDestroyed(object sender, EventArgs e)
+        {
+            //Xóa các đối tượng ko dùng đến
+
+            _errorMsg.Clear();
+            _errorMsg = null;
+            _thuocController = null;
+
+            if (_backgroundWorker != null)
+            {
+                _backgroundWorker.CancelAsync();
+                _backgroundWorker.RunWorkerCompleted -= OnBackgroundWorkerRunWorkerCompleted;
+                _backgroundWorker.DoWork -= OnBackgroundWorkerDoWork;
+                _backgroundWorker.ProgressChanged -= OnBackgroundWorkerProgressChanged;
+
+                _backgroundWorker.Dispose();
+            }
+
+            if (_dataTable != null)
+            {
+                _dataTable.Dispose();
+            }
         }
 
+        private void OnHandleCreated(object sender, EventArgs e)
+        {
+            _errorMsg = new List<string>();
+            _thuocController = new ThuocController();
+        }
+
+        private void OnBtnDuyetTimClick(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDlg = new OpenFileDialog();
+            openFileDlg.Filter = "Excel 2007 (*.xls)|*.xls|Laster version (*.xlsx*)|*.xlsx*";
+            openFileDlg.Title = "Mở file Exel để import dữ liệu";
+            if (openFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                _txtDuongDan.Text = openFileDlg.FileName;
+            }
+        }
+
+        private void OnBtnDongClick(object sender, EventArgs e)
+        {
+            if (_btnDong.Text == "Dừng" && _backgroundWorker != null)
+            {
+                _backgroundWorker.CancelAsync();
+
+                _btnDong.Text = "Đóng";
+                _btnDuyet.Enabled = true;
+                _btnImport.Enabled = true;
+                _checkBoxXoaTruocKhiImport.Enabled = true;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void OnBtnImportClick(object sender, EventArgs e)
+        {
+            //Kiem tra du lieu truoc khi import
+            if (CheckBeforeImportData() == false)
+            {
+                return;
+            }
+
+            if (_checkBoxXoaTruocKhiImport.Checked == true)
+            {
+                SqlHelper.Instance.Execute("DELETE FROM THUOC");
+            }
+
+            //Lấy dữ liệu từ file excel
+            _dataTable = ExcelUtility.Instance.GetDataTable(_txtDuongDan.Text, "SELECT * FROM  [" + _txtTenSheet.Text + "$]");
+            MAX_ROWS = _dataTable.Rows.Count;
+
+            //Khoi tao gia tri mặc định
+            _progressBar.Maximum = MAX_ROWS;
+            _progressBar.Value = 0;
+
+            //Sử dụng background worker để thực hiện import và hiển thị quá trình import lên giao diện
+            if (_backgroundWorker != null)
+            {
+                _backgroundWorker.CancelAsync();
+                _backgroundWorker.RunWorkerCompleted -= OnBackgroundWorkerRunWorkerCompleted;
+                _backgroundWorker.DoWork -= OnBackgroundWorkerDoWork;
+                _backgroundWorker.ProgressChanged -= OnBackgroundWorkerProgressChanged;
+
+                _backgroundWorker.Dispose();
+            }
+
+            _backgroundWorker = new BackgroundWorker();
+            _backgroundWorker.WorkerReportsProgress = true;
+            _backgroundWorker.WorkerSupportsCancellation = true;
+            _backgroundWorker.RunWorkerCompleted += OnBackgroundWorkerRunWorkerCompleted;
+            _backgroundWorker.DoWork += OnBackgroundWorkerDoWork;
+            _backgroundWorker.ProgressChanged += OnBackgroundWorkerProgressChanged;
+
+            _btnDong.Text = "Dừng";
+            _btnDuyet.Enabled = false;
+            _btnImport.Enabled = false;
+            _checkBoxXoaTruocKhiImport.Enabled = false;
+
+            _backgroundWorker.RunWorkerAsync();
+        }
+
+        private void OnBackgroundWorkerProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            _progressBar.Value = e.ProgressPercentage;
+            _lbErrorCount.Text = _errorMsg.Count.ToString();
+        }
+
+        private void OnBackgroundWorkerDoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 1; i < MAX_ROWS; i++)
+            {
+                if (_backgroundWorker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                //Lấy dữ liệu
+                string maThuoc = _thuocController.GetNextPrimaryKeyDrug();
+
+                string tenThuoc = _dataTable.Rows[i][0].ToString();
+                string loaiThuoc = _dataTable.Rows[i][1].ToString();
+                string hoatChatChinh = _dataTable.Rows[i][2].ToString();
+                string donViTinh = _dataTable.Rows[i][3].ToString();
+                string donViQuyDoi1 = _dataTable.Rows[i][4].ToString();
+                string tyLeQuyDoi1 = _dataTable.Rows[i][5].ToString();
+                string donViQuyDoi2 = _dataTable.Rows[i][6].ToString();
+                string tyLeQuyDoi2 = _dataTable.Rows[i][7].ToString();
+                string xuatXu = _dataTable.Rows[i][8].ToString();
+
+                string doAm = "";
+                string nhietDo = "";
+                string congDung = "";
+                string cachSuDung = "";
+
+                //Loại bỏ ký tự đặc biệt
+                StringHelper.RemoveSpecialSymbol(ref tenThuoc);
+                StringHelper.RemoveSpecialSymbol(ref loaiThuoc);
+                StringHelper.RemoveSpecialSymbol(ref hoatChatChinh);
+                StringHelper.RemoveSpecialSymbol(ref donViTinh);
+                StringHelper.RemoveSpecialSymbol(ref donViQuyDoi1);
+                StringHelper.RemoveSpecialSymbol(ref donViQuyDoi2);
+                StringHelper.RemoveSpecialSymbol(ref xuatXu);
+
+                //Kiểm tra tính hợp lệ:
+                string maLoaiThuoc = "";
+                string maDonViTinh = "";
+                string maDonViQuyDoi1 = "";
+                string maDonViQuyDoi2 = "";
+
+                //Kiểm tra xem tên thuốc đã có trong CSDL hay chưa
+                if (_thuocController.CheckExistDrugByName(tenThuoc))
+                {
+                    _errorMsg.Add("Dòng " + i + ": Tên thuốc " + tenThuoc + " đã có trong CSDL");
+                }
+                else
+                {
+                    if (CheckRowsExcel(i, ref maLoaiThuoc, ref maDonViTinh, ref maDonViQuyDoi1, ref maDonViQuyDoi2) == false)
+                    {
+                        bool isSuccess = _thuocController.AddNewsDrug(maThuoc,
+                            tenThuoc, maLoaiThuoc,
+                            maDonViTinh, maDonViQuyDoi1,
+                            tyLeQuyDoi1, maDonViQuyDoi2,
+                            tyLeQuyDoi2, hoatChatChinh,
+                            congDung, cachSuDung, xuatXu,
+                            nhietDo, doAm);
+
+                        if (isSuccess == false)
+                        {
+                            _errorMsg.Add("Dòng " + i + ": Thêm dữ liệu Thuốc lỗi");
+                        }
+                    }
+                }
+                _backgroundWorker.ReportProgress(i);
+                System.Threading.Thread.Sleep(10);
+            }
+        }
+
+        private void OnBackgroundWorkerRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //send internal event
+
+            _btnDong.Text = "Đóng";
+            _btnDuyet.Enabled = true;
+            _btnImport.Enabled = true;
+            _checkBoxXoaTruocKhiImport.Enabled = true;
+
+            //Ghi danh sách lỗi ra ngoài file
+            WriteLog();
+            MessageBox.Show("Đã import xong!", "thông báo");
+        }
+
+        #endregion
+
+        #region Method
         /// <summary>
         /// Hàm kiểm tra các điều kiện cơ bản trước khi import dữ liệu
         /// </summary>
@@ -46,168 +271,147 @@ namespace GPP
                 return false;
             }
 
+            //Kiểm tra xem đã nhập tên sheet hay chưa?
+            if (string.IsNullOrEmpty(_txtTenSheet.Text))
+            {
+                ToastNotification.Show(this, "Chưa nhập tên sheet");
+                return false;
+            }
+
             return true;
         }
 
-        private void _btnImport_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Hàm kiểm tra dữ liệu hợp lệ của một rows
+        /// </summary>
+        /// <param name="rows"></param>
+        /// <param name="maLoaiThuoc"></param>
+        /// <param name="maDonViTinh"></param>
+        /// <param name="maDonViQuyDoi1"></param>
+        /// <param name="maDonViQuyDoi2"></param>
+        /// <returns></returns>
+        private bool CheckRowsExcel(int rows,
+            ref string maLoaiThuoc,
+            ref string maDonViTinh,
+            ref string maDonViQuyDoi1,
+            ref string maDonViQuyDoi2)
         {
-            //Kiem tra du lieu truoc khi import
-            if (CheckBeforeImportData() == false)
+            bool error = false;
+
+            string moTaLoaiThuoc = _dataTable.Rows[rows][1].ToString();
+            string moTaDonViTinh = _dataTable.Rows[rows][3].ToString();
+            string moTaDonViQuyDoi1 = _dataTable.Rows[rows][4].ToString();
+            string tyLeQuyDoi1 = _dataTable.Rows[rows][5].ToString();
+            string moTaDonViQuyDoi2 = _dataTable.Rows[rows][6].ToString();
+            string tyLeQuyDoi2 = _dataTable.Rows[rows][7].ToString();
+
+            //Loại bỏ ký tự đặc biệt
+            StringHelper.RemoveSpecialSymbol(ref moTaLoaiThuoc);
+            StringHelper.RemoveSpecialSymbol(ref moTaDonViTinh);
+            StringHelper.RemoveSpecialSymbol(ref moTaDonViQuyDoi1);
+            StringHelper.RemoveSpecialSymbol(ref moTaDonViQuyDoi2);
+            StringHelper.RemoveSpecialSymbol(ref tyLeQuyDoi1);
+            StringHelper.RemoveSpecialSymbol(ref tyLeQuyDoi2);
+
+            //Kiểm tra dữ liệu dạng số
+            if (StringHelper.IsNumber(tyLeQuyDoi1) == false)
             {
-                return;
+                _errorMsg.Add("Dòng " + rows + ": Cột [Tỷ lệ quy đổi 1] dữ liệu không phải dạng chữ số");
+                error = true;
+            }
+            if (StringHelper.IsNumber(tyLeQuyDoi2) == false)
+            {
+                _errorMsg.Add("Dòng " + rows + ": Cột [Tỷ lệ quy đổi 2] dữ liệu không phải dạng chữ số");
+                error = true;
             }
 
-            //Tien hanh import du lieu vao bang thuoc
-
-            _btnDuyet.Enabled = false;
-            _btnImport.Enabled = false;
-
-            if (_checkBoxXoaTruocKhiImport.Checked == true)
+            //Kiểm tra xem dữ liệu loại thuốc và đơn vị tính đã có chưa
+            //Chưa có thì thêm mới
+            if (_thuocController.CheckExistTypeOfDrug(moTaLoaiThuoc) == false)
             {
-                SqlHelper.Instance.Execute("DELETE FROM THUOC");
-                this._send(true);
-              
-            }
-
-            //chen du lieu vao
-            DataTable dataThuoc = ExcelUtility.Instance.GetDataTable(_txtDuongDan.Text, "SELECT * FROM  [Sheet1$]");
-
-            //Khoi tao gia tri cho ProgressBar
-            _progressBar.Maximum = dataThuoc.Rows.Count;
-            _progressBar.Value = 0;
-            
-            int _soLuong = dataThuoc.Rows.Count;
-            _lbError.Text = "0";
-            _lbPecen.Text = "0/" + _soLuong.ToString();
-            for (int i = 0; i < _soLuong; i++)
-            {
-                    string _maThuoc = SqlHelper.Instance.GetNextPrimaryKey("THUOC", "MATHUOC", "T000001");
-                    string _tenThuoc = dataThuoc.Rows[i][2].ToString();
-                    string _loaiThuoc = dataThuoc.Rows[i][3].ToString();
-                    string _hoatChatChinh = dataThuoc.Rows[i][4].ToString();
-                    string _donViTinh = dataThuoc.Rows[i][5].ToString();
-                    string _DVQD1 = dataThuoc.Rows[i][6].ToString();
-                    string _TLQD1 = dataThuoc.Rows[i][7].ToString();
-                    string _xuatXu = dataThuoc.Rows[i][16].ToString();
-                    string _doAm = "";
-                    string _nhietDo = "";
-                    string _congDung = "";
-                    string _cachDung = "";
-
-                    if (_checkBoxTuDongVietHoa.Checked == true)
-                    {
-                        _maThuoc.ToUpper();
-                        _tenThuoc.ToUpper();
-                        _loaiThuoc.ToUpper();
-                        _hoatChatChinh.ToUpper();
-                        _donViTinh.ToUpper();
-                        _DVQD1.ToUpper();
-                        _TLQD1.ToUpper();
-                        _xuatXu.ToUpper();
-                        _doAm.ToUpper();
-                        _congDung.ToUpper();
-                        _cachDung.ToUpper();
-                        _nhietDo.ToUpper();
-                    }
-                    _tenThuoc = LoaiBoKyTuDacBiet(_tenThuoc);
-                    if(CheckData(_tenThuoc,_loaiThuoc,_donViTinh)!="")
-                    {
-                        _richTexBoxEdit.Text += "Dong " + i + " Lỗi :\n" + CheckData(_tenThuoc, _loaiThuoc, _donViTinh);
-                        _errorCount++;
-                        _lbError.Text = _errorCount.ToString();
-                        SendKeys.Flush();
-                    }
-                    else
-                    {
-                        DataTable DVT = SqlHelper.Instance.ExecuteDataTable("Select MADONVI from DONVITINH Where MOTA='" + _donViTinh + "'");
-                        _donViTinh = DVT.Rows[0][0].ToString();
-                        DataTable dataLoaiThuoc = SqlHelper.Instance.ExecuteDataTable("SELECT MALOAITHUOC FROM LOAITHUOC WHERE MOTA='"+_loaiThuoc+"'");
-                        _loaiThuoc = dataLoaiThuoc.Rows[0][0].ToString();
-                        int recordEffect = (int)SqlHelper.Instance.Insert("THUOC", new SqlParameter[]
-                        {
-                            new SqlParameter("MATHUOC",_maThuoc),
-                            new SqlParameter("TENTHUOC",_tenThuoc),
-                            new SqlParameter("MALOAITHUOC",_loaiThuoc),
-                            new SqlParameter("DONVITINH",_donViTinh),
-                            new SqlParameter("DONVIQUYDOICAP_1",_DVQD1),
-                            new SqlParameter("TYLEQUYDOICAP_1",_TLQD1),
-                            new SqlParameter("DONVIQUYDOI_CAP2",""),
-                            new SqlParameter("TYLEQUYDOICAP_2",""),
-                            new SqlParameter("HOATCHATCHINH",_hoatChatChinh),
-                            new SqlParameter("CONGDUNG",_congDung),
-                            new SqlParameter("CACHSUDUNG",_cachDung),
-                            new SqlParameter("XUATXU",_xuatXu),
-                            new SqlParameter("NHIETDOBAOQUAN",_nhietDo),
-                            new SqlParameter("DOAMBAOQUAN",_doAm) 
-                        });
-                    }
-                    _progressBar.Value++;
-                    _lbPecen.Text = i.ToString() + "/" + _soLuong.ToString();
-                    SendKeys.Flush();
-            }
-                //sau khi import xong
-                this._send(true);
-
-                _btnImport.Enabled = true;
-                _btnDuyet.Enabled = true;
-
-            _btnImport.Enabled = true;
-            _btnDuyet.Enabled = true;
-
-            MessageBox.Show("Import dữ liệu thành công!",
-                "Thông báo",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-        }
-
-        private void _btnDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void _btnDuyet_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDlg = new OpenFileDialog();
-            openFileDlg.Filter = "Excel 2007 (*.xls)|*.xls|Laster version (*.xlsx*)|*.xlsx*";
-            openFileDlg.Title = "Mở file Exel để import dữ liệu";
-            if (openFileDlg.ShowDialog() == DialogResult.OK)
-            {
-                _fileName = openFileDlg.FileName;
-                _txtDuongDan.Text = _fileName;
-            }
-        }
-        private string LoaiBoKyTuDacBiet(string s)
-        {
-            for (int i = 0; i < s.Length; )
-            {
-                if ((int)s[i] == 34 || (int)s[i] == 39 || (int)s[i] == 46)
+                maLoaiThuoc = _thuocController.GetNextPrimaryKeyTypeOfDrug();
+                if (_thuocController.AddNewsTypeOfDrug(maLoaiThuoc, moTaLoaiThuoc) == false)
                 {
-                    s = s.Remove(i, 1);
-                }
-                else
-                {
-                    i++;
+                    _errorMsg.Add("Dòng " + rows + ": Cột [Loại thuốc] dữ liệu thêm mới lỗi");
+                    error = true;
                 }
             }
-            return s;
-        }
-        private string error;
-        private string CheckData(string tenThuoc, string loaiThuoc, string donViTinh)
-        {
-            error = "";
-            if (SqlHelper.Instance.CheckExistKey("DONVITINH", "MOTA", donViTinh.ToString()) == false)
+            else
             {
-                error = "\tThiếu thông tin đơn vị tính\n";
+                maLoaiThuoc = _thuocController.GetIDTypeOfDrugByName(moTaLoaiThuoc);
             }
-            if (SqlHelper.Instance.CheckExistKey("THUOC", "TENTHUOC", tenThuoc) == true)
+            //__________________________________________________________
+
+            if (_thuocController.CheckExistUnitOfDrug(moTaDonViTinh) == false)
             {
-                error += "\tThuốc đã tồn tại trong CSDL\n";
+                maDonViTinh = _thuocController.GetNextPromaryKeyUnitOfDrug();
+                if (_thuocController.AddNewsUnitOfDrug(maDonViTinh, moTaDonViTinh) == false)
+                {
+                    _errorMsg.Add("Dòng " + rows + ": Cột [Đơn vị tính] dữ liệu thêm mới lỗi");
+                    error = true;
+                }
             }
-            if (SqlHelper.Instance.CheckExistKey("LOAITHUOC", "MOTA", loaiThuoc.Trim()) == false)
+            else
             {
-                error += "\tKhông xác định được loại thuốc\n";
+                maDonViTinh = _thuocController.GetIDUnitOfDrugByName(moTaDonViTinh);
+            }
+
+            //__________________________________________________________
+            if (_thuocController.CheckExistUnitOfDrug(moTaDonViQuyDoi1) == false)
+            {
+                maDonViQuyDoi1 = _thuocController.GetNextPromaryKeyUnitOfDrug();
+                if (_thuocController.AddNewsUnitOfDrug(maDonViQuyDoi1, moTaDonViQuyDoi1) == false)
+                {
+                    _errorMsg.Add("Dòng " + rows + ": Cột [Đơn vị quy đổi 1] dữ liệu thêm mới lỗi");
+                    error = true;
+                }
+            }
+            else
+            {
+                maDonViQuyDoi1 = _thuocController.GetIDUnitOfDrugByName(moTaDonViQuyDoi1);
+            }
+
+            //__________________________________________________________
+            if (_thuocController.CheckExistUnitOfDrug(moTaDonViQuyDoi2) == false)
+            {
+                maDonViQuyDoi2 = _thuocController.GetNextPromaryKeyUnitOfDrug();
+                if (_thuocController.AddNewsUnitOfDrug(maDonViQuyDoi2, moTaDonViQuyDoi2) == false)
+                {
+                    _errorMsg.Add("Dòng " + rows + ": Cột [Đơn vị quy đổi 2] dữ liệu thêm mới lỗi");
+                    error = true;
+                }
+            }
+            else
+            {
+                maDonViQuyDoi2 = _thuocController.GetIDUnitOfDrugByName(moTaDonViQuyDoi2);
             }
             return error;
         }
+
+        /// <summary>
+        /// Ghi lỗi ra file
+        /// </summary>
+        private void WriteLog()
+        {
+            if (Directory.Exists(Application.StartupPath + @"\Data\") == false)
+            {
+                Directory.CreateDirectory(Application.StartupPath + @"\Data\");
+            }
+            if (Directory.Exists(Application.StartupPath + @"\Data\Log\") == false)
+            {
+                Directory.CreateDirectory(Application.StartupPath + @"\Data\Log\");
+            }
+            string fileName = Application.StartupPath + @"\Data\Log\Log.txt";
+            System.IO.StreamWriter file = new System.IO.StreamWriter(fileName);
+            for (int i = 0; i < _errorMsg.Count; i++)
+            {
+                file.WriteLine(_errorMsg[i]);
+            }
+            file.Close();
+            _errorMsg.Clear();
+
+            System.Diagnostics.Process.Start(fileName);
+        }
+        #endregion
     }
 }

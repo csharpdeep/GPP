@@ -31,10 +31,7 @@ namespace GPP
         }
         private void _btnNhapTuFile_Click(object sender, EventArgs e)
         {
-            frmImportThuoc pt = new frmImportThuoc();
-            pt._send = new frmImportThuoc.send(loadData);
-            pt.ShowDialog();
-
+            new frmImportThuoc().ShowDialog();
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
