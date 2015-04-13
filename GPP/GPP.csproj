@@ -91,12 +91,6 @@
     <Compile Include="Common\SettingSQL.Designer.cs">
       <DependentUpon>SettingSQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DangNhap\frmDangNhapUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\DangNhap\frmDangNhapUC.Designer.cs">
-      <DependentUpon>frmDangNhapUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\DonViTinh\frmDonViTinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,12 +156,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\PhanQuyen\frmPhanQuyen.Designer.cs" />
-    <Compile Include="View\SplashScreen\SplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SplashScreen\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Thuoc\frmImportThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,9 +186,6 @@
     </Compile>
     <EmbeddedResource Include="Common\SettingSQL.resx">
       <DependentUpon>SettingSQL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\DangNhap\frmDangNhapUC.resx">
-      <DependentUpon>frmDangNhapUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DonViTinh\frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
@@ -233,9 +218,6 @@
       <DependentUpon>Frm_HoaDonNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PhanQuyen\frmPhanQuyen.resx" />
-    <EmbeddedResource Include="View\SplashScreen\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Thuoc\frmImportThuoc.resx">
       <DependentUpon>frmImportThuoc.cs</DependentUpon>
     </EmbeddedResource>

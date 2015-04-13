@@ -53,7 +53,6 @@ namespace GPP
                     instance = new frmPhanQuyen();
                     break;
                 case GuiResId.ScreenID.DangNhap:
-                    instance = new frmDangNhapUC();
                     break;
                 case GuiResId.ScreenID.HoaDon:
                     break;
