@@ -7,6 +7,7 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 using Microsoft.Win32;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
@@ -68,6 +69,8 @@ namespace GPP
         {
             try
             {
+                Directory.CreateDirectory(Application.StartupPath + @"\Data\");
+
                 XmlTextWriter xtw = new XmlTextWriter(@"Data/Config.xml", null);
                 xtw.Formatting = Formatting.Indented;
                 xtw.WriteStartDocument();

@@ -12,7 +12,7 @@ using DongTX.Core;
 
 namespace GPP
 {
-    public partial class frmLoaiThuoc : Form, IUserControlBase
+    public partial class frmLoaiThuoc : Form
     {
         public frmLoaiThuoc()
         {
@@ -97,17 +97,6 @@ namespace GPP
             {
                 e.Cancel = true;
             }
-        }
-
-
-        public void Search(string keyWords)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ProcessKeyUp(ref Message msg, Keys keyData)
-        {
-            throw new NotImplementedException();
         }
     }
 }

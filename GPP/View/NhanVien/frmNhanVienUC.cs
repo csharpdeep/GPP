@@ -82,17 +82,6 @@ namespace GPP
             _dataNhanVien.DataSource = SqlHelper.Instance.ExecuteDataTable(sql);
         }
 
-        public void Search(string keyWords)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ProcessKeyUp(ref Message msg, Keys keyData)
-        {
-            throw new NotImplementedException();
-        }
-
-
         private void _btnThem_Click(object sender, EventArgs e)
         {
             maNV = SqlHelper.Instance.GetNextPrimaryKey("NHANVIEN", "MANHANVIEN", "NV001");
@@ -129,7 +118,42 @@ namespace GPP
                 MessageBox.Show("Xóa thành công","Thông báo",MessageBoxButtons.OK);
         }
 
-       
+
+
+        public void ProcessKeyUp(ref Message msg, Keys keyData)
+        {
+            throw new NotImplementedException();
         }
+
+        public void OnBtnSearchClick()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnBtnExportToExcelClick()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnBtnImportFromExcelClick()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnBtnAddClick()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnBtnEditClick()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnBtnDeleteClick()
+        {
+            throw new NotImplementedException();
+        }
+    }
     }
 

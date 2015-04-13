@@ -2,14 +2,9 @@
 
 namespace GPP
 {
-    interface IUserControlBase
+    public interface IUserControlBase
     {
         #region Implement member
-        /// <summary>
-        /// Hàm tìm kiếm dữ liệu
-        /// </summary>
-        /// <param name="keyWords">Từ khóa</param>
-        void Search(string keyWords);
 
         /// <summary>
         /// Hàm xử lý sự kiện nhấn phím
@@ -18,6 +13,12 @@ namespace GPP
         /// <param name="keyData"></param>
         void ProcessKeyUp(ref Message msg, Keys keyData);
 
+        void OnBtnSearchClick();
+        void OnBtnExportToExcelClick();
+        void OnBtnImportFromExcelClick();
+        void OnBtnAddClick();
+        void OnBtnEditClick();
+        void OnBtnDeleteClick();
         #endregion Implement member
     }
 }
