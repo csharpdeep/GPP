@@ -482,7 +482,7 @@
             this._checkNam.AutoSize = true;
             this._checkNam.Location = new System.Drawing.Point(437, 61);
             this._checkNam.Name = "_checkNam";
-            this._checkNam.Size = new System.Drawing.Size(55, 20);
+            this._checkNam.Size = new System.Drawing.Size(54, 20);
             this._checkNam.TabIndex = 44;
             this._checkNam.Text = "Nam";
             this._checkNam.UseVisualStyleBackColor = true;
@@ -564,6 +564,7 @@
             this.btn_Save.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Save.Image = global::GPP.Properties.Resources.Save;
             this.btn_Save.Location = new System.Drawing.Point(407, 456);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(111, 32);
@@ -577,6 +578,7 @@
             this.btn_exit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_exit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_exit.Image = global::GPP.Properties.Resources.Exit;
             this.btn_exit.Location = new System.Drawing.Point(559, 456);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(95, 32);
@@ -587,12 +589,13 @@
             // 
             // Popup_NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 500);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this._groupBox);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 10.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

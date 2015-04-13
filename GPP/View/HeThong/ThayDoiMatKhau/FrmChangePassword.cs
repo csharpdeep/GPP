@@ -9,9 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace GPP.View.HeThong.ThayDoiMatKhau
 {
-    public partial class Frm_DoiMatKhau : DevComponents.DotNetBar.OfficeForm
+    public partial class FrmChangePassword : DevComponents.DotNetBar.OfficeForm
     {
-        public Frm_DoiMatKhau()
+        public FrmChangePassword()
         {
             InitializeComponent();
         }

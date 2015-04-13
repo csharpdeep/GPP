@@ -42,7 +42,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Location = new System.Drawing.Point(543, 275);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 16);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ver 1.0";
             // 
@@ -68,7 +68,7 @@
             this._progressBar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this._progressBar.Location = new System.Drawing.Point(13, 240);
             this._progressBar.Name = "_progressBar";
-            this._progressBar.Size = new System.Drawing.Size(574, 12);
+            this._progressBar.Size = new System.Drawing.Size(574, 14);
             this._progressBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this._progressBar.TabIndex = 3;
             // 
@@ -79,7 +79,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(12, 268);
+            this.labelX2.Location = new System.Drawing.Point(13, 266);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(183, 23);
             this.labelX2.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // SplashScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImage = global::GPP.Properties.Resources.Background;
