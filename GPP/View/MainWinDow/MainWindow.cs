@@ -13,6 +13,8 @@ using System.Xml;
 using DongTX.Core;
 using DevComponents.DotNetBar;
 using GPP.View.HeThong.PhucHoiCSDL;
+using GPP.View.HeThong.SaoLuuCSDL;
+
 namespace GPP
 {
     public partial class MainWindow : DevComponents.DotNetBar.OfficeForm, IGuiMng
@@ -123,13 +125,14 @@ namespace GPP
 
         private void saoLưuCSDLToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            SaoLuuPhucHoiDuLieu frm = new SaoLuuPhucHoiDuLieu();
+            FrmRestoreDatabase frm = new FrmRestoreDatabase();
             frm.Show();
         }
 
         private void khôiPhụcCSDLToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-           
+            FrmBackupDataBase frm = new FrmBackupDataBase();
+            frm.Show();
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -174,6 +177,12 @@ namespace GPP
         private void chứcVụToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
         }
     }
 }

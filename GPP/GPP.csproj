@@ -103,11 +103,23 @@
     <Compile Include="View\DonViTinh\frmDonViTinh.Designer.cs">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\HeThong\PhucHoiCSDL\SaoLuuPhucHoiDuLieu.cs">
+    <Compile Include="View\HeThong\PhucHoiCSDL\FrmRestoreDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\HeThong\PhucHoiCSDL\SaoLuuPhucHoiDuLieu.Designer.cs">
-      <DependentUpon>SaoLuuPhucHoiDuLieu.cs</DependentUpon>
+    <Compile Include="View\HeThong\PhucHoiCSDL\FrmRestoreDatabase.Designer.cs">
+      <DependentUpon>FrmRestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HeThong\SaoLuuCSDL\FrmBackupDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\HeThong\SaoLuuCSDL\FrmBackupDataBase.Designer.cs">
+      <DependentUpon>FrmBackupDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HeThong\ThayDoiMatKhau\Frm_DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\HeThong\ThayDoiMatKhau\Frm_DoiMatKhau.Designer.cs">
+      <DependentUpon>Frm_DoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="View\HoaDon\UC_PhieuXuat.cs">
       <SubType>UserControl</SubType>
@@ -193,8 +205,14 @@
     <EmbeddedResource Include="View\DonViTinh\frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\HeThong\PhucHoiCSDL\SaoLuuPhucHoiDuLieu.resx">
-      <DependentUpon>SaoLuuPhucHoiDuLieu.cs</DependentUpon>
+    <EmbeddedResource Include="View\HeThong\PhucHoiCSDL\FrmRestoreDatabase.resx">
+      <DependentUpon>FrmRestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HeThong\SaoLuuCSDL\FrmBackupDataBase.resx">
+      <DependentUpon>FrmBackupDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HeThong\ThayDoiMatKhau\Frm_DoiMatKhau.resx">
+      <DependentUpon>Frm_DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HoaDon\UC_PhieuXuat.resx">
       <DependentUpon>UC_PhieuXuat.cs</DependentUpon>
@@ -251,6 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\banner.png" />
     <None Include="Resources\Open.png" />
     <None Include="Resources\Document-Download.png" />
     <None Include="Resources\Warning.png" />
@@ -279,8 +298,6 @@
     <Folder Include="View\BaoCao\" />
     <Folder Include="View\ChucVu\" />
     <Folder Include="View\HeThong\GioiThieuPhanMem\" />
-    <Folder Include="View\HeThong\SaoLuuCSDL\" />
-    <Folder Include="View\HeThong\ThayDoiMatKhau\" />
     <Folder Include="View\HeThong\ThayDoiTaiKhoan\" />
     <Folder Include="View\HeThong\ThongTinNhaThuoc\" />
   </ItemGroup>
